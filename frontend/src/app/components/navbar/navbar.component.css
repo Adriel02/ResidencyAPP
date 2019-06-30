@@ -1,0 +1,24 @@
+.navbarText {
+  font-family: 'Catamaran', sans-serif;
+}
+
+.fondoNav {
+  background-color: #387CB9;
+}
+
+li {
+  list-style: none;
+}
+
+.selectDropdownMenu {
+  cursor: pointer;
+}
+
+.selectDropdownMenu > i {
+  display: none;
+}
+
+.logout {
+  width: auto;
+  height: auto;
+}

@@ -1,3 +1,18 @@
-<nav>
-  <button class="btn btn-link nav-link logout" *ngIf="_loggedUser.getUser()!=null" (click)="logout()">Logout</button>
+<nav class="fondoNav navbarText navbar navbar-expand-lg navbar-light" *ngIf="_loggedUser.getUserLoggedIn()">
+  <ul class="navbar-nav mr-auto">
+    <li class="navbar-nav active">
+    <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/list_tasks'">
+      <i class="fas fa-bars"></i> Tasks List</span>
+    </li>
+  </ul>
+  <li ngbDropdown class="nav-item dropdown">
+    <a ngbDropdownToggle
+       class="nav-link dropdown-toggle text-white selectDropdownMenu"><i
+      class="fas fa-user-circle fa-lg"></i><span>{{_loggedUser.getUserFName()}}</span></a>
+    <div ngbDropdownMenu class="dropdown-menu logout" aria-labelledby="navbarDropdown">
+      <button class="btn btn-link nav-link logout" *ngIf="_loggedUser.getUser()!=null"
+              (click)="logout()">Logout
+      </button>
+    </div>
+  </li>
 </nav>

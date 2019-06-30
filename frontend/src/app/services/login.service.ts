@@ -43,7 +43,7 @@ export class LoginService {
   }
 
   getUserFName() {
-    return this.user.name + ' ' + this.user.surname;
+    return this.user.name + ' ' + this.user.surnames;
   }
 
   getUserId() {

@@ -37,6 +37,10 @@ public class BasicAuthConfiguration extends WebSecurityConfigurerAdapter {
                 .withUser("resp")
                 .password(encoder().encode("1234"))
                 .roles("ADMIN")
+                .and()
+                .withUser("resp2")
+                .password(encoder().encode("1234"))
+                .roles("ADMIN")
         ;
 
     }
