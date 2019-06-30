@@ -13,7 +13,8 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
 import {LoginComponent} from './login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { NavbarComponent } from './components/navbar/navbar/navbar.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
+
 
 const appRoutes: Routes = [
   {

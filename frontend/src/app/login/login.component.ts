@@ -17,16 +17,20 @@ export class LoginComponent implements OnInit {
   error = null;
 
 
-  constructor(private _loggedUser: LoginService, private _route: Router, private _auth:AuthService) {
+  constructor(private _loggedUser: LoginService, private _route: Router, private _auth: AuthService) {
   }
 
   ngOnInit() {
-    this.loginForm = new FormGroup(
-      {
-        username: new FormControl(this.username, Validators.required),
-        password: new FormControl(this.password, Validators.required),
-      }
-    );
+    if (localStorage.getItem('token')) {
+      this._route.navigate(['/list_tasks']);
+    } else {
+      this.loginForm = new FormGroup(
+        {
+          username: new FormControl(this.username, Validators.required),
+          password: new FormControl(this.password, Validators.required),
+        }
+      );
+    }
   }
 
   get controls() {
@@ -40,15 +44,16 @@ export class LoginComponent implements OnInit {
       return;
     }
     this._loggedUser.loginUser(this.controls.username.value, this.controls.password.value).subscribe((user) => {
-        this._loggedUser.setUserLoggedIn();
-        this._auth.sendToken(btoa(JSON.stringify(user)));
-        this._route.navigate(['/list_tasks']);
-      }, (error) => {
-        this.error = error.error;
-        if (this.error = null) {
-          this.error = {'message': 'User Not Found'};
-        }
-      });
+      this._loggedUser.setUserLoggedIn();
+      this._loggedUser.setUser(user);
+      this._auth.sendToken(btoa(JSON.stringify(user)));
+      this._route.navigate(['/list_tasks']);
+    }, (error) => {
+      this.error = error.error;
+      if (this.error = null) {
+        this.error = {'message': 'User Not Found'};
+      }
+    });
 
   }
 
