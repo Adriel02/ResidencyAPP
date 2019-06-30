@@ -20,13 +20,9 @@ public class UserController {
         return this.userService.getAllUser();
     }
 
-    @GetMapping("/username/{username}")
-    public User getUserByUsername(@PathVariable("username") String username){
-        return this.userService.getUserByUserName(username);
-    }
 
     @GetMapping("/role/{role}")
-    public List<User> getUsersByRole(@PathVariable("role") String role){
+    public List<User> getUsersByRole(@PathVariable("role") String role) {
         return this.userService.getAllUserByRole(role);
     }
 
@@ -41,7 +37,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable("id") String id){
+    public void deleteUser(@PathVariable("id") String id) {
         this.userService.deleteUser(id);
     }
 }

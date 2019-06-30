@@ -7,7 +7,7 @@ import {Residency} from '../model/residency';
 })
 export class ResidencyService {
 
-  private base_url = 'http://192.168.1.94:8080/residency';
+  private base_url = 'localhost:8080/residency';
 
   constructor(private _http: HttpClient) {
   }

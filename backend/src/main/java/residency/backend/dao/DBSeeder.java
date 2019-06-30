@@ -54,9 +54,9 @@ public class DBSeeder implements CommandLineRunner {
         jefe1.setId("jefe1");
         User jefe2 = new User("Ana", "Díaz Rodríguez", "369852217O", jefeDepartamento, "jefe2", "jefe2");
         jefe2.setId("jefe2");
-        User trabajador1 = new User("Raul", "García Díaz", "123456789A", trabajador, "emp1", "emp1");
+        User trabajador1 = new User("Raul", "García Díaz", "123456789A", trabajador, "emp1", "1234");
         trabajador1.setId("trabajador1");
-        User trabajador2 = new User("Lorenzo", "García Pérez", "456789123L", trabajador, "emp2", "emp2");
+        User trabajador2 = new User("Lorenzo", "García Pérez", "456789123L", trabajador, "emp2", "1234");
         trabajador2.setId("trabajador2");
         this.userRepository.deleteAll();
         this.userRepository.saveAll(Arrays.asList(jefe1, jefe2, trabajador1, trabajador2));
