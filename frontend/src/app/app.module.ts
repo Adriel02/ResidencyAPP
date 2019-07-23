@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+
 import {AppComponent} from './app.component';
 import {RouterModule, Routes} from '@angular/router';
 import {ListTaskComponent} from './components/list-task/list-task.component';
@@ -11,17 +12,19 @@ import {LoginService} from './services/login.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 import {LoginComponent} from './login/login.component';
+import {AuthGuard} from './Authentication/AuthGuard';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NavbarComponent} from './components/navbar/navbar.component';
-
+import {MatTableModule, MatSortModule} from '@angular/material';
 
 const appRoutes: Routes = [
   {
     path: '', component: LoginComponent
   },
   {
-    path: 'list_tasks', component: ListTaskComponent
+    path: 'list_tasks', component: ListTaskComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
@@ -37,12 +40,14 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatTableModule,
+    MatSortModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     BsDatepickerModule.forRoot(),
     ReactiveFormsModule,
   ],
-  providers: [ResidencyService, TaskService, SubTaskService,LoginService],
+  providers: [ResidencyService, TaskService, SubTaskService,LoginService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

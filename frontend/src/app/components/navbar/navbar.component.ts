@@ -20,7 +20,6 @@ export class NavbarComponent implements OnInit {
     this._loggedUser.logoutUser().subscribe(() => {
       this._auth.logout();
       this.removeAllLocalStorage();
-      console.log("llego");
       this._loggedUser.setUserLoggedOut();
       this._route.navigate(['/']);
     }, (error) => {

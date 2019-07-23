@@ -1,3 +1,18 @@
 
 
 <h1>ESTAMOS AHORA MISMO EN EL LIST-TASK</h1>
+
+
+
+<mat-table [dataSource]="dataSource" matSort>
+
+  <ng-container matColumnDef="user.name">
+    <mat-header-cell *matHeaderCellDef >Empleado</mat-header-cell>
+    <mat-cell *matCellDef="let task">{{task.user.name}}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedUserColums"></mat-header-row>
+  <mat-row *matRowDef="let task; columns: displayedUserColums;"></mat-row>
+
+
+</mat-table>
