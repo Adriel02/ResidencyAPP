@@ -52,14 +52,15 @@ public class BasicAuthConfiguration extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(new CorsFilter(), ChannelProcessingFilter.class);
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login", "/ws-task/**").authenticated()
-                .antMatchers(HttpMethod.GET, "/task").hasRole("ADMIN")
+                .antMatchers().permitAll().anyRequest().permitAll().and()
+                //.antMatchers("/login", "/ws-task/**").authenticated().and()
+                /*.antMatchers(HttpMethod.GET, "/task").hasRole("ADMIN")
                 .antMatchers(HttpMethod.POST, "/task").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/task").hasRole("ADMIN")
                 .antMatchers(HttpMethod.PUT, "/task").authenticated()
                 .antMatchers("/user/**").hasRole("ADMIN")
                 .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS).and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS).and()*/
                 .logout()
                 .permitAll()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))

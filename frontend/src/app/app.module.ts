@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {Injectable, NgModule} from '@angular/core';
 
 
 import {AppComponent} from './app.component';
@@ -13,10 +13,26 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './Authentication/AuthGuard';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {MatTableModule, MatSortModule} from '@angular/material';
+import {MatSortModule, MatTableModule} from '@angular/material';
+import {Observable} from 'rxjs';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
+@Injectable()
+export class XhrInterceptor implements HttpInterceptor {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const xhr = req.clone({
+      withCredentials: true,
+      headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
+    });
+    return next.handle(xhr);
+  }
+
+}
+
 
 const appRoutes: Routes = [
   {
@@ -46,9 +62,15 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BsDatepickerModule.forRoot(),
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
   ],
-  providers: [ResidencyService, TaskService, SubTaskService,LoginService,AuthGuard],
-  bootstrap: [AppComponent]
+  providers: [
+    ResidencyService, TaskService, SubTaskService,LoginService,AuthGuard
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
 }

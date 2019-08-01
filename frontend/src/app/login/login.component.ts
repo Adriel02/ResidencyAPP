@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   submitted = false;
   error = null;
 
-
   constructor(private _loggedUser: LoginService, private _route: Router, private _auth: AuthService) {
   }
 
@@ -26,10 +25,11 @@ export class LoginComponent implements OnInit {
     } else {
       this.loginForm = new FormGroup(
         {
-          username: new FormControl(this.username, Validators.required),
-          password: new FormControl(this.password, Validators.required),
+          'username': new FormControl(this.username, Validators.required),
+          'password': new FormControl(this.password, Validators.required),
         }
       );
+      this._loggedUser.setUserLoggedOut();
     }
   }
 
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       this._route.navigate(['/list_tasks']);
     }, (error) => {
       this.error = error.error;
-      if (this.error = null) {
+      if (this.error != null) {
         this.error = {'message': 'User Not Found'};
       }
     });

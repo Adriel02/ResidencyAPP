@@ -6,6 +6,7 @@
       <h5 class="mt-2 ">The best way to easy residency maintenance</h5>
     </div>
   <div class="login-form">
+    <div *ngIf="error" class="alert alert-danger">{{error.message}}</div>
     <h3>Welcome</h3>
     <form [formGroup]="loginForm" (ngSubmit)="loginUser($event)" class="mt-4">
       <div class="input-group">

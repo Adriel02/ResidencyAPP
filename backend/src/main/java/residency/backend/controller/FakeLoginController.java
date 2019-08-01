@@ -8,6 +8,7 @@ import residency.backend.services.FakeLoginService;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin
 public class FakeLoginController {
     private FakeLoginService fakeLoginService;
 

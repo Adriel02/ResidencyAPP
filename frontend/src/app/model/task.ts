@@ -7,6 +7,7 @@ export class Task {
   editDate: Date;
   endDate: Date;
   subTask: SubTask;
+  room: String;
   user: User;
   incidence: string;
   additionalInformation: string;

@@ -6,7 +6,7 @@ import {User} from '../model/user';
 })
 export class LoginService {
 
-  private base_url: string = 'http://localhost:8080';
+  private base_url: string = 'http://192.168.1.94:8080';
   private isUserLogin;
   private user: User;
 
@@ -17,12 +17,9 @@ export class LoginService {
   loginUser(name: string, password: string) {
     let params = new HttpParams();
     params = params.append('user', name);
-    let headers = new HttpHeaders({Authorization: 'Basic ' + btoa(name + ':' + password)});
-    return this._http.get<User>(this.base_url + '/login',
-      {
-        headers: headers,
-        params: params
-      });
+    let headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(name + ':' + password) });
+    console.log(headers);
+    return this._http.get<User>(this.base_url + '/login', {headers: headers, params: params});
   }
 
   logoutUser() {

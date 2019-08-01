@@ -18,6 +18,10 @@ public class Task {
     private SubTask subTask;
     @DBRef
     private User user;
+
+
+
+    private String room;
     private String incidence;
     private String additionalInformation;
     private String state;
@@ -25,13 +29,14 @@ public class Task {
     protected Task() {
     }
 
-    public Task(Date creationDate, SubTask subTask, User user, String incidence, String additionalInformation, String state) {
+    public Task(Date creationDate, SubTask subTask, User user, String incidence, String additionalInformation, String state,String room) {
         this.creationDate = creationDate;
         this.subTask = subTask;
         this.user = user;
         this.incidence = incidence;
         this.additionalInformation = additionalInformation;
         this.state = state;
+        this.room = room;
     }
 
     public String getState() {
@@ -104,5 +109,13 @@ public class Task {
 
     public void setSubTask(SubTask subTask) {
         this.subTask = subTask;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
     }
 }

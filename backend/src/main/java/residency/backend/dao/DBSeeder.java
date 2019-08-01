@@ -62,9 +62,13 @@ public class DBSeeder implements CommandLineRunner {
         this.userRepository.saveAll(Arrays.asList(jefe1, jefe2, trabajador1, trabajador2));
 
 
-        Task task1 = new Task(new Date(), subTask, trabajador1, "", "", "En progreso");
-        Task task2 = new Task(new Date(), subTask2, trabajador2, "Papel en el suelo", "", "Cancelada");
+        Task task1 = new Task(new Date(), subTask, trabajador1, "", "asd3", "En progreso","105");
+        Task task2 = new Task(new Date(), subTask2, trabajador2, "Papel en el suelo", "", "Cancelada","116");
+        Task task3 = new Task(new Date(), subTask, trabajador2, "Papel en el suelo", "asd2", "Cancelada","220");
+        Task task4 = new Task(new Date(), subTask2, trabajador2, "", "", "En progreso","310");
+        Task task5 = new Task(new Date(), subTask, trabajador1, "Papel en el suelo", "asd1", "Cancelada","312");
+        Task task6 = new Task(new Date(), subTask2, trabajador1, "", "Informacion adicional", "En progreso","514");
         this.taskRepository.deleteAll();
-        this.taskRepository.saveAll(Arrays.asList(task1, task2));
+        this.taskRepository.saveAll(Arrays.asList(task1, task2,task3,task4,task5,task6));
     }
 }
