@@ -22,7 +22,7 @@
   </form>
 
   <div *ngIf="isBoss()" class="col my-4 py-2">
-    <button class="btn button right"><i class="fas fa-plus"></i> Create
+    <button class="btn button right" (click)="createTask()"><i class="fas fa-plus"></i> Create
       new Task
     </button>
   </div>

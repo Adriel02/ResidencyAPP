@@ -3,6 +3,10 @@
     <li class="navbar-nav active">
     <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/list_tasks'">
       <i class="fas fa-bars"></i> Tasks List</span>
+
+      <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/task'">
+      <a class="text-white" routerLink="/list_tasks"><i class="fas fa-arrow-left"></i></a> New Task</span>
+
     </li>
   </ul>
   <li ngbDropdown class="nav-item dropdown">

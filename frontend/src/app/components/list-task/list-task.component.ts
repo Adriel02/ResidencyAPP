@@ -9,6 +9,7 @@ import {UserService} from '../../services/user.service';
 import {TaskService} from '../../services/task.service';
 import {BsDatepickerConfig} from 'ngx-bootstrap';
 import {Task} from '../../model/task';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ import {Task} from '../../model/task';
   templateUrl: './list-task.component.html',
   styleUrls: ['./list-task.component.css']
 })
-export class ListTaskComponent implements OnInit, OnDestroy {
+export class ListTaskComponent implements OnInit {
 
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -27,7 +28,6 @@ export class ListTaskComponent implements OnInit, OnDestroy {
   private users: User[];
   private stompClient = null;
   formGroup: FormGroup;
-
   dataSource: MatTableDataSource<any>;
   displayedUserColums = ['user.name', 'room', 'state', 'additionalInformation', 'incidence', 'Options'];
 
@@ -36,6 +36,7 @@ export class ListTaskComponent implements OnInit, OnDestroy {
     private _loggedUser: LoginService,
     private _user: UserService,
     private _taskService: TaskService,
+    private _router : Router,
   ) {
     this.datePickerConfig = Object.assign({}, {
         showWeekNumbers: false,
@@ -71,7 +72,7 @@ export class ListTaskComponent implements OnInit, OnDestroy {
     }
 
     if (localStorage.getItem('user')) {
-      this.formGroup.controls.value.setValue(JSON.parse(atob(localStorage.getItem('user'))));
+      this.formGroup.controls.user.setValue(JSON.parse(atob(localStorage.getItem('user'))));
     } else {
       this.formGroup.controls.user.setValue('All');
     }
@@ -90,7 +91,7 @@ export class ListTaskComponent implements OnInit, OnDestroy {
 
 
   private getUserByRole() {
-    this._user.getUserByRole('trabajador').subscribe((user) => {
+    this._user.getUsersByRole('trabajador').subscribe((user) => {
         let trabajadorAll = new User();
         trabajadorAll.name = 'All';
         this.users = user;
@@ -201,6 +202,12 @@ export class ListTaskComponent implements OnInit, OnDestroy {
     }
   }
 
+  createTask() {
+    let task = new Task();
+    this.saveTaskInLocalStorage(task);
+    this._taskService.setter(task);
+    this._router.navigate(['/task']);
+  }
 
   removeTaskHtml(id: string) {
     let index = this.dataSource.data.findIndex((obj => obj.id == id));
@@ -213,6 +220,12 @@ export class ListTaskComponent implements OnInit, OnDestroy {
       }));
       this.dataSource._updateChangeSubscription();
     }
+  }
+
+  saveTaskInLocalStorage(task) {
+    localStorage.setItem('task', btoa(JSON.stringify(task)));
+    localStorage.setItem('date', this.bsvalue);
+    localStorage.setItem('user', btoa(JSON.stringify(this.formGroup.controls.user.value)));
   }
 
   connectWebSocket() {
@@ -237,10 +250,5 @@ export class ListTaskComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    if (this.stompClient != null) {
-      this.stompClient.disconnect();
-    }
-  }
 
 }

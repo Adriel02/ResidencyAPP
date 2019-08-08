@@ -19,6 +19,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {MatSortModule, MatTableModule} from '@angular/material';
 import {Observable} from 'rxjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TaskFormComponent } from './components/task-form/task-form.component';
 
 
 @Injectable()
@@ -39,6 +40,10 @@ const appRoutes: Routes = [
     path: '', component: LoginComponent
   },
   {
+    path: 'task', component: TaskFormComponent,
+    //canActivate: [AuthGuard]
+  },
+  {
     path: 'list_tasks', component: ListTaskComponent,
     canActivate: [AuthGuard]
   }
@@ -51,6 +56,7 @@ const appRoutes: Routes = [
     LoginComponent,
     ListTaskComponent,
     NavbarComponent,
+    TaskFormComponent,
   ],
   imports: [
     BrowserModule,

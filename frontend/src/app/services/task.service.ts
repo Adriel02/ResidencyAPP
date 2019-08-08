@@ -42,4 +42,12 @@ export class TaskService {
     params.append('task', JSON.stringify(task));
     return this._http.put(this.base_url + '/', params);
   }
+
+
+  setter(task:Task){
+    this.task= task;
+  }
+  getter(){
+    return this.task;
+  }
 }
