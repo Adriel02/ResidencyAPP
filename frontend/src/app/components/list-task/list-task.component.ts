@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {User} from '../../model/user';
@@ -8,6 +8,7 @@ import {LoginService} from '../../services/login.service';
 import {UserService} from '../../services/user.service';
 import {TaskService} from '../../services/task.service';
 import {BsDatepickerConfig} from 'ngx-bootstrap';
+import {Task} from '../../model/task';
 
 
 @Component({
@@ -15,7 +16,7 @@ import {BsDatepickerConfig} from 'ngx-bootstrap';
   templateUrl: './list-task.component.html',
   styleUrls: ['./list-task.component.css']
 })
-export class ListTaskComponent implements OnInit {
+export class ListTaskComponent implements OnInit, OnDestroy {
 
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -190,13 +191,56 @@ export class ListTaskComponent implements OnInit {
     }
   }
 
+
+  deleteTask(task: Task) {
+    if (confirm('¿Estás seguro que quieres eliminar la tarea?')) {
+      this._taskService.deleteTask(task.id).subscribe(() => {
+      }, (error) => {
+        console.log(error);
+      });
+    }
+  }
+
+
+  removeTaskHtml(id: string) {
+    let index = this.dataSource.data.findIndex((obj => obj.id == id));
+    if (index != null) {
+      this.dataSource.data.splice(this.dataSource.data.indexOf(this.dataSource.data[index]), 1);
+      index = this.dataSource.data.findIndex((obj => {
+        if (obj.task != null) {
+          return obj.task.id == id;
+        }
+      }));
+      this.dataSource._updateChangeSubscription();
+    }
+  }
+
   connectWebSocket() {
     const socket = new SockJS('http://192.168.1.94:8080/ws-task');
     this.stompClient = Stomp.Stomp.over(socket);
     const _this = this;
     this.stompClient.connect({}, function () {
 
+
+      _this.stompClient.subscribe('/ws/add', function (task) {
+        //_this.addTask(JSON.parse(task.body));
+
+      });
+      _this.stompClient.subscribe('/ws/update', function (task) {
+        //_this.updateTaskHtml(JSON.parse(task.body));
+
+      });
+      _this.stompClient.subscribe('/ws/remove', function (task) {
+        _this.removeTaskHtml(task.body);
+
+      });
     });
+  }
+
+  ngOnDestroy(): void {
+    if (this.stompClient != null) {
+      this.stompClient.disconnect();
+    }
   }
 
 }

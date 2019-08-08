@@ -52,6 +52,7 @@ public class BasicAuthConfiguration extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(new CorsFilter(), ChannelProcessingFilter.class);
         http.csrf().disable()
                 .authorizeRequests()
+                .antMatchers("/login","/ws-task/**").authenticated()
                 .antMatchers().permitAll().anyRequest().permitAll().and()
                 //.antMatchers("/login", "/ws-task/**").authenticated().and()
                 /*.antMatchers(HttpMethod.GET, "/task").hasRole("ADMIN")

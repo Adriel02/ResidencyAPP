@@ -38,8 +38,12 @@ public class TaskService {
         return null;
     }
 
-    public void updateTask(Task task){
-        this.taskRepository.save(task);
+    public Task updateTask(Task task) {
+        if (isValidtask(task)) {
+            this.taskRepository.save(task);
+            return task;
+        }
+        return null;
     }
 
     private boolean isValidtask(Task task) {

@@ -14,13 +14,20 @@ export class LoginService {
     this.isUserLogin = false;
   }
 
+
   loginUser(name: string, password: string) {
     let params = new HttpParams();
     params = params.append('user', name);
-    let headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(name + ':' + password) });
+    let headers = new HttpHeaders({Authorization: 'Basic ' + btoa(name + ':' + password)});
     console.log(headers);
-    return this._http.get<User>(this.base_url + '/login', {headers: headers, params: params});
+    return this._http.get<User>(this.base_url + '/login',
+      {
+        headers: headers,
+        params: params
+      });
+
   }
+
 
   logoutUser() {
     return this._http.get(this.base_url + '/logout');

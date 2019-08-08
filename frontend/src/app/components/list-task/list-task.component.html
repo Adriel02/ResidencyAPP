@@ -59,10 +59,10 @@
     <mat-header-cell *matHeaderCellDef>Opciones</mat-header-cell>
     <mat-cell class="optionsColumSize" *matCellDef="let task">
       <div class="row">
-        <button class="btn text-secondary "><i
+        <button class="btn text-secondary"><i
           class="fas fa-pen fa-sm"></i></button>
         <button class="btn text-secondary"><i
-          class="fas fa-times fa-sm"></i></button>
+          class="fas fa-times fa-sm"(click)="deleteTask(task)"></i></button>
       </div>
     </mat-cell>
   </ng-container>

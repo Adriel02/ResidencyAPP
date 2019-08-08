@@ -13,7 +13,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './Authentication/AuthGuard';
-import {HttpClientModule, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {MatSortModule, MatTableModule} from '@angular/material';
@@ -63,10 +63,13 @@ const appRoutes: Routes = [
     BsDatepickerModule.forRoot(),
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    BsDatepickerModule.forRoot()
   ],
   providers: [
-    ResidencyService, TaskService, SubTaskService,LoginService,AuthGuard
+    ResidencyService, TaskService, SubTaskService,LoginService,AuthGuard,{
+    provide : HTTP_INTERCEPTORS,
+      useClass: XhrInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [
     AppComponent

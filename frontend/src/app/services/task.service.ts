@@ -7,7 +7,7 @@ import {Task} from '../model/task';
 })
 export class TaskService {
 
-  private base_url = 'http://192.168.1.94:8080/task';
+  private base_url: string = 'http://192.168.1.94:8080/task';
   private _task: Task;
 
   get task(): Task {

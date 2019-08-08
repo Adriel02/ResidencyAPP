@@ -17,7 +17,7 @@ public class CorsFilter extends OncePerRequestFilter {
         response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         response.setHeader("Access-Control-Allow-Headers", "x-auth-token, x-xsrf-token,x-requested-with, XMLHttpRequest, authorization, content-type, xsrf-token");
-        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader("Access-Control-Allow-Credentials","true");
         response.addHeader("Access-Control-Expose-Headers", "xsrf-token");
         if ("OPTIONS".equals(request.getMethod())) {
             response.setStatus(HttpServletResponse.SC_OK);
