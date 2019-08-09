@@ -1,4 +1,4 @@
-import {SubTask} from './sub-task';
+import {SubTask} from './subTask';
 import {User} from './user';
 
 export class Task {

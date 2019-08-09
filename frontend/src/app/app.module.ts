@@ -7,7 +7,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {ListTaskComponent} from './components/list-task/list-task.component';
 import {ResidencyService} from './services/residency.service';
 import {TaskService} from './services/task.service';
-import {SubTaskService} from './services/sub-task.service';
+import {SubTaskService} from './services/subTask.service';
 import {LoginService} from './services/login.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BsDatepickerModule} from 'ngx-bootstrap';

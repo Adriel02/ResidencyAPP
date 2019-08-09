@@ -34,6 +34,7 @@ export class TaskService {
   }
 
   createTask(task: Task) {
+    console.log("estoy en createTask");
     return this._http.post(this.base_url + '/', task);
   }
 
