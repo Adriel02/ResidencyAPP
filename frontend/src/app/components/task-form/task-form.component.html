@@ -17,7 +17,6 @@
           </div>
         </div>
 
-        <div class="form-group">
           <label>Assing to:</label>
           <div></div>
           <select formControlName="user" class="form-control">
@@ -31,13 +30,43 @@
               User is required.
             </div>
           </div>
-        </div>
+
+            <label >Floor</label>
+            <select formControlName="floorNumber" class="form-control " (change)="changeRooms()">
+              <option hidden></option>
+              <option *ngFor="let floor of floors" [ngValue]="floor">{{floor.numberFloor}}</option>
+            </select>
+
+            <div
+              *ngIf="controls.floorNumber.invalid && ((controls.floorNumber.dirty || controls.floorNumber.touched) || submitted) "
+              class="text-danger">
+
+              <div *ngIf="controls.floorNumber.errors.required">
+                Floor is required.
+              </div>
+            </div>
+
+            <label >Room</label>
+            <select class="form-control " formControlName="roomNumber">
+              <option hidden></option>
+              <option *ngFor="let room of rooms" [ngValue]="room">{{room.number}}</option>
+            </select>
+            <div
+              *ngIf="controls.roomNumber.invalid && ((controls.roomNumber.dirty || controls.roomNumber.touched) || submitted) "
+              class="text-danger">
+
+              <div *ngIf="controls.roomNumber.errors.required">
+                Room is required.
+              </div>
+            </div>
+
 
         <div class="form-group textArea">
           <label>Additional info:</label>
           <textarea rows="5" name="additionalInformation" formControlName="additionalInformation"
                     class="form-control"></textarea>
         </div>
+
 
         <div class="buttons">
           <button *ngIf="task.id==null" type="submit" name="save" class="btn button-create button1"><i

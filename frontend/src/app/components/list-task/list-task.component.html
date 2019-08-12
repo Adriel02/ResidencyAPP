@@ -36,14 +36,18 @@
     <mat-header-cell *matHeaderCellDef mat-sort-header>Empleado</mat-header-cell>
     <mat-cell *matCellDef="let task">{{task.user.name}}</mat-cell>
   </ng-container>
-  <ng-container matColumnDef="room">
+  <ng-container matColumnDef="room.number">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Habitacion</mat-header-cell>
-    <mat-cell *matCellDef="let task">{{task.room}}</mat-cell>
+    <mat-cell *matCellDef="let task">
+      <span *ngIf="task.room.number < 10">{{task.floorNumber + "0" + task.room.number}}</span>
+      <span *ngIf="task.room.number >= 10">{{task.floorNumber + "" + task.room.number}}</span>
+    </mat-cell>
   </ng-container>
   <ng-container matColumnDef="state">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Estado</mat-header-cell>
     <mat-cell *matCellDef="let task">{{task.state}}</mat-cell>
   </ng-container>
+
 
   <ng-container matColumnDef="additionalInformation">
     <mat-header-cell *matHeaderCellDef>Informacion</mat-header-cell>

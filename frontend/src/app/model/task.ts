@@ -1,5 +1,6 @@
 import {SubTask} from './subTask';
 import {User} from './user';
+import {Room} from './room';
 
 export class Task {
   id: string;
@@ -7,7 +8,8 @@ export class Task {
   editDate: Date;
   endDate: Date;
   subTask: SubTask;
-  room: String;
+  room: Room;
+  floorNumber: number;
   user: User;
   incidence: string;
   additionalInformation: string;

@@ -29,7 +29,7 @@ export class ListTaskComponent implements OnInit {
   private stompClient = null;
   formGroup: FormGroup;
   dataSource: MatTableDataSource<any>;
-  displayedUserColums = ['user.name', 'room', 'state', 'additionalInformation', 'incidence', 'Options'];
+  displayedUserColums = ['user.name', 'room.number', 'state', 'additionalInformation', 'incidence', 'Options'];
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -109,6 +109,7 @@ export class ListTaskComponent implements OnInit {
     this.dataSource = new MatTableDataSource(rows);
     this.dataSource.sortingDataAccessor = (item, property) => {
       let task = item;
+      console.log("asdasdadsadsa"+task.floorNumber);
       if (item.task != null) {
         task = item.task;
 
@@ -116,8 +117,8 @@ export class ListTaskComponent implements OnInit {
       switch (property) {
         case 'user.name':
           return task.user.name;
-        case 'room':
-          return task.room;
+        case 'room.number':
+          return task.room.number;
         case 'state':
           return task.state;
         case 'additionalInformation':

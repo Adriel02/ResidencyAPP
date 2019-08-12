@@ -21,7 +21,8 @@ public class Task {
 
 
 
-    private String room;
+    private Integer floorNumber;
+    private Room room;
     private String incidence;
     private String additionalInformation;
     private String state;
@@ -29,14 +30,14 @@ public class Task {
     protected Task() {
     }
 
-    public Task(Date creationDate, SubTask subTask, User user, String incidence, String additionalInformation, String state,String room) {
+    public Task(Date creationDate, SubTask subTask, User user, Integer floorNumber, Room room, String additionalInformation, String state) {
         this.creationDate = creationDate;
         this.subTask = subTask;
         this.user = user;
-        this.incidence = incidence;
+        this.floorNumber = floorNumber;
+        this.room = room;
         this.additionalInformation = additionalInformation;
         this.state = state;
-        this.room = room;
     }
 
     public String getState() {
@@ -111,11 +112,20 @@ public class Task {
         this.subTask = subTask;
     }
 
-    public String getRoom() {
+    public Room getRoom() {
         return room;
     }
 
-    public void setRoom(String room) {
+    public void setRoom(Room room) {
         this.room = room;
+    }
+
+
+    public Integer getFloorNumber() {
+        return floorNumber;
+    }
+
+    public void setFloorNumber(Integer floorNumber) {
+        this.floorNumber = floorNumber;
     }
 }

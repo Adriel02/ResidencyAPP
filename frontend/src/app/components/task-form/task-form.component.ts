@@ -8,6 +8,8 @@ import {User} from '../../model/user';
 import {SubTask} from '../../model/subTask';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {SubTaskService} from '../../services/subTask.service';
+import {Floor} from '../../model/floor';
+import {Room} from '../../model/room';
 
 
 @Component({
@@ -22,7 +24,8 @@ export class TaskFormComponent implements OnInit {
   taskForm: FormGroup;
   submitted = false;
   private subTasks: SubTask [];
-
+  private rooms : Room [];
+  private floors: Floor[];
 
   constructor(
     private _taskService: TaskService,
@@ -67,6 +70,7 @@ export class TaskFormComponent implements OnInit {
 
   private getResidency(id: string) {
     this._residencyService.getResidency(id).subscribe((residency) => {
+      this.floors = residency.floors;
       this.setDefaultValues();
     }, (error) => {
       console.log(error);
@@ -83,13 +87,19 @@ export class TaskFormComponent implements OnInit {
   }
 
   private generateFormGroup() {
-
+    this.taskForm = new FormGroup({
+      'user': new FormControl('', Validators.required),
+      'roomNumber': new FormControl('', Validators.required),
+      'floorNumber': new FormControl('', Validators.required),
+      'subTask': new FormControl(this.task.subTask, Validators.required),
+      'additionalInformation': new FormControl(this.task.additionalInformation),
+    });
   }
 
   processForm() {
-    console.log("processForm");
+    console.log(this.taskForm);
     this.submitted = true;
-        if (this.taskForm.invalid) {
+    if (this.taskForm.invalid) {
       return;
     }
     this.formToTask();
@@ -115,8 +125,9 @@ export class TaskFormComponent implements OnInit {
     this.taskForm = new FormGroup({
       'user': new FormControl('', Validators.required),
       'roomNumber': new FormControl('', Validators.required),
+      'floorNumber': new FormControl('', Validators.required),
       'subTask': new FormControl('', Validators.required),
-      'additionalInformation': new FormControl(''),
+      'additionalInformation': new FormControl('')
     });
   }
 
@@ -125,10 +136,24 @@ export class TaskFormComponent implements OnInit {
   }
 
   private setDefaultValues() {
+    if (this.task.id != undefined) {
+      let index = this.floors.findIndex((floor => floor.numberFloor == this.task.floorNumber));
+
+      if (index != null) {
+        this.taskForm.controls.floorNumber.setValue(this.floors[index], {onlySelf: true});
+        this.taskForm.controls.floorNumber.disable();
+
+        this.rooms = this.floors[index].rooms;
+
+        let room = this.rooms.find(room => room.number == this.task.room.number);
+        this.taskForm.controls.roomNumber.setValue(room, {onlySelf: true});
+        this.taskForm.controls.roomNumber.disable();
+      }
+    }
   }
 
   private setDefaultValuesUser() {
-      if (this.task.id != undefined) {
+    if (this.task.id != undefined) {
       let index = this.users.findIndex((obj => obj.id == this.task.user.id));
       if (index >= 0) {
         this.taskForm.controls.user.setValue(this.users[index], {onlySelf: true});
@@ -143,11 +168,16 @@ export class TaskFormComponent implements OnInit {
   private formToTask() {
     console.log('entro1');
     this.task.additionalInformation = this.taskForm.controls.additionalInformation.value;
+    this.task.floorNumber = this.taskForm.controls.floorNumber.value.numberFloor;
     this.task.room = this.taskForm.controls.roomNumber.value;
     this.task.user = this.taskForm.controls.user.value;
   }
 
   addSubTask() {
 
+  }
+
+  changeRooms() {
+    this.rooms = this.taskForm.controls.floorNumber.value.rooms;
   }
 }
