@@ -8,6 +8,7 @@ import residency.backend.exception.TaskNotValidException;
 import residency.backend.model.Task;
 import residency.backend.services.TaskService;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -52,7 +53,7 @@ public class TaskController {
     }
 
     @PutMapping
-    public void updateTask(@RequestBody Task task) throws TaskNotValidException {
+    public void updateTask(@RequestParam String task) throws TaskNotValidException, IOException {
         Task newTask = this.taskService.updateTask(task);
         if (newTask == null) {
             throw new TaskNotValidException();

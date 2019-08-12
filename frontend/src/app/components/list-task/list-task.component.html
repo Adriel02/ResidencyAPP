@@ -36,6 +36,12 @@
     <mat-header-cell *matHeaderCellDef mat-sort-header>Empleado</mat-header-cell>
     <mat-cell *matCellDef="let task">{{task.user.name}}</mat-cell>
   </ng-container>
+  <ng-container matColumnDef="subTask.id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Tarea</mat-header-cell>
+    <mat-cell *matCellDef="let task">{{task.subTask.id}}</mat-cell>
+  </ng-container>
+
+
   <ng-container matColumnDef="room.number">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Habitacion</mat-header-cell>
     <mat-cell *matCellDef="let task">
@@ -64,7 +70,7 @@
     <mat-cell class="optionsColumSize" *matCellDef="let task">
       <div class="row">
         <button class="btn text-secondary"><i
-          class="fas fa-pen fa-sm"></i></button>
+          class="fas fa-pen fa-sm" (click)="updateTask(task)"></i></button>
         <button class="btn text-secondary"><i
           class="fas fa-times fa-sm"(click)="deleteTask(task)"></i></button>
       </div>

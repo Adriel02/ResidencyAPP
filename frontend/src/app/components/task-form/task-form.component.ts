@@ -58,6 +58,7 @@ export class TaskFormComponent implements OnInit {
 
   getAllSubtasks() {
     this._subTaskService.getAllSubtasks().subscribe((subTask) => {
+      console.log(subTask);
       this.subTasks = subTask;
       if (this.task.id != undefined) {
         let subtask: SubTask = this.subTasks.find((obj => obj.id == this.task.subTask.id));
@@ -90,8 +91,8 @@ export class TaskFormComponent implements OnInit {
     this.taskForm = new FormGroup({
       'user': new FormControl('', Validators.required),
       'roomNumber': new FormControl('', Validators.required),
-      'floorNumber': new FormControl('', Validators.required),
       'subTask': new FormControl(this.task.subTask, Validators.required),
+      'floorNumber': new FormControl('', Validators.required),
       'additionalInformation': new FormControl(this.task.additionalInformation),
     });
   }
@@ -103,8 +104,10 @@ export class TaskFormComponent implements OnInit {
       return;
     }
     this.formToTask();
+    console.log("aaa"+this.task.id);
     if (this.task.id == undefined) {
       this.task.creationDate = new Date();
+      console.log("asdasdadsa"+JSON.stringify(this.task));
       this._taskService.createTask(this.task).subscribe(() => {
         this.successMessage();
         this._router.navigate(['/list_tasks']);
@@ -125,8 +128,8 @@ export class TaskFormComponent implements OnInit {
     this.taskForm = new FormGroup({
       'user': new FormControl('', Validators.required),
       'roomNumber': new FormControl('', Validators.required),
-      'floorNumber': new FormControl('', Validators.required),
       'subTask': new FormControl('', Validators.required),
+      'floorNumber': new FormControl('', Validators.required),
       'additionalInformation': new FormControl('')
     });
   }
@@ -162,11 +165,10 @@ export class TaskFormComponent implements OnInit {
   }
 
   private successMessage() {
-    console.log('La tarea ha sido creada satisfactoriamente');
+    alert('La tarea ha sido creada satisfactoriamente');
   }
 
   private formToTask() {
-    console.log('entro1');
     this.task.additionalInformation = this.taskForm.controls.additionalInformation.value;
     this.task.floorNumber = this.taskForm.controls.floorNumber.value.numberFloor;
     this.task.room = this.taskForm.controls.roomNumber.value;
@@ -174,7 +176,7 @@ export class TaskFormComponent implements OnInit {
   }
 
   addSubTask() {
-
+    this.task.subTask = this.taskForm.controls.subTask.value;
   }
 
   changeRooms() {

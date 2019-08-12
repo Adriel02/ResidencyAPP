@@ -29,14 +29,14 @@ export class ListTaskComponent implements OnInit {
   private stompClient = null;
   formGroup: FormGroup;
   dataSource: MatTableDataSource<any>;
-  displayedUserColums = ['user.name', 'room.number', 'state', 'additionalInformation', 'incidence', 'Options'];
+  displayedUserColums = ['user.name', 'subTask.id', 'room.number', 'state', 'additionalInformation', 'incidence', 'Options'];
 
   constructor(
     private _formBuilder: FormBuilder,
     private _loggedUser: LoginService,
     private _user: UserService,
     private _taskService: TaskService,
-    private _router : Router,
+    private _router: Router,
   ) {
     this.datePickerConfig = Object.assign({}, {
         showWeekNumbers: false,
@@ -109,7 +109,6 @@ export class ListTaskComponent implements OnInit {
     this.dataSource = new MatTableDataSource(rows);
     this.dataSource.sortingDataAccessor = (item, property) => {
       let task = item;
-      console.log("asdasdadsadsa"+task.floorNumber);
       if (item.task != null) {
         task = item.task;
 
@@ -117,8 +116,10 @@ export class ListTaskComponent implements OnInit {
       switch (property) {
         case 'user.name':
           return task.user.name;
+        case 'subTask.id':
+          return task.subTask.id;
         case 'room.number':
-          return task.room.number;
+          return task.floorNumber + '' + task.room.number;
         case 'state':
           return task.state;
         case 'additionalInformation':
@@ -237,12 +238,8 @@ export class ListTaskComponent implements OnInit {
 
 
       _this.stompClient.subscribe('/ws/add', function (task) {
-        //_this.addTask(JSON.parse(task.body));
-
       });
       _this.stompClient.subscribe('/ws/update', function (task) {
-        //_this.updateTaskHtml(JSON.parse(task.body));
-
       });
       _this.stompClient.subscribe('/ws/remove', function (task) {
         _this.removeTaskHtml(task.body);
@@ -252,4 +249,9 @@ export class ListTaskComponent implements OnInit {
   }
 
 
+  updateTask(task: Task) {
+    this._taskService.setter(task);
+    this.saveTaskInLocalStorage(task);
+    this._router.navigate(['/task']);
+  }
 }

@@ -25,21 +25,18 @@ export class TaskService {
     return this._http.get<Task[]>(this.base_url);
   }
 
-  getTaskByUser(user: string) {
-    return this._http.get<Task[]>(this.base_url + '/' + user);
-  }
 
   deleteTask(id: string) {
     return this._http.delete(this.base_url + '/' + id);
   }
 
   createTask(task: Task) {
-    console.log("estoy en createTask");
+    console.log("esta es la tarea "+ task);
     return this._http.post(this.base_url + '/', task);
   }
 
   updateTask(task: Task) {
-    const params = new FormData();
+    var params = new FormData();
     params.append('task', JSON.stringify(task));
     return this._http.put(this.base_url + '/', params);
   }
