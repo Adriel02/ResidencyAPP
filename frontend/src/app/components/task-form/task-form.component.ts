@@ -58,14 +58,13 @@ export class TaskFormComponent implements OnInit {
 
   getAllSubtasks() {
     this._subTaskService.getAllSubtasks().subscribe((subTask) => {
-      console.log(subTask);
       this.subTasks = subTask;
       if (this.task.id != undefined) {
         let subtask: SubTask = this.subTasks.find((obj => obj.id == this.task.subTask.id));
         this.taskForm.controls.subTask.setValue(subtask, {onlySelf: true});
       }
-    }, (err) => {
-      console.log(err);
+    }, (error) => {
+      console.log(error);
     });
   }
 
@@ -98,25 +97,22 @@ export class TaskFormComponent implements OnInit {
   }
 
   processForm() {
-    console.log(this.taskForm);
     this.submitted = true;
     if (this.taskForm.invalid) {
       return;
     }
     this.formToTask();
-    console.log("aaa"+this.task.id);
     if (this.task.id == undefined) {
       this.task.creationDate = new Date();
-      console.log("asdasdadsa"+JSON.stringify(this.task));
       this._taskService.createTask(this.task).subscribe(() => {
-        this.successMessage();
+        this.successMessage('create');
         this._router.navigate(['/list_tasks']);
       }, (error) => {
         console.log(error);
       });
     } else {
       this._taskService.updateTask(this.task).subscribe((task) => {
-        this.successMessage();
+        this.successMessage('update');
         this._router.navigate(['/list_tasks']);
       }, (error) => {
         console.log(error);
@@ -164,8 +160,13 @@ export class TaskFormComponent implements OnInit {
     }
   }
 
-  private successMessage() {
-    alert('La tarea ha sido creada satisfactoriamente');
+  private successMessage(message : string) {
+    if(message == 'create'){
+      alert('La tarea ha sido creada satisfactoriamente');
+    }else{
+      alert('La tarea ha sido modificada satisfactoriamente');
+
+    }
   }
 
   private formToTask() {

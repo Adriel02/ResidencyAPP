@@ -30,6 +30,7 @@
   <br>
 </div>
 
+<div *ngIf="isBoss(); then bossView else employeeView"></div>
 <mat-table [dataSource]="dataSource" matSort matSortDisableClear matSortDirection="asc">
 
   <ng-container matColumnDef="user.name">
@@ -69,16 +70,28 @@
     <mat-header-cell *matHeaderCellDef>Opciones</mat-header-cell>
     <mat-cell class="optionsColumSize" *matCellDef="let task">
       <div class="row">
-        <button class="btn text-secondary"><i
+
+        <button *ngIf="isBoss()" class="btn text-secondary"><i
           class="fas fa-pen fa-sm" (click)="updateTask(task)"></i></button>
-        <button class="btn text-secondary"><i
-          class="fas fa-times fa-sm"(click)="deleteTask(task)"></i></button>
+
+        <button *ngIf="!isBoss()" class="btn text-secondary"><i
+          class="fas fa-pen fa-sm" (click)="employeeUpdateTask(task)"></i></button>
+
+        <button *ngIf="isBoss()" class="btn text-secondary"><i
+          class="fas fa-times fa-sm" (click)="deleteTask(task)"></i></button>
       </div>
     </mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedUserColums"></mat-header-row>
-  <mat-row *matRowDef="let task; columns: displayedUserColums;"></mat-row>
+  <ng-template #bossView>
+    <mat-header-row *matHeaderRowDef="displayedBossColums"></mat-header-row>
+    <mat-row *matRowDef="let task; columns: displayedBossColums;"></mat-row>
+  </ng-template>
+
+  <ng-template #employeeView>
+    <mat-header-row *matHeaderRowDef="displayedEmployeeColums"></mat-header-row>
+    <mat-row *matRowDef="let task; columns: displayedEmployeeColums;"></mat-row>
+  </ng-template>
 
 
 </mat-table>

@@ -20,6 +20,7 @@ import {MatSortModule, MatTableModule} from '@angular/material';
 import {Observable} from 'rxjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TaskFormComponent } from './components/task-form/task-form.component';
+import { EmployeeTaskFormComponent } from './components/employee-task-form/employee-task-form.component';
 
 
 @Injectable()
@@ -41,7 +42,11 @@ const appRoutes: Routes = [
   },
   {
     path: 'task', component: TaskFormComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'update', component: EmployeeTaskFormComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'list_tasks', component: ListTaskComponent,
@@ -57,6 +62,7 @@ const appRoutes: Routes = [
     ListTaskComponent,
     NavbarComponent,
     TaskFormComponent,
+    EmployeeTaskFormComponent,
   ],
   imports: [
     BrowserModule,

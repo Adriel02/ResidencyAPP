@@ -19,7 +19,6 @@ export class LoginService {
     let params = new HttpParams();
     params = params.append('user', name);
     let headers = new HttpHeaders({Authorization: 'Basic ' + btoa(name + ':' + password)});
-    console.log(headers);
     return this._http.get<User>(this.base_url + '/login',
       {
         headers: headers,

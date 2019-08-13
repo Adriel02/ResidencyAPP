@@ -29,7 +29,8 @@ export class ListTaskComponent implements OnInit {
   private stompClient = null;
   formGroup: FormGroup;
   dataSource: MatTableDataSource<any>;
-  displayedUserColums = ['user.name', 'subTask.id', 'room.number', 'state', 'additionalInformation', 'incidence', 'Options'];
+  displayedBossColums = ['user.name', 'subTask.id', 'room.number', 'state', 'additionalInformation', 'incidence', 'Options'];
+  displayedEmployeeColums = ['subTask.id', 'room.number', 'state', 'additionalInformation', 'incidence', 'Options'];
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -82,6 +83,12 @@ export class ListTaskComponent implements OnInit {
     if (this._loggedUser.getRoleUser() == 'jefedepartamento') {
       this.getUserByRole();
       this._taskService.getAllTasks().subscribe((tasks) => {
+        this.getData(tasks);
+      }, (error) => {
+        console.log(error);
+      });
+    } else if (this._loggedUser.getRoleUser() == 'trabajador') {
+      this._taskService.getAllTaskByUser(this._loggedUser.getUserId()).subscribe((tasks) => {
         this.getData(tasks);
       }, (error) => {
         console.log(error);
@@ -211,18 +218,6 @@ export class ListTaskComponent implements OnInit {
     this._router.navigate(['/task']);
   }
 
-  removeTaskHtml(id: string) {
-    let index = this.dataSource.data.findIndex((obj => obj.id == id));
-    if (index != null) {
-      this.dataSource.data.splice(this.dataSource.data.indexOf(this.dataSource.data[index]), 1);
-      index = this.dataSource.data.findIndex((obj => {
-        if (obj.task != null) {
-          return obj.task.id == id;
-        }
-      }));
-      this.dataSource._updateChangeSubscription();
-    }
-  }
 
   saveTaskInLocalStorage(task) {
     localStorage.setItem('task', btoa(JSON.stringify(task)));
@@ -238,8 +233,10 @@ export class ListTaskComponent implements OnInit {
 
 
       _this.stompClient.subscribe('/ws/add', function (task) {
+        _this.addTaskHtml(JSON.parse(task.body));
       });
       _this.stompClient.subscribe('/ws/update', function (task) {
+        _this.updateTaskHtml(JSON.parse(task.body));
       });
       _this.stompClient.subscribe('/ws/remove', function (task) {
         _this.removeTaskHtml(task.body);
@@ -248,10 +245,49 @@ export class ListTaskComponent implements OnInit {
     });
   }
 
+  addTaskHtml(task: Task) {
+    if (this.isBoss() || this._loggedUser.getUserId() == task.user.id) {
+      this.dataSource.data.push(task);
+      this.dataSource._updateChangeSubscription();
+    }
+  }
+
+  updateTaskHtml(task: Task) {
+    let index = this.dataSource.data.findIndex((obj => obj.id == task.id));
+    if(index >=0){
+      if(!this.isBoss() && this._loggedUser.getUserId() != task.user.id){
+        this.dataSource.data.splice(this.dataSource.data.indexOf(this.dataSource.data[index]), 1);
+      }else{
+        this.dataSource.data[index] = task;
+      }
+    }else{
+      this.dataSource.data.push(task);
+    }
+    this.dataSource._updateChangeSubscription();
+  }
+
+  removeTaskHtml(id: string) {
+    let index = this.dataSource.data.findIndex((obj => obj.id == id));
+    if (index != null) {
+      this.dataSource.data.splice(this.dataSource.data.indexOf(this.dataSource.data[index]), 1);
+      index = this.dataSource.data.findIndex((obj => {
+        if (obj.task != null) {
+          return obj.task.id == id;
+        }
+      }));
+      this.dataSource._updateChangeSubscription();
+    }
+  }
 
   updateTask(task: Task) {
     this._taskService.setter(task);
     this.saveTaskInLocalStorage(task);
     this._router.navigate(['/task']);
+  }
+
+  employeeUpdateTask(task: Task) {
+    this._taskService.setter(task);
+    this.saveTaskInLocalStorage(task);
+    this._router.navigate(['/update']);
   }
 }

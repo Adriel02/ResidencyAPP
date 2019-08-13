@@ -25,13 +25,15 @@ export class TaskService {
     return this._http.get<Task[]>(this.base_url);
   }
 
+  getAllTaskByUser(userId: string){
+    return this._http.get<Task[]>(this.base_url + '/' + userId);
+  }
 
   deleteTask(id: string) {
     return this._http.delete(this.base_url + '/' + id);
   }
 
   createTask(task: Task) {
-    console.log("esta es la tarea "+ task);
     return this._http.post(this.base_url + '/', task);
   }
 

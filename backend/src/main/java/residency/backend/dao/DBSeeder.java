@@ -33,11 +33,15 @@ public class DBSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         List<Room> habitaciones = new ArrayList<>();
+        List<Room> habitaciones2 = new ArrayList<>();
         for (int i = 1; i <= 10; i++) {
             habitaciones.add(new Room(i));
         }
+        for (int i = 1; i <= 5; i++) {
+            habitaciones.add(new Room(i));
+        }
         Floor f1 = new Floor(1, habitaciones);
-        Floor f2 = new Floor(2, habitaciones);
+        Floor f2 = new Floor(2, habitaciones2);
 
         Residency abuelito = new Residency("Residencia El Abuelito", "Santa María de Guía", Arrays.asList(f1,f2));
         abuelito.setId("Abuelito");
@@ -86,6 +90,23 @@ public class DBSeeder implements CommandLineRunner {
         Task task6 = new Task(new Date(),subTask3,trabajador2,2,habitaciones.get(6),"informacion6","In Progress");
         Task task7 = new Task(new Date(),subTask4,trabajador2,2,habitaciones.get(7),"informacion7","Finalized");
         Task task8 = new Task(new Date(),subTask4,trabajador2,2,habitaciones.get(8),"informacion8","Finalized");
+
+        List<Boolean> finalized = new ArrayList<>();
+        List<Boolean> inProgress= new ArrayList<>();
+        List<Boolean> pending= new ArrayList<>();
+
+        finalized.add(true);
+        finalized.add(false);
+        inProgress.add(false);
+        inProgress.add(true);
+        pending.add(false);
+
+
+        task4.setIsFinished(inProgress);
+        task5.setIsFinished(inProgress);
+        task6.setIsFinished(inProgress);
+        task7.setIsFinished(finalized);
+        task8.setIsFinished(finalized);
 
         this.taskRepository.deleteAll();
         this.taskRepository.saveAll(Arrays.asList(task1, task2,task3,task4,task5,task6,task7,task8));
