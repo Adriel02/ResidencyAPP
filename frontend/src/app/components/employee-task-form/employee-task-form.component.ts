@@ -6,6 +6,7 @@ import {ResidencyService} from '../../services/residency.service';
 import {SubTaskService} from '../../services/subTask.service';
 import {Task} from '../../model/task';
 import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {EnumResidency} from '../../enums/enum-residency.enum';
 
 @Component({
   selector: 'app-employee-task-form',
@@ -71,12 +72,13 @@ export class EmployeeTaskFormComponent implements OnInit {
     if (this.taskForm.controls.incidence != null) {
       this.task.incidence = this.taskForm.controls.incidence.value;
     }
+    console.log(this.isAllTaskFinish());
     if (this.isAllTaskFinish()) {
-      this.task.state = 'Finalized';
+      this.task.state = EnumResidency.FINALIZED;
     } else if (!this.isAllTaskFinish()) {
-      this.task.state = 'Pending';
+      this.task.state = EnumResidency.INPROGRESS;
     } else {
-      this.task.state = 'In Progress';
+      this.task.state = EnumResidency.PENDING;
     }
     this.task.room.lastCleaningDate = new Date();
     this._taskService.updateTask(this.task).subscribe((task) => {
@@ -90,7 +92,6 @@ export class EmployeeTaskFormComponent implements OnInit {
   addSubtask(i: number) {
     this.task.isFinished[i] = !this.task.isFinished[i];
   }
-
 
   private isAllTaskFinish() {
     for (let isFinish of this.task.isFinished) {

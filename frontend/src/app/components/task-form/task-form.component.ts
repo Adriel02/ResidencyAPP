@@ -10,6 +10,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {SubTaskService} from '../../services/subTask.service';
 import {Floor} from '../../model/floor';
 import {Room} from '../../model/room';
+import {EnumResidency} from '../../enums/enum-residency.enum';
 
 
 @Component({
@@ -78,7 +79,7 @@ export class TaskFormComponent implements OnInit {
   }
 
   private getUsersByRole() {
-    this._userService.getUsersByRole('trabajador').subscribe((user) => {
+    this._userService.getUsersByRole(EnumResidency.TRABAJADOR).subscribe((user) => {
       this.users = user;
       this.setDefaultValuesUser();
     }, (error) => {

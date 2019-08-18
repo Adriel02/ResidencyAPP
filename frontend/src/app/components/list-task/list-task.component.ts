@@ -10,6 +10,7 @@ import {TaskService} from '../../services/task.service';
 import {BsDatepickerConfig} from 'ngx-bootstrap';
 import {Task} from '../../model/task';
 import {Router} from '@angular/router';
+import {EnumResidency} from '../../enums/enum-residency.enum';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class ListTaskComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  datePickerConfig: Partial<BsDatepickerConfig>;
+  datePickerConfig: Partial<BsDatepickerConfig> = new BsDatepickerConfig();
   bsvalue;
   date;
   private users: User[];
@@ -41,8 +42,7 @@ export class ListTaskComponent implements OnInit {
   ) {
     this.datePickerConfig = Object.assign({}, {
         showWeekNumbers: false,
-        dateInputFormat: 'DD/MM/YYYY',
-        containerClass: 'theme-dark-blue',
+        dateInputFormat: EnumResidency.DATEINPUTFORMAT,
         isDisabled: true
       }
     );
@@ -75,19 +75,19 @@ export class ListTaskComponent implements OnInit {
     if (localStorage.getItem('user')) {
       this.formGroup.controls.user.setValue(JSON.parse(atob(localStorage.getItem('user'))));
     } else {
-      this.formGroup.controls.user.setValue('All');
+      this.formGroup.controls.user.setValue(EnumResidency.ALL);
     }
   }
 
   private getAllData() {
-    if (this._loggedUser.getRoleUser() == 'jefedepartamento') {
+    if (this._loggedUser.getRoleUser() == EnumResidency.JEFEDEPARTAMENTO ) {
       this.getUserByRole();
       this._taskService.getAllTasks().subscribe((tasks) => {
         this.getData(tasks);
       }, (error) => {
         console.log(error);
       });
-    } else if (this._loggedUser.getRoleUser() == 'trabajador') {
+    } else if (this._loggedUser.getRoleUser() == EnumResidency.TRABAJADOR) {
       this._taskService.getAllTaskByUser(this._loggedUser.getUserId()).subscribe((tasks) => {
         this.getData(tasks);
       }, (error) => {
@@ -98,9 +98,9 @@ export class ListTaskComponent implements OnInit {
 
 
   private getUserByRole() {
-    this._user.getUsersByRole('trabajador').subscribe((user) => {
+    this._user.getUsersByRole(EnumResidency.TRABAJADOR).subscribe((user) => {
         let trabajadorAll = new User();
-        trabajadorAll.name = 'All';
+        trabajadorAll.name = EnumResidency.ALL;
         this.users = user;
         this.users.splice(0, 0, trabajadorAll);
       }, (error) => {
@@ -143,7 +143,7 @@ export class ListTaskComponent implements OnInit {
   }
 
   isBoss() {
-    return this._loggedUser.getRoleUser() == 'jefedepartamento';
+    return this._loggedUser.getRoleUser() == EnumResidency.JEFEDEPARTAMENTO;
   }
 
 
@@ -152,7 +152,7 @@ export class ListTaskComponent implements OnInit {
     this.dataSource.filterPredicate =
       (data: any, filter) => {
         if (data.task == null) {
-          if (this.formGroup.controls.user.value != 'All') {
+          if (this.formGroup.controls.user.value != EnumResidency.ALL) {
             return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
               && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
           } else {
@@ -160,7 +160,7 @@ export class ListTaskComponent implements OnInit {
               && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
           }
         } else {
-          if (this.formGroup.controls.user.value != 'All') {
+          if (this.formGroup.controls.user.value != EnumResidency.ALL) {
             return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
               && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
           } else {
@@ -174,7 +174,7 @@ export class ListTaskComponent implements OnInit {
 
   applyFilterUser() {
     let searchUser = this.formGroup.controls.user.value;
-    if (searchUser != 'All') {
+    if (searchUser != EnumResidency.ALL) {
       this.dataSource.filterPredicate =
         (data: any, filter) => {
           if (data.task == null) {
@@ -226,7 +226,7 @@ export class ListTaskComponent implements OnInit {
   }
 
   connectWebSocket() {
-    const socket = new SockJS('http://192.168.1.94:8080/ws-task');
+    const socket = new SockJS(EnumResidency.IP+'/ws-task');
     this.stompClient = Stomp.Stomp.over(socket);
     const _this = this;
     this.stompClient.connect({}, function () {
