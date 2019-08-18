@@ -72,13 +72,13 @@
       <div class="row">
 
         <button *ngIf="isBoss()" class="btn text-secondary"><i
-          class="fas fa-pen fa-sm" (click)="updateTask(task)"></i></button>
+          class="fas fa-pen fa-sm right modifyTask" (click)="updateTask(task)"></i></button>
 
         <button *ngIf="!isBoss()" class="btn text-secondary"><i
-          class="fas fa-pen fa-sm" (click)="employeeUpdateTask(task)"></i></button>
+          class="fas fa-pen fa-sm right modifyTask" (click)="employeeUpdateTask(task)"></i></button>
 
         <button *ngIf="isBoss()" class="btn text-secondary"><i
-          class="fas fa-times fa-sm" (click)="deleteTask(task)"></i></button>
+          class="fas fa-times fa-sm right modifyTask" (click)="deleteTask(task)"></i></button>
       </div>
     </mat-cell>
   </ng-container>

@@ -2,3 +2,16 @@
   overflow: hidden;
   float: right;
 }
+
+
+.button {
+  background-color: #2e73b0;
+  color: white;
+}
+
+
+.modifyTask {
+  font-size: 20px;
+  border: none;
+  background: none;
+}
