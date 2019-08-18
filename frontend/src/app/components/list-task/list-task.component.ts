@@ -43,7 +43,8 @@ export class ListTaskComponent implements OnInit {
     this.datePickerConfig = Object.assign({}, {
         showWeekNumbers: false,
         dateInputFormat: EnumResidency.DATEINPUTFORMAT,
-        isDisabled: true
+        containerClass: 'theme-dark-blue',
+        isDisabled: true,
       }
     );
   };
