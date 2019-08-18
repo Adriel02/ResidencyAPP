@@ -72,9 +72,9 @@ const appRoutes: Routes = [
     MatSortModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    BsDatepickerModule.forRoot(),
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [
     ResidencyService, TaskService, SubTaskService,LoginService,AuthGuard,{

@@ -38,31 +38,31 @@ public class DBSeeder implements CommandLineRunner {
             habitaciones.add(new Room(i));
         }
         for (int i = 1; i <= 5; i++) {
-            habitaciones.add(new Room(i));
+            habitaciones2.add(new Room(i));
         }
         Floor f1 = new Floor(1, habitaciones);
         Floor f2 = new Floor(2, habitaciones2);
 
-        Residency abuelito = new Residency("Residencia El Abuelito", "Santa María de Guía", Arrays.asList(f1,f2));
+        Residency abuelito = new Residency("Residencia El Abuelito", "Santa María de Guía", Arrays.asList(f1, f2));
         abuelito.setId("Abuelito");
         this.residencyRepository.deleteAll();
         this.residencyRepository.saveAll(Arrays.asList(abuelito));
 
 
-        SubTask subTask1 = new SubTask("Limpieza habitual", Arrays.asList("Cambiar Jabon", "Limpiar lavamano"));
-        subTask1.setId("LH");
-        SubTask subTask2 = new SubTask("Limpieza urgente", Arrays.asList("Limpiar el suelo", "Fregar lavamano", "Recoger escrementos"));
-        subTask2.setId("LU");
-        SubTask subTask3 = new SubTask("Reponer material", Arrays.asList("Cambiar papel", "Reponer jabón", "Reponer toallas"));
-        subTask3.setId("RM");
-        SubTask subTask4 = new SubTask("Preparacion", Arrays.asList("Poner papel", "Poner jabon", "Limpiar lavamano", "Limpiar inodoro"));
-        subTask4.setId("PR");
+        SubTask lh = new SubTask("Limpieza habitual", Arrays.asList("Cambiar Jabon", "Limpiar lavamano"));
+        lh.setId("LH");
+        SubTask lu = new SubTask("Limpieza urgente", Arrays.asList("Limpiar el suelo", "Fregar lavamano", "Recoger escrementos"));
+        lu.setId("LU");
+        SubTask rm = new SubTask("Reponer material", Arrays.asList("Cambiar papel", "Reponer jabón", "Reponer toallas"));
+        rm.setId("RM");
+        SubTask pr = new SubTask("Preparacion", Arrays.asList("Poner papel", "Poner jabon", "Limpiar lavamano", "Limpiar inodoro"));
+        pr.setId("PR");
         this.subTaskRepository.deleteAll();
-        this.subTaskRepository.saveAll(Arrays.asList(subTask1, subTask2,subTask3,subTask4));
+        this.subTaskRepository.saveAll(Arrays.asList(lh, lu, rm, pr));
 
 
         Role jefeDepartamento = new Role("Jefe Departamento");
-        jefeDepartamento.setId("jefedepartamento");
+        jefeDepartamento.setId("jefeDepartamento");
         Role trabajador = new Role("Trabajador");
         trabajador.setId("trabajador");
         this.roleRepository.deleteAll();
@@ -81,34 +81,30 @@ public class DBSeeder implements CommandLineRunner {
         this.userRepository.saveAll(Arrays.asList(jefe1, jefe2, trabajador1, trabajador2));
 
 
-
-        Task task1 = new Task(new Date(),subTask1,trabajador1,1,habitaciones.get(1),"informacion1","Pending");
-        Task task2 = new Task(new Date(),subTask2,trabajador1,1,habitaciones.get(2),"informacion2","Pending");
-        Task task3 = new Task(new Date(),subTask3,trabajador1,1,habitaciones.get(3),"informacion3","Pending");
-        Task task4 = new Task(new Date(),subTask2,trabajador1,1,habitaciones.get(4),"informacion4","In Progress");
-        Task task5 = new Task(new Date(),subTask4,trabajador2,2,habitaciones.get(5),"informacion5","In Progress");
-        Task task6 = new Task(new Date(),subTask3,trabajador2,2,habitaciones.get(6),"informacion6","In Progress");
-        Task task7 = new Task(new Date(),subTask4,trabajador2,2,habitaciones.get(7),"informacion7","Finalized");
-        Task task8 = new Task(new Date(),subTask4,trabajador2,2,habitaciones.get(8),"informacion8","Finalized");
+        Task task1 = new Task(new Date(), lu, trabajador1, 1, habitaciones.get(1), "informacion1", "Pending");
+        Task task2 = new Task(new Date(), lh, trabajador1, 1, habitaciones.get(2), "informacion2", "In progress");
+        Task task3 = new Task(new Date(), rm, trabajador2, 2, habitaciones.get(3), "informacion3", "Finalized");
+        Task task4 = new Task(new Date(), pr, trabajador2, 2, habitaciones.get(4), "informacion4", "In Progress");
 
         List<Boolean> finalized = new ArrayList<>();
-        List<Boolean> inProgress= new ArrayList<>();
-        List<Boolean> pending= new ArrayList<>();
+        List<Boolean> inProgress = new ArrayList<>();
+        List<Boolean> pending = new ArrayList<>();
 
         finalized.add(true);
-        finalized.add(false);
+        finalized.add(true);
+        finalized.add(true);
         inProgress.add(false);
         inProgress.add(true);
         pending.add(false);
+        pending.add(false);
+        pending.add(false);
 
-
+        task1.setIsFinished(pending);
+        task2.setIsFinished(inProgress);
+        task3.setIsFinished(finalized);
         task4.setIsFinished(inProgress);
-        task5.setIsFinished(inProgress);
-        task6.setIsFinished(inProgress);
-        task7.setIsFinished(finalized);
-        task8.setIsFinished(finalized);
 
         this.taskRepository.deleteAll();
-        this.taskRepository.saveAll(Arrays.asList(task1, task2,task3,task4,task5,task6,task7,task8));
+        this.taskRepository.saveAll(Arrays.asList(task1, task2, task3, task4));
     }
 }

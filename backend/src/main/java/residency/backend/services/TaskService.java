@@ -7,6 +7,7 @@ import residency.backend.dao.TaskRepository;
 import residency.backend.model.Task;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,16 +34,22 @@ public class TaskService {
 
     public Task createTask(Task task) {
         if (isValidtask(task)) {
+            addIsFinished(task);
             this.taskRepository.insert(task);
             return task;
         }
         return null;
     }
 
+
+
     public Task updateTask(String StringTask) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         Task task = mapper.readValue(StringTask, Task.class);
         if (isValidtask(task)) {
+            if(task.getIsFinished()==null){
+                addIsFinished(task);
+            }
             this.taskRepository.save(task);
             return task;
         }
@@ -52,5 +59,12 @@ public class TaskService {
     private boolean isValidtask(Task task) {
         return task.getUser() != null && task.getCreationDate() != null &&
                 task.getState() != null;
+    }
+    private void addIsFinished(Task task) {
+        List<Boolean > isFinished = new ArrayList<>();
+        for(String taskToDo : task.getSubTask().getTasksToDo()){
+            isFinished.add(false);
+        }
+        task.setIsFinished(isFinished);
     }
 }
