@@ -17,8 +17,9 @@ export class UserService {
     return this._http.get(this.base_url + '/username/' + username);
   }
 
-  getUserByRole(role: string) {
-    return this._http.get<User>(this.base_url + '/role/' + role);
+  getUsersByRole(role: string) {
+    return this._http.get<User[]>(this.base_url + '/role/' + role);
+
   }
 
   createUser(user: User) {

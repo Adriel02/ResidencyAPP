@@ -1,11 +1,12 @@
 package residency.backend.services;
 
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import residency.backend.dao.TaskRepository;
 import residency.backend.model.Task;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -38,8 +39,14 @@ public class TaskService {
         return null;
     }
 
-    public void updateTask(Task task){
-        this.taskRepository.save(task);
+    public Task updateTask(String StringTask) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        Task task = mapper.readValue(StringTask, Task.class);
+        if (isValidtask(task)) {
+            this.taskRepository.save(task);
+            return task;
+        }
+        return null;
     }
 
     private boolean isValidtask(Task task) {

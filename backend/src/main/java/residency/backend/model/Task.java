@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 
 @Document(collection = "Task")
@@ -18,18 +19,24 @@ public class Task {
     private SubTask subTask;
     @DBRef
     private User user;
+
+
+    private Integer floorNumber;
+    private Room room;
     private String incidence;
     private String additionalInformation;
     private String state;
+    private List<Boolean> isFinished;
 
     protected Task() {
     }
 
-    public Task(Date creationDate, SubTask subTask, User user, String incidence, String additionalInformation, String state) {
+    public Task(Date creationDate, SubTask subTask, User user, Integer floorNumber, Room room, String additionalInformation, String state) {
         this.creationDate = creationDate;
         this.subTask = subTask;
         this.user = user;
-        this.incidence = incidence;
+        this.floorNumber = floorNumber;
+        this.room = room;
         this.additionalInformation = additionalInformation;
         this.state = state;
     }
@@ -104,5 +111,30 @@ public class Task {
 
     public void setSubTask(SubTask subTask) {
         this.subTask = subTask;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+
+    public Integer getFloorNumber() {
+        return floorNumber;
+    }
+
+    public void setFloorNumber(Integer floorNumber) {
+        this.floorNumber = floorNumber;
+    }
+
+    public List<Boolean> getIsFinished() {
+        return isFinished;
+    }
+
+    public void setIsFinished(List<Boolean> isFinished) {
+        this.isFinished = isFinished;
     }
 }

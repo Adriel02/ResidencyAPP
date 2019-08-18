@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27ede6c0-0263-4f07-bfc4-d207007789de" name="Default Changelist" comment="Add Services Frontend&#10;&#10;Ya estan implementados los met">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/residency.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/sub-task.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="27ede6c0-0263-4f07-bfc4-d207007789de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/model/task.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/model/task.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,181 +27,151 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/ResidencyController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="29" column="29" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="29" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/RoleController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="250">
-                  <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#359#360#0" expanded="true" />
-                    <element signature="e#405#406#0" expanded="true" />
-                    <element signature="e#455#456#0" expanded="true" />
-                    <element signature="e#508#509#0" expanded="true" />
-                    <element signature="e#597#598#0" expanded="true" />
-                    <element signature="e#644#645#0" expanded="true" />
-                    <element signature="e#715#716#0" expanded="true" />
-                    <element signature="e#763#764#0" expanded="true" />
-                    <element signature="e#832#833#0" expanded="true" />
-                    <element signature="e#880#881#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/SubTaskController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="697">
-                  <caret line="45" column="50" lean-forward="true" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#590#591#0" expanded="true" />
-                    <element signature="e#642#643#0" expanded="true" />
-                    <element signature="e#745#746#0" expanded="true" />
-                    <element signature="e#802#803#0" expanded="true" />
-                    <element signature="e#1244#1245#0" expanded="true" />
-                    <element signature="e#1293#1294#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/services/residency.service.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="19" column="35" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="35" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/services/sub-task.service.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" selection-start-line="18" selection-end-line="18" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/services/task.service.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-end-line="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/frontend/src/app/services/user.service.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="851">
+              <caret line="261" column="7" lean-forward="true" selection-start-line="261" selection-start-column="7" selection-end-line="261" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>title</find>
       <find>router-outlet</find>
+      <find>bo</find>
+      <find>compilerOption</find>
+      <find>llego</find>
+      <find>dataSo</find>
+      <find>hola</find>
+      <find>as</find>
+      <find>glob</find>
+      <find>global</find>
+      <find>cert.</find>
+      <find>right</find>
+      <find>users</find>
+      <find>TaskController</find>
+      <find>appcom</find>
+      <find>formGroup</find>
+      <find>formBuilder</find>
+      <find>formcontrol</find>
+      <find>getRei</find>
+      <find>sort</find>
+      <find>console</find>
+      <find>alert</find>
+      <find>console.log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Adriel-Development" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/RoleService.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/RoleRepository.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/ResidencyService.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/SubTaskService.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/UserService.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/ResidencyRepository.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/SubTaskRepository.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/TaskRepository.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/UserRepository.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/ResidencyController.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/SubTaskController.java" />
-        <option value="$PROJECT_DIR$/frontend/src/app/model/residency.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/model/role.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/model/sub-task.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/model/task.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/model/user.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/index.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/services/residency-service.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/services/task-service.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/login/login.component.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/services/residency.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/services/sub-task.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/model/user.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/Authentication/authGuard.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/Authentication/AuthguardGuard.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/Authentication/AuthGuard.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/login/login.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/SubTaskController.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/ResidencyController.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/FakeLoginController.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/frontend/src/styles.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/login/login.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/config/WebSocket.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/security/BasicAuthConfiguration.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/security/CorsFilter.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/security/MyLogoutSuccessHandler.java" />
+        <option value="$PROJECT_DIR$/backend/pom.xml" />
+        <option value="$PROJECT_DIR$/frontend/src/index.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/task-form/task-form.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/services/user.service.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/services/residency.service.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/model/subTask.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/model/sub-task.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/services/subTask.service.ts" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Room.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Residency.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Floor.java" />
+        <option value="$PROJECT_DIR$/frontend/src/app/model/floor.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/model/room.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/model/residency.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/model/task.ts" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Task.java" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/services/login.service.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.html" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java" />
       </list>
     </option>
   </component>
@@ -217,9 +183,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="798" />
-    <option name="height" value="1057" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -229,59 +196,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
               <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
@@ -308,6 +228,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="employee-task-form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
@@ -325,7 +254,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="task-form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
@@ -339,6 +276,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,7 +289,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/src/main/java/residency/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/frontend/node_modules/protractor" />
@@ -358,10 +297,19 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\src\app\components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\src\assets" />
       <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\backend\src\main\java\residency\backend" />
     </key>
   </component>
@@ -387,7 +335,10 @@
       <scope-kind value="ALL" />
       <method v="2" />
     </configuration>
-    <configuration name="Angular Application (frontend)" type="JavascriptDebugType" uri="http://localhost:4200">
+    <configuration name="Angular Application (frontend)" type="JavascriptDebugType" uri="http://localhost:4200" useFirstLineBreakpoints="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Debugg" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -407,6 +358,13 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application (frontend)" />
+      <item itemvalue="JavaScript Debug.Debugg" />
+      <item itemvalue="npm.Angular CLI Server (frontend)" />
+      <item itemvalue="Protractor.E2E Tests (frontend)" />
+      <item itemvalue="Spring Boot.BackendApplication" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -420,6 +378,27 @@
       <updated>1555248219960</updated>
       <workItem from="1555248221804" duration="3427000" />
       <workItem from="1555278731343" duration="3264000" />
+      <workItem from="1558796534909" duration="35000" />
+      <workItem from="1558796621662" duration="3714000" />
+      <workItem from="1559078638570" duration="11087000" />
+      <workItem from="1561122938784" duration="760000" />
+      <workItem from="1561914998083" duration="3057000" />
+      <workItem from="1561918174953" duration="2482000" />
+      <workItem from="1561923062387" duration="3401000" />
+      <workItem from="1561935138320" duration="1383000" />
+      <workItem from="1561936569419" duration="776000" />
+      <workItem from="1562009188175" duration="201000" />
+      <workItem from="1562020753549" duration="622000" />
+      <workItem from="1563214572970" duration="3530000" />
+      <workItem from="1563906931306" duration="7497000" />
+      <workItem from="1564332684350" duration="7339000" />
+      <workItem from="1564344946074" duration="1348000" />
+      <workItem from="1564685164994" duration="5583000" />
+      <workItem from="1565286104038" duration="9085000" />
+      <workItem from="1565373894913" duration="3929000" />
+      <workItem from="1565560540487" duration="229000" />
+      <workItem from="1565625780179" duration="9851000" />
+      <workItem from="1565718336606" duration="8639000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1555248258417</created>
@@ -456,11 +435,60 @@
       <option name="project" value="LOCAL" />
       <updated>1555250455439</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Funciona Login">
+      <created>1561919160226</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1561919160226</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Casi funciona el list task">
+      <created>1563917056164</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563917056164</updated>
+    </task>
+    <task id="LOCAL-00008" summary="FUNCIONA EL BORRADO DE TAREAS">
+      <created>1565290316124</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1565290316124</updated>
+    </task>
+    <task id="LOCAL-00009" summary="BUG : Se arregla un bug con el FormControl&#10;&#10;Se añaden métodos para el CreateTask">
+      <created>1565295104004</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565295104004</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Hay cosas en el Create (subTask, users, additionalInformation)&#10;&#10;Falta que funcione el create">
+      <created>1565377816139</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565377816139</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Funciona el Create&#10;Se añade al modelo Floor y Room para guardar en BBDD las habitaciones y los pisos">
+      <created>1565631827902</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565631827903</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Funciona el CREATE y el UPDATE">
+      <created>1565635436538</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565635436538</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6691000" />
+    <option name="totallyTimeSpent" value="95108000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,21 +510,21 @@
       <window_info id="npm" order="4" side_tool="true" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info id="Designer" order="6" />
-      <window_info content_ui="combo" id="Project" order="7" weight="0.32356077" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.20415778" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" order="0" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.2658092" />
+      <window_info anchor="bottom" id="TypeScript" order="0" sideWeight="0.49946696" weight="0.3290461" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.4978678" visible="true" weight="0.2636656" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5021322" side_tool="true" weight="0.2636656" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.3290461" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.3290461" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.3290461" />
       <window_info anchor="bottom" id="Message" order="9" />
-      <window_info anchor="bottom" id="Find" order="10" />
-      <window_info anchor="bottom" id="Run" order="11" weight="0.3290461" />
-      <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="10" weight="0.3290461" />
+      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49946696" weight="0.3279743" />
+      <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.49946696" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.3290461" />
@@ -511,43 +539,6 @@
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Capture Tool" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="npm" order="4" side_tool="true" />
-      <window_info id="Web" order="5" side_tool="true" />
-      <window_info id="Designer" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.32356077" />
-      <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" order="0" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.2658092" />
-      <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="4" weight="0.3290461" />
-      <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.3290461" />
-      <window_info anchor="bottom" id="Database Changes" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.3290461" />
-      <window_info anchor="bottom" id="Message" order="9" />
-      <window_info anchor="bottom" id="Find" order="10" />
-      <window_info anchor="bottom" id="Run" order="11" weight="0.3290461" />
-      <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="15" weight="0.3290461" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Bean Validation" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -558,133 +549,51 @@
     <MESSAGE value="Add Frontend Module" />
     <MESSAGE value="Add Backend files&#10;&#10;1) Model&#10;2) Repositories&#10;3) Service&#10;4) Controller&#10;5) DBSeeder&#10;&#10;Change Application Properties" />
     <MESSAGE value="Add Frontend files&#10;&#10;1) Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Frontend files&#10;&#10;1) Model" />
+    <MESSAGE value="Funciona Login" />
+    <MESSAGE value="Casi funciona el list task" />
+    <MESSAGE value="FUNCIONA EL BORRADO DE TAREAS" />
+    <MESSAGE value="BUG : Se arregla un bug con el FormControl&#10;&#10;Se añaden métodos para el CreateTask" />
+    <MESSAGE value="Hay cosas en el Create (subTask, users, additionalInformation)&#10;&#10;Falta que funcione el create" />
+    <MESSAGE value="Funciona el Create&#10;Se añade al modelo Floor y Room para guardar en BBDD las habitaciones y los pisos" />
+    <MESSAGE value="Funciona el CREATE y el UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Funciona el CREATE y el UPDATE" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/ResidencyService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.6.RELEASE/spring-core-5.1.6.RELEASE.jar!/org/springframework/util/backoff/FixedBackOff.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state>
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#0#1960#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/RoleService.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/security/BasicAuthConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        <state relative-caret-position="254">
+          <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3146#3147#0" expanded="true" />
+            <element signature="e#3196#3197#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/SubTaskService.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/security/CorsFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-            <element signature="e#1163#1164#0" expanded="true" />
-            <element signature="e#1204#1205#0" expanded="true" />
-            <element signature="e#1254#1255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/ResidencyRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+        <state relative-caret-position="306">
+          <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/RoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/SubTaskRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/TaskRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/UserRepository.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/security/MyLogoutSuccessHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -693,297 +602,440 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/BackendApplication.java">
+    <entry file="file://$PROJECT_DIR$/backend/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="384">
+          <caret line="83" column="40" lean-forward="true" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/model/subTask" />
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/model/task.ts" />
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/model/subTask.ts" />
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/model/role.ts" />
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/model/user.ts" />
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/alias.ts" />
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/model/residency.ts" />
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/residency.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/role.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/sub-task.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/task.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="25" lean-forward="true" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/SubTask.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/node_modules/@angular/common/http/http.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="739" column="4" selection-start-line="739" selection-start-column="4" selection-end-line="739" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="566" selection-start-line="566" selection-end-line="566" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="69" column="58" lean-forward="true" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/Authentication/AuthGuard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/residency.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Residency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Floor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Role.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Residency.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Room.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/SubTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/user.ts">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.css">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/role.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.spec.ts">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/floor.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/user.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/room.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/residency.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/2.1.6.RELEASE/spring-data-mongodb-2.1.6.RELEASE.jar!/org/springframework/data/mongodb/repository/MongoRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar!/com/fasterxml/jackson/core/ObjectCodec.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/subTask.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/e2e/src/app.po.ts">
+    <entry file="file://$PROJECT_DIR$/frontend/node_modules/typescript/lib/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="-179">
+          <caret line="17906" column="17" selection-start-line="17906" selection-start-column="17" selection-end-line="17906" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/subTask.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/karma.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/login/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/login/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="278">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/RoleController.java">
+    <entry file="file://$PROJECT_DIR$/frontend/node_modules/@angular/router/router.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        <state relative-caret-position="200">
+          <caret line="2024" column="4" selection-start-line="2024" selection-start-column="4" selection-end-line="2024" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/task.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-            <element signature="e#508#509#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-            <element signature="e#832#833#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#2852#2853#0" expanded="true" />
+            <element signature="e#2885#2886#0" expanded="true" />
+            <element signature="e#2944#2945#0" expanded="true" />
+            <element signature="e#2988#2989#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/ResidencyController.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="222">
+          <caret line="65" column="53" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/residency.service.ts">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="45" column="50" lean-forward="true" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1293#1294#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/SubTaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/sub-task.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="239">
+          <caret line="57" column="63" lean-forward="true" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/services/task.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-end-line="10" />
+        <state relative-caret-position="404">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/user.service.ts">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        <state relative-caret-position="267">
+          <caret line="119" column="5" lean-forward="true" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/login.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="21" column="57" lean-forward="true" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#961#962#0" expanded="true" />
+            <element signature="e#1018#1019#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="261" column="7" lean-forward="true" selection-start-line="261" selection-start-column="7" selection-end-line="261" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>backend</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

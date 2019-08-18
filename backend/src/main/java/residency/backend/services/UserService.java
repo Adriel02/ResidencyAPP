@@ -21,9 +21,7 @@ public class UserService {
         return this.userRepository.findAll();
     }
 
-    public User getUserByUserName(String username) {
-        return this.userRepository.findByUsername(username);
-    }
+
 
     public List<User> findAllByRole(String role) {
         return this.userRepository.findAllByRole(role);

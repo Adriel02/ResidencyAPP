@@ -1,0 +1,37 @@
+.login-page {
+  margin-top: 25px;
+  background-color: #fcfcfc;
+  width: 550px;
+  min-height: 580px;
+  border: 1px solid #d9d9d9;
+
+}
+
+.login-form {
+  padding: 50px 100px;
+  min-height: 390px;
+}
+
+.button {
+  background-color: #2e73b0;
+  color: white;
+}
+
+.image {
+  width: 300px;
+  height: 140px;
+}
+
+
+h5 {
+  text-align: center;
+}
+
+.logo {
+  padding: 70px;
+  background-color: #387CB9 ;
+  height: 190px;
+}
+
+
+

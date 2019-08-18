@@ -11,12 +11,12 @@ public class Residency {
     private String id;
     private String name;
     private String address;
-    private List<Integer> floors;
+    private List<Floor> floors;
 
     protected Residency() {
     }
 
-    public Residency(String name, String address, List<Integer> floors) {
+    public Residency(String name, String address, List<Floor> floors) {
         this.name = name;
         this.address = address;
         this.floors = floors;
@@ -46,11 +46,11 @@ public class Residency {
         this.address = address;
     }
 
-    public List<Integer> getFloors() {
+    public List<Floor> getFloors() {
         return floors;
     }
 
-    public void setFloors(List<Integer> floors) {
+    public void setFloors(List<Floor> floors) {
         this.floors = floors;
     }
 }

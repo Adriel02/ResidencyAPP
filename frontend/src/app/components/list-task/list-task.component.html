@@ -1,3 +1,97 @@
+<div>
+  <div class="col-md-auto">
+    <label class="text-secondary">Date</label>
+    <div class="input-group form-group">
+      <input type="text" bsDatepicker #datePicker="bsDatepicker" [bsConfig]="datePickerConfig" class="form-control"
+             [(ngModel)]="bsvalue" readonly
+             (ngModelChange)="applyFilterDate()">
+      <div (click)="datePicker.toggle()" class="input-group-append calendarIcon">
+        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="formGroup" class="col-md-auto">
+    <div *ngIf="isBoss()">
+      <label class="text-secondary">Employee</label>
+      <select class="form-control" name="searchUser" formControlName="user"
+              (change)="applyFilterUser()">
+        <option *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
+      </select>
+    </div>
+
+  </form>
+
+  <div *ngIf="isBoss()" class="col my-4 py-2">
+    <button class="btn button right" (click)="createTask()"><i class="fas fa-plus"></i> Create
+      new Task
+    </button>
+  </div>
+  <br>
+  <br>
+</div>
+
+<div *ngIf="isBoss(); then bossView else employeeView"></div>
+<mat-table [dataSource]="dataSource" matSort matSortDisableClear matSortDirection="asc">
+
+  <ng-container matColumnDef="user.name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Empleado</mat-header-cell>
+    <mat-cell *matCellDef="let task">{{task.user.name}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="subTask.id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Tarea</mat-header-cell>
+    <mat-cell *matCellDef="let task">{{task.subTask.id}}</mat-cell>
+  </ng-container>
 
 
-<h1>ESTAMOS AHORA MISMO EN EL LIST-TASK</h1>
+  <ng-container matColumnDef="room.number">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Habitacion</mat-header-cell>
+    <mat-cell *matCellDef="let task">
+      <span *ngIf="task.room.number < 10">{{task.floorNumber + "0" + task.room.number}}</span>
+      <span *ngIf="task.room.number >= 10">{{task.floorNumber + "" + task.room.number}}</span>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="state">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Estado</mat-header-cell>
+    <mat-cell *matCellDef="let task">{{task.state}}</mat-cell>
+  </ng-container>
+
+
+  <ng-container matColumnDef="additionalInformation">
+    <mat-header-cell *matHeaderCellDef>Informacion</mat-header-cell>
+    <mat-cell *matCellDef="let task">{{task.additionalInformation}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="incidence">
+    <mat-header-cell *matHeaderCellDef>Incidencias</mat-header-cell>
+    <mat-cell *matCellDef="let task">{{task.incidence}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Options">
+    <mat-header-cell *matHeaderCellDef>Opciones</mat-header-cell>
+    <mat-cell class="optionsColumSize" *matCellDef="let task">
+      <div class="row">
+
+        <button *ngIf="isBoss()" class="btn text-secondary"><i
+          class="fas fa-pen fa-sm" (click)="updateTask(task)"></i></button>
+
+        <button *ngIf="!isBoss()" class="btn text-secondary"><i
+          class="fas fa-pen fa-sm" (click)="employeeUpdateTask(task)"></i></button>
+
+        <button *ngIf="isBoss()" class="btn text-secondary"><i
+          class="fas fa-times fa-sm" (click)="deleteTask(task)"></i></button>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-template #bossView>
+    <mat-header-row *matHeaderRowDef="displayedBossColums"></mat-header-row>
+    <mat-row *matRowDef="let task; columns: displayedBossColums;"></mat-row>
+  </ng-template>
+
+  <ng-template #employeeView>
+    <mat-header-row *matHeaderRowDef="displayedEmployeeColums"></mat-header-row>
+    <mat-row *matRowDef="let task; columns: displayedEmployeeColums;"></mat-row>
+  </ng-template>
+
+
+</mat-table>

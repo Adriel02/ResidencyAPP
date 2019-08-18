@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <form [formGroup]="taskForm" (ngSubmit)="processForm()">
+
+
+      <div class="form-group col-md-7 task-size">
+        <label>Tasks</label>
+        <select formControlName="subTask" class="form-control" (change)="addSubTask()">
+          <option *ngFor="let subtask of subTasks" [ngValue]="subtask">{{subtask.type}} ({{subtask.id}})</option>
+        </select>
+
+        <div *ngIf="controls.subTask.invalid && ((controls.subTask.dirty || controls.subTask.touched) || submitted) "
+             class="text-danger">
+
+          <div *ngIf="controls.subTask.errors.required">
+            Task is required.
+          </div>
+        </div>
+
+          <label>Assing to:</label>
+          <div></div>
+          <select formControlName="user" class="form-control">
+            <option hidden></option>
+            <option *ngFor="let user of users" [ngValue]="user">{{user.name}}</option>
+          </select>
+          <div *ngIf="controls.user.invalid && ((controls.user.dirty || controls.user.touched) || submitted) "
+               class="text-danger">
+
+            <div *ngIf="controls.user.errors.required">
+              User is required.
+            </div>
+          </div>
+
+            <label >Floor</label>
+            <select formControlName="floorNumber" class="form-control " (change)="changeRooms()">
+              <option hidden></option>
+              <option *ngFor="let floor of floors" [ngValue]="floor">{{floor.numberFloor}}</option>
+            </select>
+
+            <div
+              *ngIf="controls.floorNumber.invalid && ((controls.floorNumber.dirty || controls.floorNumber.touched) || submitted) "
+              class="text-danger">
+
+              <div *ngIf="controls.floorNumber.errors.required">
+                Floor is required.
+              </div>
+            </div>
+
+            <label >Room</label>
+            <select class="form-control " formControlName="roomNumber">
+              <option hidden></option>
+              <option *ngFor="let room of rooms" [ngValue]="room">{{room.number}}</option>
+            </select>
+            <div
+              *ngIf="controls.roomNumber.invalid && ((controls.roomNumber.dirty || controls.roomNumber.touched) || submitted) "
+              class="text-danger">
+
+              <div *ngIf="controls.roomNumber.errors.required">
+                Room is required.
+              </div>
+            </div>
+
+
+        <div class="form-group textArea">
+          <label>Additional info:</label>
+          <textarea rows="5" name="additionalInformation" formControlName="additionalInformation"
+                    class="form-control"></textarea>
+        </div>
+
+
+        <div class="buttons">
+          <button *ngIf="task.id==null" type="submit" name="save" class="btn button-create button1"><i
+            class="fas fa-check"></i> Create task
+          </button>
+          <button *ngIf="task.id!=null" type="submit" name="save" class="btn button-create button1"><i
+            class="fas fa-check"></i> Update task
+          </button>
+          <button type="button" class="btn button-cancel ml-2 button1" routerLink="/list_tasks"><i
+            class="fas fa-times"></i> Cancel
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

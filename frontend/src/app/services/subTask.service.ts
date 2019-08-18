@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {SubTask} from '../model/sub-task';
+import {SubTask} from '../model/subTask';
 
 @Injectable({
   providedIn: 'root'

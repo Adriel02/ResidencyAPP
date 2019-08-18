@@ -1,0 +1,52 @@
+<div>
+  <form [formGroup]="taskForm" (ngSubmit)="processForm()">
+
+    <div class="form-row">
+      <div class="form-group col-md-2 floor-size">
+        <label>Floor</label>
+        <input type="text" disabled formControlName="floor" class="form-control">
+      </div>
+
+      <div class="form-group col-md-3 room-size">
+        <label>Room</label>
+        <input type="text" disabled formControlName="room" class="form-control">
+      </div>
+
+      <div class="form-group col-md-7 task-size">
+        <label>Tasks</label>
+        <input type="text" disabled formControlName="task" class="form-control">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label>Task items:</label>
+      <div formArrayName="taskToDo"
+           *ngFor="let choice of taskForm.controls.taskToDo.controls; let i = index">
+        <input id="item{{i}}" type="checkbox" [formControlName]="i"
+               (change)="addSubtask(i)">
+        <label for="item{{i}}" [ngClass]="choice.disabled ? 'label': 'label-disabled'">{{listSubTasks[i]}}</label>
+      </div>
+    </div>
+
+
+    <div class="form-group textArea">
+      <label>Additional info:</label>
+      <textarea rows="5" name="additionalInformation" formControlName="additionalInformation" disabled
+                class="form-control"></textarea>
+    </div>
+
+
+    <div class="form-group textArea">
+      <label>Incidences:</label>
+      <textarea rows="5" name="incidence" formControlName="incidence"
+                class="form-control"></textarea>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" name="save" class="btn button-update"><i class="fas fa-check"></i> Update</button>
+      <button class="btn button-cancel" routerLink="/list_tasks"><i class="fas fa-times"></i> Cancel</button>
+    </div>
+
+  </form>
+</div>
