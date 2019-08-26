@@ -1,37 +1,43 @@
-<div>
-  <div>
+<div class="mainPage">
+  <div class="actionPage">
     <form [formGroup]="taskForm" (ngSubmit)="processForm()">
+      <div class="form-group task-size">
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>Tasks</label>
+            <select formControlName="subTask" class="form-control" (change)="addSubTask()">
+              <option *ngFor="let subtask of subTasks" [ngValue]="subtask">{{subtask.type}} ({{subtask.id}})</option>
+            </select>
 
+            <div
+              *ngIf="controls.subTask.invalid && ((controls.subTask.dirty || controls.subTask.touched) || submitted) "
+              class="text-danger">
 
-      <div class="form-group col-md-7 task-size">
-        <label>Tasks</label>
-        <select formControlName="subTask" class="form-control" (change)="addSubTask()">
-          <option *ngFor="let subtask of subTasks" [ngValue]="subtask">{{subtask.type}} ({{subtask.id}})</option>
-        </select>
-
-        <div *ngIf="controls.subTask.invalid && ((controls.subTask.dirty || controls.subTask.touched) || submitted) "
-             class="text-danger">
-
-          <div *ngIf="controls.subTask.errors.required">
-            Task is required.
-          </div>
-        </div>
-
-          <label>Assing to:</label>
-          <div></div>
-          <select formControlName="user" class="form-control">
-            <option hidden></option>
-            <option *ngFor="let user of users" [ngValue]="user">{{user.name}}</option>
-          </select>
-          <div *ngIf="controls.user.invalid && ((controls.user.dirty || controls.user.touched) || submitted) "
-               class="text-danger">
-
-            <div *ngIf="controls.user.errors.required">
-              User is required.
+              <div *ngIf="controls.subTask.errors.required">
+                Task is required.
+              </div>
             </div>
           </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>Assing to:</label>
+            <select formControlName="user" class="form-control">
+              <option hidden></option>
+              <option *ngFor="let user of users" [ngValue]="user">{{user.name}} {{user.surname}}</option>
+            </select>
+            <div *ngIf="controls.user.invalid && ((controls.user.dirty || controls.user.touched) || submitted) "
+                 class="text-danger">
 
-            <label >Floor</label>
+              <div *ngIf="controls.user.errors.required">
+                User is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-2 ">
+            <label>Floor</label>
             <select formControlName="floorNumber" class="form-control " (change)="changeRooms()">
               <option hidden></option>
               <option *ngFor="let floor of floors" [ngValue]="floor">{{floor.numberFloor}}</option>
@@ -45,8 +51,9 @@
                 Floor is required.
               </div>
             </div>
-
-            <label >Room</label>
+          </div>
+          <div class="form-group col-md-2">
+            <label>Room</label>
             <select class="form-control " formControlName="roomNumber">
               <option hidden></option>
               <option *ngFor="let room of rooms" [ngValue]="room">{{room.number}}</option>
@@ -59,7 +66,8 @@
                 Room is required.
               </div>
             </div>
-
+          </div>
+        </div>
 
         <div class="form-group textArea">
           <label>Additional info:</label>
