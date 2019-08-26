@@ -61,7 +61,7 @@ export class EmployeeTaskFormComponent implements OnInit {
       state: [this.task.state],
       floor: [this.task.floorNumber],
       room: [this.task.room.number],
-      task: [this.task.subTask.id],
+      task: [this.task.subTask.type + ' (' + this.task.subTask.id + ')'],
       taskToDo: new FormArray(listTasks),
       additionalInformation: [this.task.additionalInformation],
     });

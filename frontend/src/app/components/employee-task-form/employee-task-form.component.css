@@ -6,3 +6,35 @@
   background-color: #ce3311;
   color: white;
 }
+
+.actionPage{
+  width: 50%;
+  border: 1px solid black;
+  margin: auto;
+  padding: 25px 50px 25px ;
+}
+
+.mainPage{
+  padding: 50px;
+}
+
+textarea{
+  resize: none;
+}
+.employeeOption{
+  padding-left: 10px;
+}
+
+.box{
+  -webkit-transform: scale(1.5);
+}
+
+@media (max-width: 1200px) {
+  .actionPage{
+    margin: auto;
+    width: 75%;
+  }
+  .mainPage{
+    padding: 20px;
+  }
+}
