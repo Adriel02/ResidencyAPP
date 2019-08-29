@@ -8,7 +8,7 @@ public class UserDTO {
     @Id
     private String id;
     private String name;
-    private String surnames;
+    private String surname;
     @DBRef
     private Role role;
     private String username;
@@ -29,12 +29,12 @@ public class UserDTO {
         this.name = name;
     }
 
-    public String getSurnames() {
-        return surnames;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurnames(String surnames) {
-        this.surnames = surnames;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public Role getRole() {
@@ -53,9 +53,9 @@ public class UserDTO {
         this.username = username;
     }
 
-    public UserDTO(String name, String surnames, Role role, String username) {
+    public UserDTO(String name, String surname, Role role, String username) {
         this.name = name;
-        this.surnames = surnames;
+        this.surname = surname;
         this.role = role;
         this.username = username;
     }
