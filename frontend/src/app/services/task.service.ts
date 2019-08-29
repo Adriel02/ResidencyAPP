@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Task} from '../model/task';
+import {EnumResidency} from '../enums/enum-residency.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  private base_url: string = 'http://192.168.1.94:8080/task';
+  private base_url: string = EnumResidency.IP+'/task';
   private _task: Task;
 
   get task(): Task {

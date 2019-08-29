@@ -6,7 +6,6 @@ import {User} from '../model/user';
 })
 export class LoginService {
 
-  private base_url: string = 'http://192.168.1.94:8080';
   private isUserLogin;
   private user: User;
 
@@ -19,7 +18,7 @@ export class LoginService {
     let params = new HttpParams();
     params = params.append('user', name);
     let headers = new HttpHeaders({Authorization: 'Basic ' + btoa(name + ':' + password)});
-    return this._http.get<User>(this.base_url + '/login',
+    return this._http.get<User>(EnumResidency.IP + '/login',
       {
         headers: headers,
         params: params
@@ -29,7 +28,7 @@ export class LoginService {
 
 
   logoutUser() {
-    return this._http.get(this.base_url + '/logout');
+    return this._http.get(EnumResidency.IP + '/logout');
   }
 
   setUserLoggedIn() {
@@ -46,7 +45,7 @@ export class LoginService {
   }
 
   getUserFName() {
-    return this.user.name + ' ' + this.user.surnames;
+    return this.user.name + ' ' + this.user.surname;
   }
 
   getUserId() {
@@ -70,3 +69,4 @@ export class LoginService {
 }
 
 import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
+import {EnumResidency} from '../enums/enum-residency.enum';

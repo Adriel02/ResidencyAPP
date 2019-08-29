@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../model/user';
+import {EnumResidency} from '../enums/enum-residency.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private base_url = 'http://192.168.1.94:8080/user';
+  private base_url = EnumResidency.IP+'/user';
 
 
   constructor(private _http: HttpClient) {
