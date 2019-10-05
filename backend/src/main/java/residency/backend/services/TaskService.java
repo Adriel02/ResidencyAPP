@@ -57,7 +57,7 @@ public class TaskService {
     }
 
     private boolean isValidtask(Task task) {
-        return task.getUser() != null && task.getCreationDate() != null &&
+        return  task.getCreationDate() != null &&
                 task.getState() != null;
     }
     private void addIsFinished(Task task) {

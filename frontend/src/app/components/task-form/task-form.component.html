@@ -21,20 +21,36 @@
         </div>
         <div class="form-row">
           <div class="col-md-4">
-            <label>Assing to:</label>
+            <label>Assign to:</label>
             <select formControlName="user" class="form-control">
               <option hidden></option>
               <option *ngFor="let user of users" [ngValue]="user">{{user.name}} {{user.surname}}</option>
             </select>
-            <div *ngIf="controls.user.invalid && ((controls.user.dirty || controls.user.touched) || submitted) "
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>State</label>
+            <select formControlName="state" class="form-control">
+              <option hidden></option>
+              <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
+            </select>
+            <div *ngIf="controls.state.invalid && ((controls.state.dirty || controls.state.touched) || submitted) "
                  class="text-danger">
 
-              <div *ngIf="controls.user.errors.required">
-                User is required.
+              <div *ngIf="controls.state.errors.required">
+                State is required.
               </div>
             </div>
           </div>
         </div>
+
+
+
+
+
         <div class="form-row">
           <div class="form-group col-md-2 ">
             <label>Floor</label>
