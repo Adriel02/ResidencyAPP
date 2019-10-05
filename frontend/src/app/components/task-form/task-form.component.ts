@@ -27,6 +27,7 @@ export class TaskFormComponent implements OnInit {
   private subTasks: SubTask [];
   private rooms : Room [];
   private floors: Floor[];
+  private states : string [] = ['Pending', 'In progress', 'Finalized'];
 
   constructor(
     private _taskService: TaskService,
@@ -89,8 +90,9 @@ export class TaskFormComponent implements OnInit {
 
   private generateFormGroup() {
     this.taskForm = new FormGroup({
-      'user': new FormControl('', Validators.required),
+      'user': new FormControl(''),
       'roomNumber': new FormControl('', Validators.required),
+      'state': new FormControl(this.task.state,Validators.required),
       'subTask': new FormControl(this.task.subTask, Validators.required),
       'floorNumber': new FormControl('', Validators.required),
       'additionalInformation': new FormControl(this.task.additionalInformation),
@@ -123,8 +125,9 @@ export class TaskFormComponent implements OnInit {
 
   private generateEmptyFormGroup() {
     this.taskForm = new FormGroup({
-      'user': new FormControl('', Validators.required),
+      'user': new FormControl(''),
       'roomNumber': new FormControl('', Validators.required),
+      'state': new FormControl('', Validators.required),
       'subTask': new FormControl('', Validators.required),
       'floorNumber': new FormControl('', Validators.required),
       'additionalInformation': new FormControl('')
@@ -174,7 +177,8 @@ export class TaskFormComponent implements OnInit {
     this.task.additionalInformation = this.taskForm.controls.additionalInformation.value;
     this.task.floorNumber = this.taskForm.controls.floorNumber.value.numberFloor;
     this.task.room = this.taskForm.controls.roomNumber.value;
-    this.task.user = this.taskForm.controls.user.value;
+    //this.task.user = this.taskForm.controls.user.value;
+    this.task.state = this.taskForm.controls.state.value;
   }
 
   addSubTask() {

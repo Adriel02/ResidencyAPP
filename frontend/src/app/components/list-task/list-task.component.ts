@@ -27,6 +27,7 @@ export class ListTaskComponent implements OnInit {
   bsvalue;
   date;
   private users: User[];
+  private states: string [] = ['Pending', 'In progress', 'Finalized'];
   private stompClient = null;
   formGroup: FormGroup;
   dataSource: MatTableDataSource<any>;
@@ -60,7 +61,8 @@ export class ListTaskComponent implements OnInit {
   private generateFormGroup() {
     this.formGroup = this._formBuilder.group(
       {
-        user: []
+        user: [],
+        state: []
       }
     );
   }
@@ -73,6 +75,11 @@ export class ListTaskComponent implements OnInit {
       this.bsvalue = new Date();
     }
 
+    if (localStorage.getItem('state')) {
+      this.formGroup.controls.state.setValue(localStorage.getItem('state'));
+    } else {
+      this.formGroup.controls.state.setValue('Pending');
+    }
     if (localStorage.getItem('user')) {
       this.formGroup.controls.user.setValue(JSON.parse(atob(localStorage.getItem('user'))));
     } else {
@@ -81,7 +88,7 @@ export class ListTaskComponent implements OnInit {
   }
 
   private getAllData() {
-    if (this._loggedUser.getRoleUser() == EnumResidency.JEFEDEPARTAMENTO ) {
+    if (this._loggedUser.getRoleUser() == EnumResidency.JEFEDEPARTAMENTO) {
       this.getUserByRole();
       this._taskService.getAllTasks().subscribe((tasks) => {
         this.getData(tasks);
@@ -155,18 +162,22 @@ export class ListTaskComponent implements OnInit {
         if (data.task == null) {
           if (this.formGroup.controls.user.value != EnumResidency.ALL) {
             return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
-              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1
+              && data.state.indexOf(localStorage.getItem('state')) != -1;
           } else {
             return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
-              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1
+              && data.state.indexOf(localStorage.getItem('state')) != -1;
           }
         } else {
           if (this.formGroup.controls.user.value != EnumResidency.ALL) {
             return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
-              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1
+              && data.task.state.indexOf(localStorage.getItem('state')) != -1;
           } else {
             return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
-              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1
+              && data.task.state.indexOf(localStorage.getItem('state')) != -1;
           }
         }
       };
@@ -180,10 +191,12 @@ export class ListTaskComponent implements OnInit {
         (data: any, filter) => {
           if (data.task == null) {
             return data.user.name.indexOf(filter) != -1
-              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1;
+              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+              && data.state.indexOf(localStorage.getItem('state')) != -1;
           } else {
             return data.task.user.name.indexOf(filter) != -1
-              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1;
+              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+              && data.task.state.indexOf(localStorage.getItem('state')) != -1;
           }
         };
       this.dataSource.filter = searchUser.trim();
@@ -192,16 +205,47 @@ export class ListTaskComponent implements OnInit {
         (data: any, filter) => {
           if (data.task == null) {
             return data.user.name.indexOf(filter) == -1
-              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1;
+              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+              && data.state.indexOf(localStorage.getItem('state')) != -1;
           } else {
             return data.task.user.name.indexOf(filter) == -1
-              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1;
+              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+              && data.task.state.indexOf(localStorage.getItem('state')) != -1;
           }
         };
       this.dataSource.filter = searchUser.trim();
     }
   }
 
+
+  applyFilterState() {
+    let stateValue = localStorage.getItem('state');
+    this.dataSource.filterPredicate =
+      (data: any, filter) => {
+        if (data.task == null) {
+          if (this.formGroup.controls.user.value != EnumResidency.ALL) {
+            return data.state.indexOf(filter) != -1
+              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+          } else {
+            return data.state.indexOf(filter) != -1
+              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+          }
+        } else {
+          if (this.formGroup.controls.user.value != EnumResidency.ALL) {
+            return data.task.state.indexOf(filter) != -1
+              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+          } else {
+            return data.task.state.indexOf(filter) != -1
+              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+          }
+        }
+      };
+    this.dataSource.filter = stateValue;
+  }
 
   deleteTask(task: Task) {
     if (confirm('¿Estás seguro que quieres eliminar la tarea?')) {
@@ -227,7 +271,7 @@ export class ListTaskComponent implements OnInit {
   }
 
   connectWebSocket() {
-    const socket = new SockJS(EnumResidency.IP+'/ws-task');
+    const socket = new SockJS(EnumResidency.IP + '/ws-task');
     this.stompClient = Stomp.Stomp.over(socket);
     const _this = this;
     this.stompClient.connect({}, function () {
@@ -255,13 +299,13 @@ export class ListTaskComponent implements OnInit {
 
   updateTaskHtml(task: Task) {
     let index = this.dataSource.data.findIndex((obj => obj.id == task.id));
-    if(index >=0){
-      if(!this.isBoss() && this._loggedUser.getUserId() != task.user.id){
+    if (index >= 0) {
+      if (!this.isBoss() && this._loggedUser.getUserId() != task.user.id) {
         this.dataSource.data.splice(this.dataSource.data.indexOf(this.dataSource.data[index]), 1);
-      }else{
+      } else {
         this.dataSource.data[index] = task;
       }
-    }else{
+    } else {
       this.dataSource.data.push(task);
     }
     this.dataSource._updateChangeSubscription();
@@ -291,4 +335,11 @@ export class ListTaskComponent implements OnInit {
     this.saveTaskInLocalStorage(task);
     this._router.navigate(['/update']);
   }
+
+  stateChange(event: any) {
+    localStorage.setItem('state', event.target.value.substring(3, event.target.value.length));
+    this.applyFilterState();
+  }
+
 }
+

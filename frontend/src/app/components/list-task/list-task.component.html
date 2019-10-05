@@ -9,10 +9,23 @@
     </div>
 
   </form>
+
+  <form [formGroup]="formGroup" class="col-md-auto">
+    <div *ngIf="isBoss()">
+      <label class="text-secondary">States</label>
+      <select class="form-control handIcon" name="searchState" formControlName="state"
+              (change)="stateChange($event)">
+        <option class="handIcon" *ngFor="let state of states" [ngValue]="state"
+        >{{state}}</option>
+      </select>
+    </div>
+  </form>
+
   <div class="col-md-auto">
     <label class="text-secondary">Date</label>
     <div class="input-group form-group">
-      <input type="text" bsDatepicker #datePicker="bsDatepicker" [bsConfig]="datePickerConfig" class="form-control handIcon"
+      <input type="text" bsDatepicker #datePicker="bsDatepicker" [bsConfig]="datePickerConfig"
+             class="form-control handIcon"
              [(ngModel)]="bsvalue" readonly
              (ngModelChange)="applyFilterDate()">
       <div (click)="datePicker.toggle()" class="input-group-append handIcon">
@@ -28,19 +41,19 @@
   </div>
 </div>
 
-<div *ngIf="isBoss(); then bossView else employeeView"></div>
+<div *ngIf="!isBoss(); then bossView else employeeView"></div>
 <div class="tabla">
   <mat-table [dataSource]="dataSource" matSort matSortDisableClear matSortDirection="asc">
 
-    <ng-container matColumnDef="user.name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Employee</mat-header-cell>
-      <mat-cell *matCellDef="let task">{{task.user.name}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="subTask.id">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Task</mat-header-cell>
-      <mat-cell *matCellDef="let task">{{task.subTask.id}}</mat-cell>
-    </ng-container>
+      <ng-container matColumnDef="user.name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Employee</mat-header-cell>
+        <mat-cell *matCellDef="let task">{{task.user.name}}</mat-cell>
+      </ng-container>
 
+      <ng-container matColumnDef="subTask.id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Task</mat-header-cell>
+        <mat-cell *matCellDef="let task">{{task.subTask.id}}</mat-cell>
+      </ng-container>
 
     <ng-container matColumnDef="room.number">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Room</mat-header-cell>
