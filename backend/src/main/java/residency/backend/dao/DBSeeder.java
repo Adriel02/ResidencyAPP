@@ -81,10 +81,10 @@ public class DBSeeder implements CommandLineRunner {
         this.userRepository.saveAll(Arrays.asList(jefe1, jefe2, trabajador1, trabajador2));
 
 
-        Task task1 = new Task(new Date(), lu, trabajador1, 1, habitaciones.get(1), "informacion1", "Pending");
-        Task task2 = new Task(new Date(), lh, trabajador1, 1, habitaciones.get(2), "informacion2", "In progress");
-        Task task3 = new Task(new Date(), rm, trabajador2, 2, habitaciones.get(3), "informacion3", "Finalized");
-        Task task4 = new Task(new Date(), pr, trabajador2, 2, habitaciones.get(4), "informacion4", "In Progress");
+        Task task1 = new Task(new Date(), lu, trabajador1, 1, habitaciones.get(1), "informacion1", "Pending",jefe1);
+        Task task2 = new Task(new Date(), lh, trabajador1, 1, habitaciones.get(2), "informacion2", "In Progress",jefe1);
+        Task task3 = new Task(new Date(), rm, trabajador2, 2, habitaciones.get(3), "informacion3", "Finalized",jefe2);
+        Task task4 = new Task(new Date(), pr, trabajador2, 2, habitaciones.get(4), "informacion4", "In Progress",jefe2);
 
         List<Boolean> finalized = new ArrayList<>();
         List<Boolean> inProgress = new ArrayList<>();
@@ -93,6 +93,8 @@ public class DBSeeder implements CommandLineRunner {
         finalized.add(true);
         finalized.add(true);
         finalized.add(true);
+        inProgress.add(false);
+        inProgress.add(false);
         inProgress.add(false);
         inProgress.add(true);
         pending.add(false);

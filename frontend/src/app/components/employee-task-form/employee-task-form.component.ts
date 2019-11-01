@@ -80,6 +80,7 @@ export class EmployeeTaskFormComponent implements OnInit {
     } else {
       this.task.state = EnumResidency.PENDING;
     }
+    this.task.editDate = new Date();
     this.task.room.lastCleaningDate = new Date();
     this._taskService.updateTask(this.task).subscribe((task) => {
       this.successMessage('update');

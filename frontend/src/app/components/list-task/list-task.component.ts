@@ -27,7 +27,7 @@ export class ListTaskComponent implements OnInit {
   bsvalue;
   date;
   private users: User[];
-  private states: string [] = ['Pending', 'In progress', 'Finalized'];
+  private states: string [] = ['All', EnumResidency.PENDING, EnumResidency.INPROGRESS, EnumResidency.FINALIZED];
   private stompClient = null;
   formGroup: FormGroup;
   dataSource: MatTableDataSource<any>;
@@ -78,7 +78,8 @@ export class ListTaskComponent implements OnInit {
     if (localStorage.getItem('state')) {
       this.formGroup.controls.state.setValue(localStorage.getItem('state'));
     } else {
-      this.formGroup.controls.state.setValue('Pending');
+      this.formGroup.controls.state.setValue(EnumResidency.ALL);
+      localStorage.setItem('state',EnumResidency.ALL);
     }
     if (localStorage.getItem('user')) {
       this.formGroup.controls.user.setValue(JSON.parse(atob(localStorage.getItem('user'))));
@@ -161,23 +162,49 @@ export class ListTaskComponent implements OnInit {
       (data: any, filter) => {
         if (data.task == null) {
           if (this.formGroup.controls.user.value != EnumResidency.ALL) {
-            return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
-              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1
-              && data.state.indexOf(localStorage.getItem('state')) != -1;
+            if (this.formGroup.controls.state.value != EnumResidency.ALL) {
+              return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
+                && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1
+                && data.state.indexOf(localStorage.getItem('state')) == -1;
+            } else {
+              return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
+                && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1
+                && data.state.indexOf(localStorage.getItem('state')) != -1;
+            }
           } else {
-            return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
-              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1
-              && data.state.indexOf(localStorage.getItem('state')) != -1;
+            if (this.formGroup.controls.state.value != EnumResidency.ALL) {
+              return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
+                && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1
+                && data.state.indexOf(localStorage.getItem('state')) == -1;
+            } else {
+              return data.creationDate.toString().substring(0, 10).indexOf(filter) != -1
+                && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1
+                && data.state.indexOf(localStorage.getItem('state')) != -1;
+            }
           }
         } else {
           if (this.formGroup.controls.user.value != EnumResidency.ALL) {
-            return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
-              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1
-              && data.task.state.indexOf(localStorage.getItem('state')) != -1;
+            if (this.formGroup.controls.state.value != EnumResidency.ALL) {
+              return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
+                && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1
+                && data.task.state.indexOf(localStorage.getItem('state')) == -1;
+            } else {
+              return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
+                && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1
+                && data.task.state.indexOf(localStorage.getItem('state')) != -1;
+            }
+
           } else {
-            return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
-              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1
-              && data.task.state.indexOf(localStorage.getItem('state')) != -1;
+            if (this.formGroup.controls.state.value != EnumResidency.ALL) {
+              return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
+                && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1
+                && data.task.state.indexOf(localStorage.getItem('state')) == -1;
+            } else {
+              return data.task.creationDate.toString().substring(0, 10).indexOf(filter) != -1
+                && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1
+                && data.task.state.indexOf(localStorage.getItem('state')) != -1;
+            }
+
           }
         }
       };
@@ -186,17 +213,30 @@ export class ListTaskComponent implements OnInit {
 
   applyFilterUser() {
     let searchUser = this.formGroup.controls.user.value;
+    let stateValue = localStorage.getItem('state');
     if (searchUser != EnumResidency.ALL) {
       this.dataSource.filterPredicate =
         (data: any, filter) => {
           if (data.task == null) {
-            return data.user.name.indexOf(filter) != -1
-              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
-              && data.state.indexOf(localStorage.getItem('state')) != -1;
+            if (stateValue != EnumResidency.ALL) {
+              return data.user.name.indexOf(filter) != -1
+                && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.state.indexOf(stateValue) != -1;
+            } else {
+              return data.user.name.indexOf(filter) != -1
+                && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.state.indexOf(stateValue) == -1;
+            }
           } else {
-            return data.task.user.name.indexOf(filter) != -1
-              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
-              && data.task.state.indexOf(localStorage.getItem('state')) != -1;
+            if (stateValue != EnumResidency.ALL) {
+              return data.task.user.name.indexOf(filter) != -1
+                && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.task.state.indexOf(stateValue) != -1;
+            } else {
+              return data.task.user.name.indexOf(filter) != -1
+                && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.task.state.indexOf(stateValue) == -1;
+            }
           }
         };
       this.dataSource.filter = searchUser.trim();
@@ -204,13 +244,26 @@ export class ListTaskComponent implements OnInit {
       this.dataSource.filterPredicate =
         (data: any, filter) => {
           if (data.task == null) {
-            return data.user.name.indexOf(filter) == -1
-              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
-              && data.state.indexOf(localStorage.getItem('state')) != -1;
+            if (stateValue != EnumResidency.ALL) {
+              return data.user.name.indexOf(filter) == -1
+                && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.state.indexOf(stateValue) != -1;
+            } else {
+              return data.user.name.indexOf(filter) == -1
+                && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.state.indexOf(stateValue) == -1;
+            }
+
           } else {
-            return data.task.user.name.indexOf(filter) == -1
-              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
-              && data.task.state.indexOf(localStorage.getItem('state')) != -1;
+            if (stateValue != EnumResidency.ALL) {
+              return data.task.user.name.indexOf(filter) == -1
+                && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.task.state.indexOf(stateValue) != -1;
+            } else {
+              return data.task.user.name.indexOf(filter) == -1
+                && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.task.state.indexOf(stateValue) == -1;
+            }
           }
         };
       this.dataSource.filter = searchUser.trim();
@@ -220,31 +273,59 @@ export class ListTaskComponent implements OnInit {
 
   applyFilterState() {
     let stateValue = localStorage.getItem('state');
-    this.dataSource.filterPredicate =
-      (data: any, filter) => {
-        if (data.task == null) {
-          if (this.formGroup.controls.user.value != EnumResidency.ALL) {
-            return data.state.indexOf(filter) != -1
-              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
-              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+    if (stateValue != EnumResidency.ALL) {
+      this.dataSource.filterPredicate =
+        (data: any, filter) => {
+          if (data.task == null) {
+            if (this.formGroup.controls.user.value != EnumResidency.ALL) {
+              return data.state.indexOf(filter) != -1
+                && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+            } else {
+              return data.state.indexOf(filter) != -1
+                && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+            }
           } else {
-            return data.state.indexOf(filter) != -1
-              && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
-              && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+            if (this.formGroup.controls.user.value != EnumResidency.ALL) {
+              return data.task.state.indexOf(filter) != -1
+                && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+            } else {
+              return data.task.state.indexOf(filter) != -1
+                && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+            }
           }
-        } else {
-          if (this.formGroup.controls.user.value != EnumResidency.ALL) {
-            return data.task.state.indexOf(filter) != -1
-              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
-              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+        };
+      this.dataSource.filter = stateValue.trim();
+    } else {
+      this.dataSource.filterPredicate =
+        (data: any, filter) => {
+          if (data.task == null) {
+            if (this.formGroup.controls.user.value != EnumResidency.ALL) {
+              return data.state.indexOf(filter) == -1
+                && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+            } else {
+              return data.state.indexOf(filter) == -1
+                && data.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+            }
           } else {
-            return data.task.state.indexOf(filter) != -1
-              && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
-              && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+            if (this.formGroup.controls.user.value != EnumResidency.ALL) {
+              return data.task.state.indexOf(filter) == -1
+                && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) != -1;
+            } else {
+              return data.task.state.indexOf(filter) == -1
+                && data.task.creationDate.toString().substring(0, 10).indexOf(this.bsvalue.toISOString().substring(0, 10)) != -1
+                && data.task.user.name.toString().indexOf(this.formGroup.controls.user.value) == -1;
+            }
           }
-        }
-      };
-    this.dataSource.filter = stateValue;
+        };
+      this.dataSource.filter = stateValue.trim();
+    }
   }
 
   deleteTask(task: Task) {

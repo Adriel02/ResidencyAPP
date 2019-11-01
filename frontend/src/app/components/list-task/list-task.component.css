@@ -12,7 +12,9 @@
   color: white;
 }
 
-
+.icon-status{
+  width: 50px;
+}
 .modifyTask {
   font-size: 20px;
   border: none;

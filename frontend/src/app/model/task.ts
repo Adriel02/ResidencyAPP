@@ -11,6 +11,7 @@ export class Task {
   room: Room;
   floorNumber: number;
   user: User;
+  supervisor : User;
   isFinished: boolean [];
   incidence: string;
   additionalInformation: string;
