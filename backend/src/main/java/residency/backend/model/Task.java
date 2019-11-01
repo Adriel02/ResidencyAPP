@@ -19,8 +19,8 @@ public class Task {
     private SubTask subTask;
     @DBRef
     private User user;
-
-
+    @DBRef
+    private User supervisor;
     private Integer floorNumber;
     private Room room;
     private String incidence;
@@ -31,7 +31,7 @@ public class Task {
     protected Task() {
     }
 
-    public Task(Date creationDate, SubTask subTask, User user, Integer floorNumber, Room room, String additionalInformation, String state) {
+    public Task(Date creationDate, SubTask subTask, User user, Integer floorNumber, Room room, String additionalInformation, String state, User supervisor) {
         this.creationDate = creationDate;
         this.subTask = subTask;
         this.user = user;
@@ -39,7 +39,9 @@ public class Task {
         this.room = room;
         this.additionalInformation = additionalInformation;
         this.state = state;
+        this.supervisor = supervisor;
     }
+
 
     public String getState() {
         return state;
@@ -137,4 +139,13 @@ public class Task {
     public void setIsFinished(List<Boolean> isFinished) {
         this.isFinished = isFinished;
     }
+
+    public User getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(User supervisor) {
+        this.supervisor = supervisor;
+    }
+
 }

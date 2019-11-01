@@ -11,6 +11,9 @@ import {SubTaskService} from '../../services/subTask.service';
 import {Floor} from '../../model/floor';
 import {Room} from '../../model/room';
 import {EnumResidency} from '../../enums/enum-residency.enum';
+import {isPending} from 'q';
+import {Role} from '../../model/role';
+import {LoginService} from '../../services/login.service';
 
 
 @Component({
@@ -25,9 +28,12 @@ export class TaskFormComponent implements OnInit {
   taskForm: FormGroup;
   submitted = false;
   private subTasks: SubTask [];
-  private rooms : Room [];
+  private rooms: Room [];
   private floors: Floor[];
-  private states : string [] = ['Pending', 'In progress', 'Finalized'];
+  private states: string [] = ['Pending', 'In progress', 'Finalized'];
+  pendingUser: User;
+  pendingRole: Role;
+
 
   constructor(
     private _taskService: TaskService,
@@ -35,6 +41,7 @@ export class TaskFormComponent implements OnInit {
     private _userService: UserService,
     private _residencyService: ResidencyService,
     private _subTaskService: SubTaskService,
+    private _loggedUser: LoginService
   ) {
   }
 
@@ -47,7 +54,7 @@ export class TaskFormComponent implements OnInit {
       this._taskService.setter(task);
     }
     this.task = this._taskService.getter();
-    this.getResidency('Abuelito');
+    this.getResidency(EnumResidency.RESIDENCIAABUELITO);
     this.getUsersByRole();
     this.getAllSubtasks();
     if (this.task.id != undefined) {
@@ -92,7 +99,7 @@ export class TaskFormComponent implements OnInit {
     this.taskForm = new FormGroup({
       'user': new FormControl(''),
       'roomNumber': new FormControl('', Validators.required),
-      'state': new FormControl(this.task.state,Validators.required),
+      'state': new FormControl(this.task.state, Validators.required),
       'subTask': new FormControl(this.task.subTask, Validators.required),
       'floorNumber': new FormControl('', Validators.required),
       'additionalInformation': new FormControl(this.task.additionalInformation),
@@ -107,6 +114,8 @@ export class TaskFormComponent implements OnInit {
     this.formToTask();
     if (this.task.id == undefined) {
       this.task.creationDate = new Date();
+      console.log(this._loggedUser.getUser());
+      this.task.supervisor = this._loggedUser.getUser();
       this._taskService.createTask(this.task).subscribe(() => {
         this.successMessage('create');
         this._router.navigate(['/list_tasks']);
@@ -164,10 +173,10 @@ export class TaskFormComponent implements OnInit {
     }
   }
 
-  private successMessage(message : string) {
-    if(message == 'create'){
+  private successMessage(message: string) {
+    if (message == 'create') {
       alert('La tarea ha sido creada satisfactoriamente');
-    }else{
+    } else {
       alert('La tarea ha sido modificada satisfactoriamente');
 
     }
@@ -177,9 +186,11 @@ export class TaskFormComponent implements OnInit {
     this.task.additionalInformation = this.taskForm.controls.additionalInformation.value;
     this.task.floorNumber = this.taskForm.controls.floorNumber.value.numberFloor;
     this.task.room = this.taskForm.controls.roomNumber.value;
-    //this.task.user = this.taskForm.controls.user.value;
+    console.log("Usuario ------------->"+ this.taskForm.controls.user.value);
+    if (this.taskForm.controls.user.value!= null) this.task.user = this.taskForm.controls.user.value;
     this.task.state = this.taskForm.controls.state.value;
   }
+
 
   addSubTask() {
     this.task.subTask = this.taskForm.controls.subTask.value;
