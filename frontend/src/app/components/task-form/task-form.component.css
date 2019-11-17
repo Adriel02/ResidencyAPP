@@ -6,6 +6,9 @@
   background-color: #ce3311;
   color: white;
 }
+.createdBy{
+  float: right;
+}
 
 .actionPage{
   width: 50%;

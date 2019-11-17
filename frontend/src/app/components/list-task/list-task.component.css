@@ -1,3 +1,4 @@
+
 .right {
   overflow: hidden;
   float: right;
@@ -64,6 +65,9 @@ mat-row:nth-child(4n+1), mat-row:nth-child(4n+3) {
 .tabla {
   padding: 25px;
 }
+
+
+
 
 
 @media (max-width: 1200px) {

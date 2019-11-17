@@ -16,11 +16,12 @@ import {AuthGuard} from './Authentication/AuthGuard';
 import {HTTP_INTERCEPTORS, HttpClientModule, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {MatSortModule, MatTableModule} from '@angular/material';
+import {MatPaginatorModule, MatSortModule, MatTableModule} from '@angular/material';
 import {Observable} from 'rxjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { EmployeeTaskFormComponent } from './components/employee-task-form/employee-task-form.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @Injectable()
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     TaskFormComponent,
     EmployeeTaskFormComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +72,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatTableModule,
     MatSortModule,
+    MatPaginatorModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
