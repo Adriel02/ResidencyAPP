@@ -3,10 +3,17 @@
     <form [formGroup]="taskForm" (ngSubmit)="processForm()">
       <div class="form-group task-size">
         <div class="form-row">
+          <div class="col-md-8">
+            <b><label class="createdBy text-success ">This task has been created by {{this.task.supervisor.name+' '+this.task.supervisor.surname}}</label></b>
+          </div>
+        </div>
+
+        <div class="form-row">
           <div class="col-md-4">
             <label>Tasks</label>
             <select formControlName="subTask" class="form-control" (change)="addSubTask()">
-              <option *ngFor="let subtask of subTasks" [ngValue]="subtask">{{subtask.type}} ({{subtask.id}})</option>
+              <option *ngFor="let subtask of subTasks" [ngValue]="subtask">{{subtask.type}} ({{subtask.id}})
+              </option>
             </select>
 
             <div
@@ -21,7 +28,7 @@
         </div>
         <div class="form-row">
           <div class="col-md-4">
-            <label>Assign to:</label>
+            <label>Assign to</label>
             <select formControlName="user" class="form-control">
               <option hidden></option>
               <option *ngFor="let user of users" [ngValue]="user">{{user.name}} {{user.surname}}</option>
@@ -37,8 +44,9 @@
               <option hidden></option>
               <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
             </select>
-            <div *ngIf="controls.state.invalid && ((controls.state.dirty || controls.state.touched) || submitted) "
-                 class="text-danger">
+            <div
+              *ngIf="controls.state.invalid && ((controls.state.dirty || controls.state.touched) || submitted) "
+              class="text-danger">
 
               <div *ngIf="controls.state.errors.required">
                 State is required.
@@ -46,9 +54,6 @@
             </div>
           </div>
         </div>
-
-
-
 
 
         <div class="form-row">

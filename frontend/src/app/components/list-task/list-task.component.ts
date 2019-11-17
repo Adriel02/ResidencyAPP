@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
+import {MatPaginator} from '@angular/material/paginator';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {User} from '../../model/user';
 import * as Stomp from '@stomp/stompjs';
@@ -20,8 +21,8 @@ import {EnumResidency} from '../../enums/enum-residency.enum';
 })
 export class ListTaskComponent implements OnInit {
 
-
   @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   datePickerConfig: Partial<BsDatepickerConfig> = new BsDatepickerConfig();
   bsvalue;
@@ -52,6 +53,7 @@ export class ListTaskComponent implements OnInit {
 
 
   ngOnInit() {
+
     this.generateFormGroup();
     this.setDefaultValue();
     this.getAllData();
@@ -123,6 +125,7 @@ export class ListTaskComponent implements OnInit {
     const rows = [];
     tasks.forEach(task => rows.push(task));
     this.dataSource = new MatTableDataSource(rows);
+    this.dataSource.paginator= this.paginator;
     this.dataSource.sortingDataAccessor = (item, property) => {
       let task = item;
       if (item.task != null) {
