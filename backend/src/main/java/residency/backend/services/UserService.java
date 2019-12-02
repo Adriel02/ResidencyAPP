@@ -22,13 +22,16 @@ public class UserService {
     }
 
 
-
-    public List<User> findAllByRole(String role) {
+    public List<User> getAllUserByRole(String role) {
         return this.userRepository.findAllByRole(role);
     }
 
-    public List<User> getAllUserByRole(String role) {
-        return this.userRepository.findAllByRole(role);
+    public List<User> getAllUserByTimeSheet (String timeSheet) {
+        return  this.userRepository.findAllByTimeSheet(timeSheet);
+    }
+
+    public List<User> getAllUserByRoleAndTimeSheet(String timeSheet,String role){
+        return this.userRepository.findAllByRoleAndTimeSheet(role,timeSheet);
     }
 
     public User createUser(User user) {

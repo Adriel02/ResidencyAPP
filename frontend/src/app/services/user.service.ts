@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from '../model/user';
+import {User} from '../model/User';
 import {EnumResidency} from '../enums/enum-residency.enum';
 
 @Injectable({
@@ -20,7 +20,10 @@ export class UserService {
 
   getUsersByRole(role: string) {
     return this._http.get<User[]>(this.base_url + '/role/' + role);
+  }
 
+  getUsersByTimeSheet(timeSheet: string) {
+    return this._http.get<User[]>(this.base_url + '/timeSheet/' + timeSheet);
   }
 
   createUser(user: User) {

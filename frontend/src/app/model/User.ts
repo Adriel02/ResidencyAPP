@@ -1,4 +1,5 @@
-import {Role} from './role';
+import {Role} from './Role';
+import {TimeSheet} from './TimeSheet';
 
 export class User {
   id: string;
@@ -8,6 +9,6 @@ export class User {
   role: Role;
   username: string;
   password: string;
-
+  timeSheet: TimeSheet;
 
 }

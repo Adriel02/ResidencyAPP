@@ -18,14 +18,15 @@ public class DBSeeder implements CommandLineRunner {
     private RoleRepository roleRepository;
     private ResidencyRepository residencyRepository;
     private SubTaskRepository subTaskRepository;
+    private TimeSheetRepository timeSheetRepository;
 
-
-    public DBSeeder(TaskRepository taskRepository, UserRepository userRepository, RoleRepository roleRepository, ResidencyRepository residencyRepository, SubTaskRepository subTaskRepository) {
+    public DBSeeder(TaskRepository taskRepository, UserRepository userRepository, RoleRepository roleRepository, ResidencyRepository residencyRepository, SubTaskRepository subTaskRepository,TimeSheetRepository timeSheetRepository) {
         this.taskRepository = taskRepository;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.residencyRepository = residencyRepository;
         this.subTaskRepository = subTaskRepository;
+        this.timeSheetRepository = timeSheetRepository;
     }
 
 
@@ -48,6 +49,12 @@ public class DBSeeder implements CommandLineRunner {
         this.residencyRepository.deleteAll();
         this.residencyRepository.saveAll(Arrays.asList(abuelito));
 
+        TimeSheet morning = new TimeSheet("Morning","08:00","16:00");
+        morning.setId("morning");
+        TimeSheet afternoon = new TimeSheet("Afternoon","16:00","24:00");
+        afternoon.setId("afternoon");
+        this.timeSheetRepository.deleteAll();
+        this.timeSheetRepository.saveAll(Arrays.asList(morning,afternoon));
 
         SubTask lh = new SubTask("Limpieza habitual", Arrays.asList("Cambiar Jabon", "Limpiar lavamano"));
         lh.setId("LH");
@@ -69,13 +76,13 @@ public class DBSeeder implements CommandLineRunner {
         this.roleRepository.saveAll(Arrays.asList(jefeDepartamento, trabajador));
 
 
-        User jefe1 = new User("Adriel", "García Díaz", "789456123E", jefeDepartamento, "resp", "1234");
+        User jefe1 = new User("Adriel", "García Díaz", "789456123E", jefeDepartamento, "resp", "1234",morning);
         jefe1.setId("jefe1");
-        User jefe2 = new User("Ana", "Díaz Rodríguez", "369852217O", jefeDepartamento, "resp2", "1234");
+        User jefe2 = new User("Ana", "Díaz Rodríguez", "369852217O", jefeDepartamento, "resp2", "1234",afternoon);
         jefe2.setId("jefe2");
-        User trabajador1 = new User("Raul", "García Díaz", "123456789A", trabajador, "emp1", "1234");
+        User trabajador1 = new User("Raul", "García Díaz", "123456789A", trabajador, "emp1", "1234",morning);
         trabajador1.setId("trabajador1");
-        User trabajador2 = new User("Miriam", "Benitez García", "45396676N", trabajador, "emp2", "1234");
+        User trabajador2 = new User("Miriam", "Benitez García", "45396676N", trabajador, "emp2", "1234",afternoon);
         trabajador2.setId("trabajador2");
         this.userRepository.deleteAll();
         this.userRepository.saveAll(Arrays.asList(jefe1, jefe2, trabajador1, trabajador2));

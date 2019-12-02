@@ -2,14 +2,14 @@ import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {MatPaginator} from '@angular/material/paginator';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {User} from '../../model/user';
+import {User} from '../../model/User';
 import * as Stomp from '@stomp/stompjs';
 import * as SockJS from 'sockjs-client';
 import {LoginService} from '../../services/login.service';
 import {UserService} from '../../services/user.service';
 import {TaskService} from '../../services/task.service';
 import {BsDatepickerConfig} from 'ngx-bootstrap';
-import {Task} from '../../model/task';
+import {Task} from '../../model/Task';
 import {Router} from '@angular/router';
 import {EnumResidency} from '../../enums/enum-residency.enum';
 
@@ -349,7 +349,7 @@ export class ListTaskComponent implements OnInit {
 
 
   saveTaskInLocalStorage(task) {
-    localStorage.setItem('task', btoa(JSON.stringify(task)));
+    localStorage.setItem('Task.ts', btoa(JSON.stringify(task)));
     localStorage.setItem('date', this.bsvalue);
     localStorage.setItem('user', btoa(JSON.stringify(this.formGroup.controls.user.value)));
   }

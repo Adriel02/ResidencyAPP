@@ -1,6 +1,6 @@
-import {SubTask} from './subTask';
-import {User} from './user';
-import {Room} from './room';
+import {SubTask} from './SubTask';
+import {User} from './User';
+import {Room} from './Room';
 
 export class Task {
   id: string;

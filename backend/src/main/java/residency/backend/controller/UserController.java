@@ -27,6 +27,20 @@ public class UserController {
         return this.userService.getAllUserByRole(role);
     }
 
+    @GetMapping("/timeSheet/{timeSheet}")
+    public List<User> getUsersByTimeSheet(@PathVariable("timeSheet")String timeSheet){
+        return this.userService.getAllUserByTimeSheet(timeSheet);
+    }
+
+    /**
+     *
+     * HAY QUE MIRAR COMO PASAR 2 PARAMETROS Y PODER DEVOLVER RESULTADOS
+     */
+//    @GetMapping("/u/")
+//    public List<User> getUsersByTimeSheet(@RequestParam("role")String role,@RequestParam("timeSheet")String timeSheet){
+//        return this.userService.getAllUserByRoleAndTimeSheet(role,timeSheet);
+//    }
+
     @PostMapping
     public void createUser(@RequestBody User user) {
         this.userService.createUser(user);
