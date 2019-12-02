@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 import {UserService} from '../../services/user.service';
 import {ResidencyService} from '../../services/residency.service';
 import {SubTaskService} from '../../services/subTask.service';
-import {Task} from '../../model/task';
+import {Task} from '../../model/Task';
 import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {EnumResidency} from '../../enums/enum-residency.enum';
 
@@ -33,8 +33,8 @@ export class EmployeeTaskFormComponent implements OnInit {
   ngOnInit() {
     if (this._taskService.getter() == null) {
       let task = new Task();
-      if (localStorage.getItem('task')) {
-        task = JSON.parse(atob(localStorage.getItem('task')));
+      if (localStorage.getItem('Task.ts')) {
+        task = JSON.parse(atob(localStorage.getItem('Task.ts')));
       } else {
         this._router.navigate(['/list_tasks']);
       }

@@ -2,17 +2,17 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {Router} from '@angular/router';
 import {TaskService} from '../../services/task.service';
-import {Task} from '../../model/task';
+import {Task} from '../../model/Task';
 import {ResidencyService} from '../../services/residency.service';
-import {User} from '../../model/user';
-import {SubTask} from '../../model/subTask';
+import {User} from '../../model/User';
+import {SubTask} from '../../model/SubTask';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {SubTaskService} from '../../services/subTask.service';
-import {Floor} from '../../model/floor';
-import {Room} from '../../model/room';
+import {Floor} from '../../model/Floor';
+import {Room} from '../../model/Room';
 import {EnumResidency} from '../../enums/enum-residency.enum';
 import {isPending} from 'q';
-import {Role} from '../../model/role';
+import {Role} from '../../model/Role';
 import {LoginService} from '../../services/login.service';
 
 
@@ -48,8 +48,8 @@ export class TaskFormComponent implements OnInit {
   ngOnInit() {
     if (this._taskService.getter() == null) {
       let task = new Task();
-      if (localStorage.getItem('task')) {
-        task = JSON.parse(atob(localStorage.getItem('task')));
+      if (localStorage.getItem('Task.ts')) {
+        task = JSON.parse(atob(localStorage.getItem('Task.ts')));
       }
       this._taskService.setter(task);
     }

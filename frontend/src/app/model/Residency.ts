@@ -1,4 +1,4 @@
-import {Floor} from './floor';
+import {Floor} from './Floor';
 
 export class Residency {
   id: string;

@@ -15,4 +15,8 @@ public interface UserRepository extends MongoRepository<User, String> {
 
     List<User> findAllByRole(String role);
 
+    List<User> findAllByTimeSheet(String timeSheet);
+
+    List<User> findAllByRoleAndTimeSheet(String timeSheet, String role);
+
 }

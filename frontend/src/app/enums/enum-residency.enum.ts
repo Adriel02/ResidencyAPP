@@ -7,5 +7,7 @@ export enum EnumResidency {
   FINALIZED = 'Finalized',
   INPROGRESS = 'In Progress',
   PENDING = 'Pending',
-  RESIDENCIAABUELITO = 'Abuelito'
+  RESIDENCIAABUELITO = 'Abuelito',
+  MORNING = 'morning',
+  AFTERNOON = 'afternoon'
 }

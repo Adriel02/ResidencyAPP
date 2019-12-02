@@ -15,7 +15,8 @@ public class User {
     private Role role;
     private String username;
     private String password;
-
+    @DBRef
+    private TimeSheet timeSheet;
 
     protected User() {
     }
@@ -25,13 +26,14 @@ public class User {
         this.password = password;
     }
 
-    public User(String name, String surname, String dni, Role role, String username, String password) {
+    public User(String name, String surname, String dni, Role role, String username, String password, TimeSheet timeSheet) {
         this.name = name;
         this.surname = surname;
         this.dni = dni;
         this.role = role;
         this.username = username;
         this.password = password;
+        this.timeSheet = timeSheet;
     }
 
     public String getId() {
@@ -91,5 +93,11 @@ public class User {
         this.password = password;
     }
 
+    public TimeSheet getTimeSheet() {
+        return timeSheet;
+    }
 
+    public void setTimeSheet(TimeSheet timeSheet) {
+        this.timeSheet = timeSheet;
+    }
 }

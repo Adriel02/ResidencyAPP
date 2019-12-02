@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Task} from '../model/task';
+import {Task} from '../model/Task';
 import {EnumResidency} from '../enums/enum-residency.enum';
 
 @Injectable({
