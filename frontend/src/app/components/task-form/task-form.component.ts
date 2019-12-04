@@ -11,9 +11,9 @@ import {SubTaskService} from '../../services/subTask.service';
 import {Floor} from '../../model/Floor';
 import {Room} from '../../model/Room';
 import {EnumResidency} from '../../enums/enum-residency.enum';
-import {isPending} from 'q';
 import {Role} from '../../model/Role';
 import {LoginService} from '../../services/login.service';
+import {DatePipe} from '@angular/common';
 
 
 @Component({
@@ -30,6 +30,7 @@ export class TaskFormComponent implements OnInit {
   private subTasks: SubTask [];
   private rooms: Room [];
   private floors: Floor[];
+  private timeSheet: string;
   private states: string [] = ['Pending', 'In progress', 'Finalized'];
   pendingUser: User;
   pendingRole: Role;
@@ -87,7 +88,8 @@ export class TaskFormComponent implements OnInit {
   }
 
   private getUsersByRole() {
-    this._userService.getUsersByRole(EnumResidency.TRABAJADOR).subscribe((user) => {
+    //this.getTimeSheet(new Date().getHours() + ':' + new Date().getMinutes());
+    this._userService.getUsersByRoleAndTimeSheet(EnumResidency.TRABAJADOR,this.timeSheet).subscribe((user) => {
       this.users = user;
       this.setDefaultValuesUser();
     }, (error) => {
@@ -186,8 +188,10 @@ export class TaskFormComponent implements OnInit {
     this.task.additionalInformation = this.taskForm.controls.additionalInformation.value;
     this.task.floorNumber = this.taskForm.controls.floorNumber.value.numberFloor;
     this.task.room = this.taskForm.controls.roomNumber.value;
-    console.log("Usuario ------------->"+ this.taskForm.controls.user.value);
-    if (this.taskForm.controls.user.value!= null) this.task.user = this.taskForm.controls.user.value;
+    console.log('Usuario ------------->' + this.taskForm.controls.user.value);
+    if (this.taskForm.controls.user.value != null) {
+      this.task.user = this.taskForm.controls.user.value;
+    }
     this.task.state = this.taskForm.controls.state.value;
   }
 
@@ -199,4 +203,5 @@ export class TaskFormComponent implements OnInit {
   changeRooms() {
     this.rooms = this.taskForm.controls.floorNumber.value.rooms;
   }
+
 }

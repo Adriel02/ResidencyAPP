@@ -42,7 +42,7 @@ const appRoutes: Routes = [
     path: '', component: LoginComponent
   },
   {
-    path: 'Task.ts', component: TaskFormComponent,
+    path: 'task', component: TaskFormComponent,
     canActivate: [AuthGuard]
   },
   {
