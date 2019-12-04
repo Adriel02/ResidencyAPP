@@ -9,7 +9,7 @@ import java.util.Optional;
 
 
 @Repository
-public interface UserRepository extends MongoRepository<User, String> {
+public interface UserRepository extends MongoRepository<User, String>{
 
     Optional<User> findByUsername(String username);
 
@@ -17,6 +17,6 @@ public interface UserRepository extends MongoRepository<User, String> {
 
     List<User> findAllByTimeSheet(String timeSheet);
 
-    List<User> findAllByRoleAndTimeSheet(String timeSheet, String role);
+    List<User> findAllByRoleAndTimeSheet(String role, String timeSheet);
 
 }

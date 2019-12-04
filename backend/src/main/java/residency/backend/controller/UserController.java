@@ -36,10 +36,10 @@ public class UserController {
      *
      * HAY QUE MIRAR COMO PASAR 2 PARAMETROS Y PODER DEVOLVER RESULTADOS
      */
-//    @GetMapping("/u/")
-//    public List<User> getUsersByTimeSheet(@RequestParam("role")String role,@RequestParam("timeSheet")String timeSheet){
-//        return this.userService.getAllUserByRoleAndTimeSheet(role,timeSheet);
-//    }
+    @GetMapping("/{role}/{timeSheet}")
+    public List<User> getUsersByTimeSheet(@PathVariable String role, @PathVariable String timeSheet){
+        return this.userService.getAllUserByRoleAndTimeSheet(role,timeSheet);
+    }
 
     @PostMapping
     public void createUser(@RequestBody User user) {

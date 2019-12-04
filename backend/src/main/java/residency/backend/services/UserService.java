@@ -1,6 +1,7 @@
 package residency.backend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 import residency.backend.dao.UserRepository;
 import residency.backend.model.User;
@@ -30,7 +31,7 @@ public class UserService {
         return  this.userRepository.findAllByTimeSheet(timeSheet);
     }
 
-    public List<User> getAllUserByRoleAndTimeSheet(String timeSheet,String role){
+    public List<User> getAllUserByRoleAndTimeSheet(String role,String timeSheet){
         return this.userRepository.findAllByRoleAndTimeSheet(role,timeSheet);
     }
 
