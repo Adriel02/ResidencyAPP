@@ -88,7 +88,7 @@ export class TaskFormComponent implements OnInit {
   }
 
   private getUsersByRole() {
-    //this.getTimeSheet(new Date().getHours() + ':' + new Date().getMinutes());
+    this.getTimeSheet();
     this._userService.getUsersByRoleAndTimeSheet(EnumResidency.TRABAJADOR,this.timeSheet).subscribe((user) => {
       this.users = user;
       this.setDefaultValuesUser();
@@ -204,4 +204,16 @@ export class TaskFormComponent implements OnInit {
     this.rooms = this.taskForm.controls.floorNumber.value.rooms;
   }
 
+  private getTimeSheet() {
+    let now = new Date();
+    let startMorning = new Date().setHours(8,0,0,0);
+    let finishMorning = new Date().setHours(16,0,0,0);
+    let finishAfternoon = new Date().setHours(24,0,0,0);
+
+    if(now.getTime() > startMorning && now.getTime() < finishMorning){
+      this.timeSheet = EnumResidency.MORNING;
+    }else if(now.getTime()> finishMorning && now.getTime()< finishAfternoon){
+      this.timeSheet = EnumResidency.AFTERNOON;
+    }
+  }
 }

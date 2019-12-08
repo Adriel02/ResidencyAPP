@@ -31,7 +31,7 @@
             <label>Assign to</label>
             <select formControlName="user" class="form-control">
               <option hidden></option>
-              <option *ngFor="let user of users" [ngValue]="user">{{user.name}} {{user.surname}}</option>
+              <option *ngFor="let user of users" [ngValue]="user">{{user.name}} {{user.surname}} || {{user.timeSheet.name.substring(0,1)}}</option>
             </select>
           </div>
         </div>
