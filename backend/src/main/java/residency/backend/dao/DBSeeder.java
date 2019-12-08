@@ -80,12 +80,24 @@ public class DBSeeder implements CommandLineRunner {
         jefe1.setId("jefe1");
         User jefe2 = new User("Ana", "Díaz Rodríguez", "369852217O", jefeDepartamento, "resp2", "1234",afternoon);
         jefe2.setId("jefe2");
+
+
         User trabajador1 = new User("Raul", "García Díaz", "123456789A", trabajador, "emp1", "1234",morning);
         trabajador1.setId("trabajador1");
         User trabajador2 = new User("Miriam", "Benitez García", "45396676N", trabajador, "emp2", "1234",afternoon);
         trabajador2.setId("trabajador2");
+        User trabajador3 = new User("Marta", "Diaz Gutierrez", "56935478N", trabajador, "emp3", "1234",afternoon);
+        trabajador3.setId("trabajador3");
+        User trabajador4 = new User("Borja", "Diaz Gutierrez", "63255412N", trabajador, "emp4", "1234",morning);
+        trabajador4.setId("trabajador4");
+        User trabajador5 = new User("Lorenzo", "García Pérez", "42322115K", trabajador, "emp5", "1234",afternoon);
+        trabajador5.setId("trabajador5");
+        User trabajador6 = new User("Aimar", "Díaz Rodríguez", "55446638L", trabajador, "emp6", "1234",morning);
+        trabajador6.setId("trabajador6");
+
+
         this.userRepository.deleteAll();
-        this.userRepository.saveAll(Arrays.asList(jefe1, jefe2, trabajador1, trabajador2));
+        this.userRepository.saveAll(Arrays.asList(jefe1, jefe2, trabajador1, trabajador2,trabajador3,trabajador4,trabajador5,trabajador6));
 
 
         Task task1 = new Task(new Date(), lu, trabajador1, 1, habitaciones.get(1), "informacion1", "Pending",jefe1);
