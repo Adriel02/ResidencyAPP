@@ -22,6 +22,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { EmployeeTaskFormComponent } from './components/employee-task-form/employee-task-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @Injectable()
@@ -52,6 +53,10 @@ const appRoutes: Routes = [
   {
     path: 'list_tasks', component: ListTaskComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile', component: ProfileComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
@@ -65,6 +70,7 @@ const appRoutes: Routes = [
     TaskFormComponent,
     EmployeeTaskFormComponent,
     FooterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
