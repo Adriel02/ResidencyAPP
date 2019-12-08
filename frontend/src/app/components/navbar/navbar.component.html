@@ -4,6 +4,8 @@
     <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/list_tasks'">
       <i class="fas fa-bars"></i> Tasks List</span>
 
+
+
       <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/task' || _route.url=='/update'">
       <a class="text-white" routerLink="/list_tasks"><i class="fas fa-home"></i></a> New Task</span>
 
