@@ -9,13 +9,13 @@ import {EnumResidency} from '../enums/enum-residency.enum';
 export class UserService {
 
   private base_url = EnumResidency.IP + '/user';
-
+  private user: User;
 
   constructor(private _http: HttpClient) {
   }
 
   getUserByUsername(username: string) {
-    return this._http.get(this.base_url + '/username/' + username);
+    return this._http.get<User>(this.base_url + '/username/' + username);
   }
 
   getUsersByRole(role: string) {
@@ -26,7 +26,16 @@ export class UserService {
     return this._http.get<User[]>(this.base_url + '/' + role + '/' + timeSheet);
   }
 
-  createUser(user: User) {
-    return this._http.post(this.base_url + '/', user);
+
+  updateUser(user: User) {
+    return this._http.put(this.base_url + '/',user);
+  }
+
+  getter() {
+    return this.user;
+  }
+
+  setter(user: User) {
+    this.user = user;
   }
 }

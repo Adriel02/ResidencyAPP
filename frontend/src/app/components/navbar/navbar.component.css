@@ -22,3 +22,8 @@ li {
   width: auto;
   height: auto;
 }
+
+nav{
+  height: 64px;
+  font-family: 'Catamaran', sans-serif;
+}

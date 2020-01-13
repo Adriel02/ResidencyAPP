@@ -1,10 +1,13 @@
 package residency.backend.controller;
 
 import org.springframework.web.bind.annotation.*;
+import residency.backend.dto.UserNoPasswordDTO;
+import residency.backend.exception.UserNotValidException;
 import residency.backend.model.User;
 import residency.backend.services.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -28,17 +31,18 @@ public class UserController {
     }
 
     @GetMapping("/timeSheet/{timeSheet}")
-    public List<User> getUsersByTimeSheet(@PathVariable("timeSheet")String timeSheet){
+    public List<User> getUsersByTimeSheet(@PathVariable("timeSheet") String timeSheet) {
         return this.userService.getAllUserByTimeSheet(timeSheet);
     }
 
-    /**
-     *
-     * HAY QUE MIRAR COMO PASAR 2 PARAMETROS Y PODER DEVOLVER RESULTADOS
-     */
     @GetMapping("/{role}/{timeSheet}")
-    public List<User> getUsersByTimeSheet(@PathVariable String role, @PathVariable String timeSheet){
-        return this.userService.getAllUserByRoleAndTimeSheet(role,timeSheet);
+    public List<User> getUsersByTimeSheet(@PathVariable String role, @PathVariable String timeSheet) {
+        return this.userService.getAllUserByRoleAndTimeSheet(role, timeSheet);
+    }
+
+    @GetMapping("/username/{username}")
+    public UserNoPasswordDTO getUserByUsername(@PathVariable String username) {
+        return this.userService.getUserByUsername(username);
     }
 
     @PostMapping
@@ -47,8 +51,11 @@ public class UserController {
     }
 
     @PutMapping
-    public void updateUser(@RequestBody User user) {
-        this.userService.updateUser(user);
+    public void updateUser(@RequestBody User user) throws UserNotValidException {
+        User newUser = this.userService.updateUser(user);
+        if (newUser == null) {
+            throw new UserNotValidException();
+        }
     }
 
     @DeleteMapping("/{id}")

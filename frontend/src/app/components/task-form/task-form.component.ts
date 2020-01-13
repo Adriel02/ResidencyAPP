@@ -13,7 +13,6 @@ import {Room} from '../../model/Room';
 import {EnumResidency} from '../../enums/enum-residency.enum';
 import {Role} from '../../model/Role';
 import {LoginService} from '../../services/login.service';
-import {DatePipe} from '@angular/common';
 
 
 @Component({
@@ -58,11 +57,16 @@ export class TaskFormComponent implements OnInit {
     this.getResidency(EnumResidency.RESIDENCIAABUELITO);
     this.getUsersByRole();
     this.getAllSubtasks();
-    if (this.task.id != undefined) {
+    if (this.idUndefined()) {
       this.generateFormGroup();
     } else {
       this.generateEmptyFormGroup();
     }
+  }
+
+  private idUndefined() {
+    if(this.task.id != undefined) return true;
+    return false;
   }
 
 
@@ -89,7 +93,7 @@ export class TaskFormComponent implements OnInit {
 
   private getUsersByRole() {
     this.getTimeSheet();
-    this._userService.getUsersByRoleAndTimeSheet(EnumResidency.TRABAJADOR,this.timeSheet).subscribe((user) => {
+    this._userService.getUsersByRoleAndTimeSheet(EnumResidency.TRABAJADOR, this.timeSheet).subscribe((user) => {
       this.users = user;
       this.setDefaultValuesUser();
     }, (error) => {
@@ -188,7 +192,6 @@ export class TaskFormComponent implements OnInit {
     this.task.additionalInformation = this.taskForm.controls.additionalInformation.value;
     this.task.floorNumber = this.taskForm.controls.floorNumber.value.numberFloor;
     this.task.room = this.taskForm.controls.roomNumber.value;
-    console.log('Usuario ------------->' + this.taskForm.controls.user.value);
     if (this.taskForm.controls.user.value != null) {
       this.task.user = this.taskForm.controls.user.value;
     }
@@ -206,13 +209,13 @@ export class TaskFormComponent implements OnInit {
 
   private getTimeSheet() {
     let now = new Date();
-    let startMorning = new Date().setHours(8,0,0,0);
-    let finishMorning = new Date().setHours(16,0,0,0);
-    let finishAfternoon = new Date().setHours(24,0,0,0);
+    let startMorning = new Date().setHours(8, 0, 0, 0);
+    let finishMorning = new Date().setHours(16, 0, 0, 0);
+    let finishAfternoon = new Date().setHours(24, 0, 0, 0);
 
-    if(now.getTime() > startMorning && now.getTime() < finishMorning){
+    if (now.getTime() > startMorning && now.getTime() < finishMorning) {
       this.timeSheet = EnumResidency.MORNING;
-    }else if(now.getTime()> finishMorning && now.getTime()< finishAfternoon){
+    } else if (now.getTime() > finishMorning && now.getTime() < finishAfternoon) {
       this.timeSheet = EnumResidency.AFTERNOON;
     }
   }
