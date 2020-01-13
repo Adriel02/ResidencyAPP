@@ -27,6 +27,7 @@ export class ListTaskComponent implements OnInit {
   datePickerConfig: Partial<BsDatepickerConfig> = new BsDatepickerConfig();
   bsvalue;
   date;
+  user : User;
   private users: User[];
   private states: string [] = ['All', EnumResidency.PENDING, EnumResidency.INPROGRESS, EnumResidency.FINALIZED];
   private stompClient = null;
@@ -87,6 +88,12 @@ export class ListTaskComponent implements OnInit {
       this.formGroup.controls.user.setValue(JSON.parse(atob(localStorage.getItem('user'))));
     } else {
       this.formGroup.controls.user.setValue(EnumResidency.ALL);
+      this._user.getUserByUsername(this._loggedUser.getUser().username).subscribe((user) => {
+        this.user = user;
+      }, (error) => {
+        console.log(error);
+      });
+      localStorage.setItem('user', btoa(JSON.stringify(this.user)));
     }
   }
 

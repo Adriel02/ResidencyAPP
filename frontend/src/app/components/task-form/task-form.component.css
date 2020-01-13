@@ -11,11 +11,11 @@
 }
 
 .actionPage{
-  width: 50%;
-  border: 1px solid black;
-  margin: auto;
-  padding: 25px 50px 25px ;
-}
+    width: 50%;
+    border: 1px solid black;
+    margin: auto;
+    padding: 25px 50px 25px ;
+  }
 
 .mainPage{
   padding: 50px;

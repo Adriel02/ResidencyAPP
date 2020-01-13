@@ -1,1 +1,63 @@
-<p>profile works!</p>
+<div class="mainPage">
+  <div class="actionPage">
+    <form [formGroup]="userForm" (ngSubmit)="processForm()">
+      <div class="form-group task-size">
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>Username:</label>
+            <input formControlName="username" class="form-control" disabled>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>Name:</label>
+            <input formControlName="name" class="form-control">
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>Surname:</label>
+            <input type="text" id="surname" formControlName="surname" class="form-control" disabled>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>DNI:</label>
+            <input type="text" id="dni" formControlName="dni" class="form-control" disabled>
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>Password:</label>
+            <input type="password" id="password" formControlName="password" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control">
+          </div>
+        </div>
+
+
+          <div class="buttons">
+            <button type="submit" name="save" class="btn button-create button"><i
+              class="fas fa-check"></i> Accept
+            </button>
+            <button type="button" class="btn button-cancel" routerLink="/list_tasks"><i
+              class="fas fa-times"></i> Cancel
+            </button>
+        </div>
+
+
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,12 +1,15 @@
 package residency.backend.services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 import residency.backend.dao.UserRepository;
+import residency.backend.dto.UserNoPasswordDTO;
 import residency.backend.model.User;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -27,12 +30,17 @@ public class UserService {
         return this.userRepository.findAllByRole(role);
     }
 
-    public List<User> getAllUserByTimeSheet (String timeSheet) {
-        return  this.userRepository.findAllByTimeSheet(timeSheet);
+    public List<User> getAllUserByTimeSheet(String timeSheet) {
+        return this.userRepository.findAllByTimeSheet(timeSheet);
     }
 
-    public List<User> getAllUserByRoleAndTimeSheet(String role,String timeSheet){
-        return this.userRepository.findAllByRoleAndTimeSheet(role,timeSheet);
+    public List<User> getAllUserByRoleAndTimeSheet(String role, String timeSheet) {
+        return this.userRepository.findAllByRoleAndTimeSheet(role, timeSheet);
+    }
+
+    public UserNoPasswordDTO getUserByUsername(String username) {
+        Optional<User> user = this.userRepository.findByUsername(username);
+        return convertModelToDTO(user);
     }
 
     public User createUser(User user) {
@@ -43,8 +51,12 @@ public class UserService {
         return null;
     }
 
-    public void updateUser(User user) {
-        this.userRepository.save(user);
+    public User updateUser(User user) {
+        if (isUserValid(user)) {
+            this.userRepository.save(user);
+            return user;
+        }
+        return null;
     }
 
     public void deleteUser(String id) {
@@ -53,7 +65,15 @@ public class UserService {
 
     private boolean isUserValid(User user) {
         return user.getDni() != null && user.getName() != null && user.getPassword() != null &&
-                user.getRole() != null && user.getSurname() != null && user.getUsername() != null;
+                user.getRole() != null && user.getSurname() != null && user.getUsername() != null
+                && user.getTimeSheet() != null;
 
+    }
+
+    private UserNoPasswordDTO convertModelToDTO(Optional<User> user) {
+        User userLogin = user.get();
+        UserNoPasswordDTO userDTO = new UserNoPasswordDTO(userLogin.getName(), userLogin.getSurname(), userLogin.getDni(), userLogin.getRole(), userLogin.getUsername(), userLogin.getTimeSheet());
+        userDTO.setId(userLogin.getId());
+        return userDTO;
     }
 }

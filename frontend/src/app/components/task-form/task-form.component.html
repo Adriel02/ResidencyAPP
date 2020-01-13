@@ -3,8 +3,8 @@
     <form [formGroup]="taskForm" (ngSubmit)="processForm()">
       <div class="form-group task-size">
         <div class="form-row">
-          <div class="col-md-8">
-            <b><label class="createdBy text-success ">This task has been created by {{this.task.supervisor.name+' '+this.task.supervisor.surname}}</label></b>
+          <div class="col-md-8" *ngIf="idUndefined()">
+            <b><label class="createdBy text-success">This task has been created by {{this.task.supervisor.name+' '+this.task.supervisor.surname}}</label></b>
           </div>
         </div>
 
