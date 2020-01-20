@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 import residency.backend.exception.TaskNotValidException;
+import residency.backend.model.Audit;
 import residency.backend.model.Task;
 import residency.backend.services.TaskService;
 
