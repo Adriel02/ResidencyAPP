@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,8 +28,11 @@ public class Task {
     private String additionalInformation;
     private String state;
     private List<Boolean> isFinished;
+    @DBRef
+    private List<Audit> audits;
 
     protected Task() {
+        this.audits = new ArrayList<Audit>();
     }
 
     public Task(Date creationDate, SubTask subTask, User user, Integer floorNumber, Room room, String additionalInformation, String state, User supervisor) {
@@ -40,6 +44,8 @@ public class Task {
         this.additionalInformation = additionalInformation;
         this.state = state;
         this.supervisor = supervisor;
+
+        this.audits = new ArrayList<Audit>();
     }
 
 
@@ -148,4 +154,7 @@ public class Task {
         this.supervisor = supervisor;
     }
 
+    public List<Audit> getAudits() {
+        return audits;
+    }
 }
