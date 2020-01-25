@@ -21,8 +21,9 @@ public class TaskService {
     private AuditRepository auditRepository;
 
     @Autowired
-    public TaskService(TaskRepository taskRepository) {
+    public TaskService(TaskRepository taskRepository,AuditRepository auditRepository) {
         this.taskRepository = taskRepository;
+        this.auditRepository = auditRepository;
     }
 
     public List<Task> getAllTask() {
@@ -40,10 +41,10 @@ public class TaskService {
     public Task createTask(Task task) {
         if (isValidtask(task)) {
             addIsFinished(task);
-//            Audit audit = new Audit("State","",task.getState(),new Date());
-//            audit.setId(java.util.UUID.randomUUID().toString());
-//            auditRepository.save(audit);
-//            task.getAudits().add(audit);
+            Audit audit = new Audit("State","",task.getState(),new Date());
+            audit.setId(java.util.UUID.randomUUID().toString());
+            auditRepository.save(audit);
+            task.getAudits().add(audit);
             this.taskRepository.insert(task);
             return task;
         }
@@ -59,11 +60,10 @@ public class TaskService {
             if(task.getIsFinished()==null){
                 addIsFinished(task);
             }
-//            Audit lastAudit = task.getAudits().get(task.getAudits().size()-1);
-//            Audit audit = new Audit("State",lastAudit.getCurrentValue(),task.getState(),new Date());
-//            auditRepository.save(audit);
-//            //Añadir la Audit a BBDD
-//            task.getAudits().add(audit);
+            Audit lastAudit = task.getAudits().get(task.getAudits().size()-1);
+            Audit audit = new Audit("State",lastAudit.getCurrentValue(),task.getState(),new Date());
+            auditRepository.save(audit);
+            task.getAudits().add(audit);
             this.taskRepository.save(task);
             return task;
         }
