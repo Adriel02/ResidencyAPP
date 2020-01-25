@@ -1,13 +1,11 @@
 package residency.backend.services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import residency.backend.dao.UserRepository;
-import residency.backend.dto.UserNoPasswordDTO;
+import residency.backend.dto.GeneralUserDTO;
 import residency.backend.model.User;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,9 +36,10 @@ public class UserService {
         return this.userRepository.findAllByRoleAndTimeSheet(role, timeSheet);
     }
 
-    public UserNoPasswordDTO getUserByUsername(String username) {
+    public User getUserByUsername(String username) {
         Optional<User> user = this.userRepository.findByUsername(username);
-        return convertModelToDTO(user);
+        return user.orElse(null);
+        //return convertModelToDTO(user);
     }
 
     public User createUser(User user) {
@@ -70,10 +69,10 @@ public class UserService {
 
     }
 
-    private UserNoPasswordDTO convertModelToDTO(Optional<User> user) {
+    /*private GeneralUserDTO convertModelToDTO(Optional<User> user) {
         User userLogin = user.get();
-        UserNoPasswordDTO userDTO = new UserNoPasswordDTO(userLogin.getName(), userLogin.getSurname(), userLogin.getDni(), userLogin.getRole(), userLogin.getUsername(), userLogin.getTimeSheet());
+        GeneralUserDTO userDTO = new GeneralUserDTO(userLogin.getName(), userLogin.getSurname(), userLogin.getDni(), userLogin.getRole(), userLogin.getUsername(), userLogin.getTimeSheet());
         userDTO.setId(userLogin.getId());
         return userDTO;
-    }
+    }*/
 }

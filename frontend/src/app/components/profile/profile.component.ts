@@ -5,6 +5,9 @@ import {UserService} from '../../services/user.service';
 import {TaskService} from '../../services/task.service';
 import {Router} from '@angular/router';
 import {User} from '../../model/User';
+import {Md5} from 'ts-md5/dist/md5';
+import {Role} from '../../model/Role';
+
 
 @Component({
   selector: 'app-profile',
@@ -37,6 +40,7 @@ export class ProfileComponent implements OnInit {
     }
     this.user = this._userService.getter();
     console.log(this.user);
+
     this.generateFormGroup();
   }
 
@@ -48,8 +52,9 @@ export class ProfileComponent implements OnInit {
       'dni': new FormControl(this.user.dni),
       'timeSheet': new FormControl(this.user.timeSheet),
       'username': new FormControl(this.user.username),
-      'password': new FormControl(this.user.password),
-      'confirmPassword': new FormControl(this.user.password),
+      'currentPassword': new FormControl(""),
+      'password': new FormControl(""),
+      'confirmPassword': new FormControl(""),
     });
   }
 
@@ -60,7 +65,7 @@ export class ProfileComponent implements OnInit {
       return;
     }
 
-    if (this.user.id != undefined && this.formToUser()){
+    if (this.user.id != undefined && this.formToUser()) {
       this._userService.updateUser(this.user).subscribe((user) => {
         this._router.navigate(['/list_tasks']);
       }, (error) => {
@@ -71,16 +76,22 @@ export class ProfileComponent implements OnInit {
 
 
   private formToUser() {
-    if (this.userForm.controls.password.value != null &&
+    var md5 = new Md5();
+    if (
+      this.userForm.controls.password.value != null &&
+      this.userForm.controls.currentPassword.value != null &&
       this.userForm.controls.confirmPassword.value != null &&
-      this.userForm.controls.password.value == this.userForm.controls.confirmPassword.value) {
-
-      this.user.password = this.userForm.controls.password.value;
+      this.userForm.controls.password.value == this.userForm.controls.confirmPassword.value
+      && md5.appendStr(''+this.userForm.controls.currentPassword.value).end() == this.user.password
+    ) {
+      md5 = new Md5();
+      this.user.password = (md5.appendStr(this.userForm.controls.password.value).end()).toString();
       return true;
-    }else{
-      alert("Las contraseñas no coinciden. Intentelo de nuevo");
+    } else {
+      alert('Error en las contraseñas. Intentelo de nuevo');
       return false;
     }
+    return false;
   }
 
 
