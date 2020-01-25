@@ -13,8 +13,7 @@
 
   <li ngbDropdown class="nav-item dropdown">
     <a ngbDropdownToggle
-       class="nav-link dropdown-toggle text-white selectDropdownMenu"><i
-      class="fas fa-user-circle fa-lg"></i><span>{{_loggedUser.getUserFName()}}</span></a>
+       class="nav-link dropdown-toggle text-white selectDropdownMenu"><span>{{_loggedUser.getUserFName()+"  "}}<i class="fas fa-user-alt"></i></span></a>
     <div ngbDropdownMenu class="dropdown-menu logout" aria-labelledby="navbarDropdown">
       <button class="btn btn-link nav-link" *ngIf="_loggedUser.getUser()!=null"
               (click)="goProfile()">Profile

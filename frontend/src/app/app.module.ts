@@ -19,11 +19,10 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {MatPaginatorModule, MatSortModule, MatTableModule} from '@angular/material';
 import {Observable} from 'rxjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { TaskFormComponent } from './components/task-form/task-form.component';
-import { EmployeeTaskFormComponent } from './components/employee-task-form/employee-task-form.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ProfileComponent } from './components/profile/profile.component';
-
+import {TaskFormComponent} from './components/task-form/task-form.component';
+import {EmployeeTaskFormComponent} from './components/employee-task-form/employee-task-form.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -86,8 +85,8 @@ const appRoutes: Routes = [
     BsDatepickerModule.forRoot(),
   ],
   providers: [
-    ResidencyService, TaskService, SubTaskService,LoginService,AuthGuard,{
-    provide : HTTP_INTERCEPTORS,
+    ResidencyService, TaskService, SubTaskService, LoginService, AuthGuard, {
+      provide: HTTP_INTERCEPTORS,
       useClass: XhrInterceptor,
       multi: true
     }

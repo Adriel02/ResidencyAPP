@@ -5,10 +5,13 @@ import residency.backend.model.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.security.*;
+
 
 @Component
 public class DBSeeder implements CommandLineRunner {
@@ -66,8 +69,10 @@ public class DBSeeder implements CommandLineRunner {
         rm.setId("RM");
         SubTask pr = new SubTask("Preparacion", Arrays.asList("Poner papel", "Poner jabon", "Limpiar lavamano", "Limpiar inodoro"));
         pr.setId("PR");
+        SubTask otro = new SubTask("Otro", new ArrayList<>());
+        otro.setId("OTRO");
         this.subTaskRepository.deleteAll();
-        this.subTaskRepository.saveAll(Arrays.asList(lh, lu, rm, pr));
+        this.subTaskRepository.saveAll(Arrays.asList(lh, lu, rm, pr,otro));
 
 
         Role jefeDepartamento = new Role("Jefe Departamento");
@@ -78,23 +83,26 @@ public class DBSeeder implements CommandLineRunner {
         this.roleRepository.saveAll(Arrays.asList(jefeDepartamento, trabajador));
 
 
-        User jefe1 = new User("Adriel", "García Díaz", "789456123E", jefeDepartamento, "resp", "1234", morning);
+
+
+        User jefe1 = new User("Adriel", "García Díaz", "789456123E", jefeDepartamento, "resp", md5Creator("1234"), morning);
         jefe1.setId("jefe1");
-        User jefe2 = new User("Ana", "Díaz Rodríguez", "369852217O", jefeDepartamento, "resp2", "1234", afternoon);
+        User jefe2 = new User("Ana", "Díaz Rodríguez", "369852217O", jefeDepartamento, "resp2", md5Creator("1234"), afternoon);
         jefe2.setId("jefe2");
 
 
-        User trabajador1 = new User("Raul", "García Díaz", "123456789A", trabajador, "emp1", "1234", morning);
+
+        User trabajador1 = new User("Raul", "García Díaz", "123456789A", trabajador, "emp1", md5Creator("1234"), morning);
         trabajador1.setId("trabajador1");
-        User trabajador2 = new User("Miriam", "Benitez García", "45396676N", trabajador, "emp2", "1234", afternoon);
+        User trabajador2 = new User("Miriam", "Benitez García", "45396676N", trabajador, "emp2", md5Creator("1234"), afternoon);
         trabajador2.setId("trabajador2");
-        User trabajador3 = new User("Marta", "Diaz Gutierrez", "56935478N", trabajador, "emp3", "1234", afternoon);
+        User trabajador3 = new User("Marta", "Diaz Gutierrez", "56935478N", trabajador, "emp3", md5Creator("1234"), afternoon);
         trabajador3.setId("trabajador3");
-        User trabajador4 = new User("Borja", "Diaz Gutierrez", "63255412N", trabajador, "emp4", "1234", morning);
+        User trabajador4 = new User("Borja", "Diaz Gutierrez", "63255412N", trabajador, "emp4", md5Creator("1234"), morning);
         trabajador4.setId("trabajador4");
-        User trabajador5 = new User("Lorenzo", "García Pérez", "42322115K", trabajador, "emp5", "1234", afternoon);
+        User trabajador5 = new User("Lorenzo", "García Pérez", "42322115K", trabajador, "emp5", md5Creator("1234"), afternoon);
         trabajador5.setId("trabajador5");
-        User trabajador6 = new User("Aimar", "Díaz Rodríguez", "55446638L", trabajador, "emp6", "1234", morning);
+        User trabajador6 = new User("Aimar", "Díaz Rodríguez", "55446638L", trabajador, "emp6", md5Creator("1234"), morning);
         trabajador6.setId("trabajador6");
 
 
@@ -169,5 +177,23 @@ public class DBSeeder implements CommandLineRunner {
 
         this.taskRepository.deleteAll();
         this.taskRepository.saveAll(Arrays.asList(task1, task2, task3, task4));
+
+
+
+
     }
+    private String md5Creator (String password) throws NoSuchAlgorithmException {
+        MessageDigest md5 = MessageDigest.getInstance("MD5");
+        md5.update(password.getBytes());
+
+        byte [] bytes = md5.digest();
+        BigInteger number = new BigInteger(1,bytes);
+        String hashPassword = number.toString(16);
+
+        while(hashPassword.length()<32){
+            hashPassword = "0"+hashPassword;
+        }
+        return hashPassword;
+    }
+
 }

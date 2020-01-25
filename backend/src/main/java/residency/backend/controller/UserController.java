@@ -1,13 +1,12 @@
 package residency.backend.controller;
 
 import org.springframework.web.bind.annotation.*;
-import residency.backend.dto.UserNoPasswordDTO;
+import residency.backend.dto.GeneralUserDTO;
 import residency.backend.exception.UserNotValidException;
 import residency.backend.model.User;
 import residency.backend.services.UserService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -41,7 +40,7 @@ public class UserController {
     }
 
     @GetMapping("/username/{username}")
-    public UserNoPasswordDTO getUserByUsername(@PathVariable String username) {
+    public User getUserByUsername(@PathVariable String username) {
         return this.userService.getUserByUsername(username);
     }
 
