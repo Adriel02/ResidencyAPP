@@ -3,7 +3,6 @@ package residency.backend.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import residency.backend.dao.UserRepository;
-import residency.backend.dto.GeneralUserDTO;
 import residency.backend.model.User;
 
 import java.util.List;

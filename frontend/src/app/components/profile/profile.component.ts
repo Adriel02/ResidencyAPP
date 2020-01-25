@@ -6,7 +6,6 @@ import {TaskService} from '../../services/task.service';
 import {Router} from '@angular/router';
 import {User} from '../../model/User';
 import {Md5} from 'ts-md5/dist/md5';
-import {Role} from '../../model/Role';
 
 
 @Component({
@@ -52,9 +51,9 @@ export class ProfileComponent implements OnInit {
       'dni': new FormControl(this.user.dni),
       'timeSheet': new FormControl(this.user.timeSheet),
       'username': new FormControl(this.user.username),
-      'currentPassword': new FormControl(""),
-      'password': new FormControl(""),
-      'confirmPassword': new FormControl(""),
+      'currentPassword': new FormControl(''),
+      'password': new FormControl(''),
+      'confirmPassword': new FormControl(''),
     });
   }
 
@@ -82,16 +81,15 @@ export class ProfileComponent implements OnInit {
       this.userForm.controls.currentPassword.value != null &&
       this.userForm.controls.confirmPassword.value != null &&
       this.userForm.controls.password.value == this.userForm.controls.confirmPassword.value
-      && md5.appendStr(''+this.userForm.controls.currentPassword.value).end() == this.user.password
+      && md5.appendStr('' + this.userForm.controls.currentPassword.value).end() == this.user.password
     ) {
       md5 = new Md5();
       this.user.password = (md5.appendStr(this.userForm.controls.password.value).end()).toString();
       return true;
     } else {
-      alert('Error en las contraseñas. Intentelo de nuevo');
+      alert('Error en las contraseñas. Inténtelo de nuevo');
       return false;
     }
-    return false;
   }
 
 
