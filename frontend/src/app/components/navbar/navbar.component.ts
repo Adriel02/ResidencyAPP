@@ -5,6 +5,8 @@ import {AuthService} from '../../services/auth.service';
 import {TaskService} from '../../services/task.service';
 import {UserService} from '../../services/user.service';
 import {User} from '../../model/User';
+import {MatMenuModule} from '@angular/material/menu';
+import {EnumResidency} from '../../enums/enum-residency.enum';
 
 @Component({
   selector: 'app-navbar',
@@ -38,7 +40,6 @@ export class NavbarComponent implements OnInit {
   }
 
   goProfile() {
-    this.saveInLocalStorage();
     this._route.navigate(['/profile']);
   }
 
@@ -46,13 +47,9 @@ export class NavbarComponent implements OnInit {
     this._route.navigate(['/list_tasks']);
   }
 
-  saveInLocalStorage() {
-    this._userService.getUserByUsername(this._loggedUser.getUser().username).subscribe((user) => {
-      this.user = user;
-    }, (error) => {
-      console.log(error);
-    });
-    localStorage.setItem('user', btoa(JSON.stringify(this.user)));
+
+  goDashboard() {
+    this._route.navigate(['/dashboard']);
   }
 
 

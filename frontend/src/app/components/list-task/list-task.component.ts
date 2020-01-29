@@ -84,16 +84,11 @@ export class ListTaskComponent implements OnInit {
       this.formGroup.controls.state.setValue(EnumResidency.ALL);
       localStorage.setItem('state',EnumResidency.ALL);
     }
-    if (localStorage.getItem('user')) {
-      this.formGroup.controls.user.setValue(JSON.parse(atob(localStorage.getItem('user'))));
+    if (localStorage.getItem('userFilter')) {
+      this.formGroup.controls.user.setValue(localStorage.getItem('userFilter'));
     } else {
       this.formGroup.controls.user.setValue(EnumResidency.ALL);
-      this._user.getUserByUsername(this._loggedUser.getUser().username).subscribe((user) => {
-        this.user = user;
-      }, (error) => {
-        console.log(error);
-      });
-      localStorage.setItem('user', btoa(JSON.stringify(this.user)));
+      localStorage.setItem('userFilter', EnumResidency.ALL);
     }
   }
 
@@ -249,7 +244,9 @@ export class ListTaskComponent implements OnInit {
             }
           }
         };
-      this.dataSource.filter = searchUser.trim();
+      if( searchUser!= null || searchUser != ""){
+        this.dataSource.filter = searchUser.trim();
+      }
     } else {
       this.dataSource.filterPredicate =
         (data: any, filter) => {
@@ -358,7 +355,7 @@ export class ListTaskComponent implements OnInit {
   saveTaskInLocalStorage(task) {
     localStorage.setItem('Task.ts', btoa(JSON.stringify(task)));
     localStorage.setItem('date', this.bsvalue);
-    localStorage.setItem('user', btoa(JSON.stringify(this.formGroup.controls.user.value)));
+    localStorage.setItem('userFilter',this.formGroup.controls.user.value);
   }
 
   connectWebSocket() {

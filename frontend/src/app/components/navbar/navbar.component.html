@@ -2,25 +2,33 @@
   <ul class="navbar-nav mr-auto">
     <li class="navbar-nav active">
     <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/list_tasks'">
-       Tasks List</span>
+      <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-bars"></i></button>
+    <mat-menu #menu="matMenu">
+      <button class="btn btn-link nav-link logout " mat-menu-item (click)="goDashboard()">
+        <span><i class="fas fa-chart-line"></i> DashBoard</span>
+      </button>
+    </mat-menu>
+
+
+    Tasks List</span>
       <a class="text-white" routerLink="/list_tasks"><span class="navbar-brand text-white"
-            *ngIf="_loggedUser.getUserLoggedIn() && _route.url!='/list_tasks'">
+                                                           *ngIf="_loggedUser.getUserLoggedIn() && _route.url!='/list_tasks'">
      <i class="fas fa-home"></i> New Task</span></a>
 
     </li>
   </ul>
 
+  <button class="text-white" mat-button [matMenuTriggerFor]="userMenu">
+    <span>{{_loggedUser.getUserFName() + "  "}} <i class="fas fa-angle-down"></i></span></button>
+  <mat-menu #userMenu="matMenu">
+    <button class="btn btn-link nav-link logout " *ngIf="_loggedUser.getUser()!=null" mat-menu-item
+            (click)="goProfile()">
+      <span><i class=" fas fa-user-alt"></i> Profile</span>
 
-  <li ngbDropdown class="nav-item dropdown">
-    <a ngbDropdownToggle
-       class="nav-link dropdown-toggle text-white selectDropdownMenu"><span>{{_loggedUser.getUserFName()+"  "}}<i class="fas fa-user-alt"></i></span></a>
-    <div ngbDropdownMenu class="dropdown-menu logout" aria-labelledby="navbarDropdown">
-      <button class="btn btn-link nav-link" *ngIf="_loggedUser.getUser()!=null"
-              (click)="goProfile()">Profile
-      </button>
-      <button class="btn btn-link nav-link logout "  *ngIf="_loggedUser.getUser()!=null"
-              (click)="logout()">Logout
-      </button>
-    </div>
-  </li>
+    </button>
+    <button class="btn btn-link nav-link logout " mat-menu-item *ngIf="_loggedUser.getUser()!=null" (click)="logout()">
+      <span><i class="fas fa-sign-out-alt"></i> Logout</span>
+    </button>
+  </mat-menu>
+
 </nav>
