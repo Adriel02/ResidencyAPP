@@ -32,8 +32,9 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     if (this._userService.getter() == null) {
       let user = new User();
-      if (localStorage.getItem('user')) {
-        user = JSON.parse(atob(localStorage.getItem('user')));
+      if (localStorage.getItem('userLogged')) {
+        user = JSON.parse(atob(localStorage.getItem('userLogged')));
+        console.log(user);
       }
       this._userService.setter(user);
     }

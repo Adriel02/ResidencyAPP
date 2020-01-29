@@ -3,6 +3,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from '../services/login.service';
 import {Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
+import {UserService} from '../services/user.service';
+import {User} from '../model/User';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +17,10 @@ export class LoginComponent implements OnInit {
   password: string;
   submitted = false;
   error = null;
+  user: User;
+  userNow: User;
 
-  constructor(private _loggedUser: LoginService, private _route: Router, private _auth: AuthService) {
+  constructor(private _loggedUser: LoginService, private _userService: UserService, private _route: Router, private _auth: AuthService) {
   }
 
   ngOnInit() {
@@ -47,6 +51,7 @@ export class LoginComponent implements OnInit {
       this._loggedUser.setUserLoggedIn();
       this._loggedUser.setUser(user);
       this._auth.sendToken(btoa(JSON.stringify(user)));
+      this.userLogged();
       this._route.navigate(['/list_tasks']);
     }, (error) => {
       this.error = error.error;
@@ -54,6 +59,19 @@ export class LoginComponent implements OnInit {
         this.error = {'message': 'User Not Found'};
       }
     });
+
+
+  }
+
+  private userLogged() {
+    this._userService.getUserByUsername(this._loggedUser.getUser().username).subscribe((user) => {
+      this.userNow = new User();
+      this.userNow = user;
+      localStorage.setItem('userLogged',btoa(JSON.stringify(this.userNow)));
+    }, (error) => {
+      console.log(error);
+    });
+
 
   }
 

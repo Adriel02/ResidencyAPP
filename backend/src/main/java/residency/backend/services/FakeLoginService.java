@@ -21,6 +21,7 @@ public class FakeLoginService {
     public UserDTO getUser(String userName) {
         Optional <User> user = userRepository.findByUsername(userName);
         return convertModelToDTO(user);
+
     }
 
     private UserDTO convertModelToDTO(Optional<User> user) {

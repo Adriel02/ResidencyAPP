@@ -138,22 +138,22 @@ public class DBSeeder implements CommandLineRunner {
         Date date = new Date();
         date.setHours(3);
         Audit audit1 = new Audit("State", "Pending", "In Progress", (Date) date.clone());
-        audit1.setId("Audit 1");
+        audit1.setId(java.util.UUID.randomUUID().toString());
         date.setHours(6);
         Audit audit2 = new Audit("State", "In Progress", "Finalized", (Date) date.clone());
-        audit2.setId("Audit 2");
+        audit2.setId(java.util.UUID.randomUUID().toString());
         date.setHours(8);
         Audit audit3 = new Audit("State", "Pending", "Finalized", (Date) date.clone());
-        audit3.setId("Audit 3");
+        audit3.setId(java.util.UUID.randomUUID().toString());
         date.setHours(12);
         Audit audit4 = new Audit("State", "Finalized", "In Progress", (Date) date.clone());
-        audit4.setId("Audit 4");
+        audit4.setId(java.util.UUID.randomUUID().toString());
         date.setHours(4);
         Audit audit5 = new Audit("State", "Finalized", "Pending", (Date) date.clone());
-        audit5.setId("Audit 5");
+        audit5.setId(java.util.UUID.randomUUID().toString());
         date.setHours(7);
         Audit audit6 = new Audit("State", "", "Pending", (Date) date.clone());
-        audit6.setId("Audit 6");
+        audit6.setId(java.util.UUID.randomUUID().toString());
 
         this.auditRepository.deleteAll();
         this.auditRepository.saveAll(Arrays.asList(audit1, audit2, audit3, audit4, audit5,audit6));

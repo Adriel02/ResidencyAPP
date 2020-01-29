@@ -16,13 +16,21 @@ import {AuthGuard} from './Authentication/AuthGuard';
 import {HTTP_INTERCEPTORS, HttpClientModule, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import {MatPaginatorModule, MatSortModule, MatTableModule} from '@angular/material';
+import {
+  _MatMenuDirectivesModule,
+  MatButtonModule, MatIconModule,
+  MatMenuModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatTableModule
+} from '@angular/material';
 import {Observable} from 'rxjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TaskFormComponent} from './components/task-form/task-form.component';
 import {EmployeeTaskFormComponent} from './components/employee-task-form/employee-task-form.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {ProfileComponent} from './components/profile/profile.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -56,7 +64,11 @@ const appRoutes: Routes = [
   {
     path: 'profile', component: ProfileComponent,
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: 'dashboard', component: DashboardComponent,
+    canActivate: [AuthGuard]
+  },
 ];
 
 
@@ -70,6 +82,7 @@ const appRoutes: Routes = [
     EmployeeTaskFormComponent,
     FooterComponent,
     ProfileComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +96,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
+    MatButtonModule,
+    _MatMenuDirectivesModule,
+    MatMenuModule,
+    MatIconModule,
   ],
   providers: [
     ResidencyService, TaskService, SubTaskService, LoginService, AuthGuard, {
