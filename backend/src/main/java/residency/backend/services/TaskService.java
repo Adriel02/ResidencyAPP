@@ -61,6 +61,9 @@ public class TaskService {
                 addIsFinished(task);
                 task.setState("Pending");
             }
+            if(!task.getState().equalsIgnoreCase(taskBefore.getState()) && !task.getState().equalsIgnoreCase("Finalized")){
+                task.setEndDate(null);
+            }
             Audit lastAudit = task.getAudits().get(task.getAudits().size() - 1);
             Audit audit = new Audit("State", lastAudit.getCurrentValue(), task.getState(), new Date());
             auditRepository.save(audit);

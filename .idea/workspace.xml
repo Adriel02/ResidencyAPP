@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27ede6c0-0263-4f07-bfc4-d207007789de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/Icon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="134" column="10" lean-forward="true" selection-start-line="134" selection-start-column="10" selection-end-line="134" selection-end-column="10" />
+            <state relative-caret-position="2006">
+              <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -38,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+            <state relative-caret-position="362">
+              <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -47,29 +43,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+            <state relative-caret-position="190">
+              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -361,14 +339,14 @@
     <property name="ts.external.directory.path" value="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\src" />
-      <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\src\app\components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\src" />
       <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\src\assets" />
       <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\backend\src\main\java\residency\backend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\src" />
+      <recent name="C:\Users\43295236\IdeaProjects\ResidencyAPP\frontend\src\app\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -697,7 +675,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212564000" />
+    <option name="totallyTimeSpent" value="213832000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -710,7 +688,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -722,9 +699,9 @@
       <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.23880596" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="0" sideWeight="0.49946696" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4946695" weight="0.2636656" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4946695" visible="true" weight="0.2636656" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50319827" side_tool="true" visible="true" weight="0.46623793" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5053305" side_tool="true" weight="0.2636656" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.4989339" weight="0.3290461" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.3290461" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
@@ -733,7 +710,7 @@
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.3290461" />
       <window_info anchor="bottom" id="Run" order="11" sideWeight="0.4946695" weight="0.3301179" />
-      <window_info active="true" anchor="bottom" id="Debug" order="12" sideWeight="0.4968017" visible="true" weight="0.46623793" />
+      <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.49626866" weight="0.3601286" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="15" weight="0.3290461" />
@@ -1244,8 +1221,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="134" column="10" lean-forward="true" selection-start-line="134" selection-start-column="10" selection-end-line="134" selection-end-column="10" />
+        <state relative-caret-position="2006">
+          <caret line="133" column="47" selection-start-line="133" selection-start-column="47" selection-end-line="133" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1258,15 +1235,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+        <state relative-caret-position="362">
+          <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+        <state relative-caret-position="190">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
