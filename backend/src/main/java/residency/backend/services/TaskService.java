@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -20,7 +21,7 @@ public class TaskService {
     private AuditRepository auditRepository;
 
     @Autowired
-    public TaskService(TaskRepository taskRepository,AuditRepository auditRepository) {
+    public TaskService(TaskRepository taskRepository, AuditRepository auditRepository) {
         this.taskRepository = taskRepository;
         this.auditRepository = auditRepository;
     }
@@ -40,7 +41,7 @@ public class TaskService {
     public Task createTask(Task task) {
         if (isValidtask(task)) {
             addIsFinished(task);
-            Audit audit = new Audit("State","",task.getState(),new Date());
+            Audit audit = new Audit("State", "", task.getState(), new Date());
             audit.setId(java.util.UUID.randomUUID().toString());
             auditRepository.save(audit);
             task.getAudits().add(audit);
@@ -51,16 +52,17 @@ public class TaskService {
     }
 
 
-
     public Task updateTask(String StringTask) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         Task task = mapper.readValue(StringTask, Task.class);
+        Task taskBefore = (this.taskRepository.findById(task.getId())).orElse(null);
         if (isValidtask(task)) {
-            if(task.getIsFinished()==null){
+            if (task.getIsFinished() == null || !taskBefore.getSubTask().getId().equalsIgnoreCase(task.getSubTask().getId())) {
                 addIsFinished(task);
+                task.setState("Pending");
             }
-            Audit lastAudit = task.getAudits().get(task.getAudits().size()-1);
-            Audit audit = new Audit("State",lastAudit.getCurrentValue(),task.getState(),new Date());
+            Audit lastAudit = task.getAudits().get(task.getAudits().size() - 1);
+            Audit audit = new Audit("State", lastAudit.getCurrentValue(), task.getState(), new Date());
             auditRepository.save(audit);
             task.getAudits().add(audit);
             this.taskRepository.save(task);
@@ -70,13 +72,14 @@ public class TaskService {
     }
 
     private boolean isValidtask(Task task) {
-        return  task.getCreationDate() != null &&
+        return task.getCreationDate() != null &&
                 task.getState() != null &&
                 task.getSupervisor() != null;
     }
+
     private void addIsFinished(Task task) {
-        List<Boolean > isFinished = new ArrayList<>();
-        for(String taskToDo : task.getSubTask().getTasksToDo()){
+        List<Boolean> isFinished = new ArrayList<>();
+        for (String taskToDo : task.getSubTask().getTasksToDo()) {
             isFinished.add(false);
         }
         task.setIsFinished(isFinished);

@@ -30,7 +30,7 @@ export class TaskFormComponent implements OnInit {
   private rooms: Room [];
   private floors: Floor[];
   private timeSheet: string;
-  private states: string [] = ['Pending', 'In progress', 'Finalized'];
+  private states: string [] = ['Pending', 'In Progress', 'Finalized'];
   pendingUser: User;
   pendingRole: Role;
 

@@ -75,6 +75,7 @@ export class EmployeeTaskFormComponent implements OnInit {
     console.log(this.isAllTaskFinish());
     if (this.isAllTaskFinish()) {
       this.task.state = EnumResidency.FINALIZED;
+      this.task.endDate = new Date();
     } else if (!this.isAllTaskFinish()) {
       this.task.state = EnumResidency.INPROGRESS;
     } else {
