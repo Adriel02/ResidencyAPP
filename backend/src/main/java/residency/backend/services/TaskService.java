@@ -88,13 +88,8 @@ public class TaskService {
         task.setIsFinished(isFinished);
     }
 
-    public void addAuditToTask(String id, Audit audit) {
-
-        Task task = taskRepository.findById(id).orElse(null);
-
-//        task.getAudits().add(audit);
-
-        taskRepository.save(task);
-
+    public int getTaskByState(String state) {
+        List<Task>tasks = this.taskRepository.findAllByState(state);
+        return tasks.size();
     }
 }

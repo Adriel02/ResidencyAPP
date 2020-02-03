@@ -1,0 +1,35 @@
+.page{
+  padding: 50px;
+}
+
+.defaultValue{
+  border : 3px solid black;
+  text-align: center;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+.pending{
+  background-color: #b9b9b7;
+}
+.inProgress{
+  background-color: #ffd000;
+}
+.finalized{
+  background-color: #50d73f;
+}
+
+
+.filter{
+  text-align: center;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+
+.right {
+  overflow: hidden;
+  float: right;
+}

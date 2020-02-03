@@ -8,7 +8,7 @@ import {EnumResidency} from '../enums/enum-residency.enum';
 })
 export class TaskService {
 
-  private base_url: string = EnumResidency.IP+'/task';
+  private base_url: string = EnumResidency.IP + '/task';
   private _task: Task;
 
   get task(): Task {
@@ -26,8 +26,12 @@ export class TaskService {
     return this._http.get<Task[]>(this.base_url);
   }
 
-  getAllTaskByUser(userId: string){
+  getAllTaskByUser(userId: string) {
     return this._http.get<Task[]>(this.base_url + '/' + userId);
+  }
+
+  getNumberOfTaskByState(state: string) {
+    return this._http.get(this.base_url + '/state/' + state);
   }
 
   deleteTask(id: string) {
@@ -45,10 +49,11 @@ export class TaskService {
   }
 
 
-  setter(task:Task){
-    this.task= task;
+  setter(task: Task) {
+    this.task = task;
   }
-  getter(){
+
+  getter() {
     return this.task;
   }
 }

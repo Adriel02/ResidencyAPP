@@ -62,4 +62,9 @@ public class TaskController {
         template.convertAndSend("/ws/update", newTask);
     }
 
+    @GetMapping("/state/{state}")
+    public int getNumberOfTaskByState(@PathVariable("state") String state){
+        return this.taskService.getTaskByState(state);
+
+    }
 }
