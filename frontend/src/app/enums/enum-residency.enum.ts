@@ -9,5 +9,6 @@ export enum EnumResidency {
   PENDING = 'Pending',
   RESIDENCIAABUELITO = 'Abuelito',
   MORNING = 'morning',
-  AFTERNOON = 'afternoon'
+  AFTERNOON = 'afternoon',
+  NOT_FINALIZED = "NotFinalized"
 }

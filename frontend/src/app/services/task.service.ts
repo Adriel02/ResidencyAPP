@@ -34,6 +34,10 @@ export class TaskService {
     return this._http.get(this.base_url + '/state/' + state);
   }
 
+  getTaskNotFinalizedByUserID(id: string) {
+    return this._http.get<Task[]>(this.base_url + '/' + id + '/' + EnumResidency.NOT_FINALIZED);
+  }
+
   deleteTask(id: string) {
     return this._http.delete(this.base_url + '/' + id);
   }

@@ -11,27 +11,62 @@
     <p>Finalized</p>
     <p>{{this.finalizedTask}}</p>
   </div>
+  <div class="diagrams">
+    <div class="diagram" *ngIf="chartReady">
+      <h3 class="text-center">Average Time</h3>
+      <div>
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                [colors]="barChartColors"
+        >
 
-  <!--<div class="filter right">
-    <label class="text-secondary">Employee</label>
-    <select class="form-control handIcon" name="searchUser" formControlName="user"
-            (change)="applyFilterUser()">
-      <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
-    </select>
-  </div>-->
-
-
-  <div class="barras1" *ngIf="chartReady">
-    <div style="display: block;">
-      <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [legend]="barChartLegend"
-              [chartType]="barChartType"
-      >
-
-      </canvas>
+        </canvas>
+      </div>
     </div>
+
+    <div class="diagram right">
+      <h3 class="text-center">WorkLoad</h3>
+      <div>
+        <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [legend]="pieChartLegend"
+                [chartType]="pieChartType"
+                [colors]="pieChartColors"
+        >
+        </canvas>
+      </div>
+    </div>
+
+
   </div>
+  <!--
+    <form [formGroup]="formGroup">
+      <div class="filter">
+        <label class="text-secondary">Employee</label>
+        <select class="form-control handIcon" name="searchUser" formControlName="user"
+                (change)="applyFilterUser()">
+          <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
+        </select>
+      </div>
+    </form>
+
+      <div class="diagram" >
+        <h3 class="text-center">Time to Finish Task</h3>
+        <div>
+          <canvas baseChart
+                  [datasets]="barChartDataByUser"
+                  [labels]="barChartLabelsByUser"
+                  [legend]="barChartLegendByUser"
+                  [chartType]="barChartTypeByUser"
+                  [colors]="barChartColorsByUser"
+          >
+
+          </canvas>
+        </div>
+      </div>-->
 </div>

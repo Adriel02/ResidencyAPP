@@ -37,6 +37,12 @@
   float: right;
 }
 
-.barras1 {
+.diagram {
   width: 33%;
+  display: inline-block;
+}
+
+.diagrams{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
