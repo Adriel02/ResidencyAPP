@@ -1,27 +1,30 @@
-.page{
+.page {
   padding: 50px;
 }
 
-.defaultValue{
-  border : 3px solid black;
+.defaultValue {
+  border: 3px solid black;
   text-align: center;
   display: inline-block;
   width: 200px;
   height: 100px;
   margin: 1em;
 }
-.pending{
+
+.pending {
   background-color: #b9b9b7;
 }
-.inProgress{
+
+.inProgress {
   background-color: #ffd000;
 }
-.finalized{
+
+.finalized {
   background-color: #50d73f;
 }
 
 
-.filter{
+.filter {
   text-align: center;
   display: inline-block;
   width: 200px;
@@ -32,4 +35,8 @@
 .right {
   overflow: hidden;
   float: right;
+}
+
+.barras1 {
+  width: 33%;
 }

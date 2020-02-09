@@ -3,21 +3,35 @@
     <p>Pending</p>
     <p>{{this.pendingTask}}</p>
   </div>
-  <div class="defaultValue inProgress" >
+  <div class="defaultValue inProgress">
     <p>In Progress</p>
     <p>{{this.inProgressTask}}</p>
   </div>
-  <div class="defaultValue finalized" >
+  <div class="defaultValue finalized">
     <p>Finalized</p>
     <p>{{this.finalizedTask}}</p>
   </div>
 
-  <div class="filter right">
+  <!--<div class="filter right">
     <label class="text-secondary">Employee</label>
     <select class="form-control handIcon" name="searchUser" formControlName="user"
             (change)="applyFilterUser()">
       <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
     </select>
+  </div>-->
+
+
+  <div class="barras1" *ngIf="chartReady">
+    <div style="display: block;">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+      >
+
+      </canvas>
+    </div>
   </div>
 </div>
-

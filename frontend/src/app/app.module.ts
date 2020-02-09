@@ -30,7 +30,8 @@ import {TaskFormComponent} from './components/task-form/task-form.component';
 import {EmployeeTaskFormComponent} from './components/employee-task-form/employee-task-form.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {ProfileComponent} from './components/profile/profile.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {ChartsModule} from 'ng2-charts';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -100,6 +101,7 @@ const appRoutes: Routes = [
     _MatMenuDirectivesModule,
     MatMenuModule,
     MatIconModule,
+    ChartsModule,
   ],
   providers: [
     ResidencyService, TaskService, SubTaskService, LoginService, AuthGuard, {

@@ -61,4 +61,6 @@ public class UserController {
     public void deleteUser(@PathVariable("id") String id) {
         this.userService.deleteUser(id);
     }
+
+
 }

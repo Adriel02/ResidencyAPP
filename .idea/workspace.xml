@@ -4,15 +4,429 @@
     <bookmark url="file://$PROJECT_DIR$/frontend/src/app/services/TimeSheet.service.ts" line="19" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27ede6c0-0263-4f07-bfc4-d207007789de" name="Default Changelist" comment="Se cambian datos para control del endDate">
+    <list default="true" id="27ede6c0-0263-4f07-bfc4-d207007789de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/dist/Chart.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/dist/Chart.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/dist/Chart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/dist/Chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/dist/Chart.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/dist/Chart.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chart.js/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color-string/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color-string/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color-string/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color-string/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color-string/color-string.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color-string/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color-string/test/basic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/chartjs-color/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/conversions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/node_modules/color-name/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/node_modules/color-name/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/node_modules/color-name/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/node_modules/color-name/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/node_modules/color-name/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/node_modules/color-name/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/node_modules/color-name/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-convert/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-name/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-name/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-name/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/color-name/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/ender.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ar-dz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ar-kw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ar-ly.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ar-ma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ar-sa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ar-tn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/be.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/bm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/bn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/bo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/bs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/cv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/de-at.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/de-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/dv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/en-SG.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/en-au.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/en-ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/en-gb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/en-ie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/en-il.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/en-nz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/eo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/es-do.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/es-us.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/fo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/fr-ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/fr-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/fy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/gd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/gom-latn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/gu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/hy-am.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/it-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/jv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ka.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/kk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/kn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ku.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/lb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/lo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/me.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/mi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/mn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/mr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ms-my.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/mt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/my.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ne.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/nl-be.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/nn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/pa-in.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/sd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/se.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/si.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/sq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/sr-cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/sw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/te.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/tet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/tg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/tl-ph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/tlh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/tzl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/tzm-latn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/tzm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ug-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/ur.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/uz-latn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/uz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/x-pseudo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/yo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/zh-hk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/locale/zh-tw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/min/locales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/min/locales.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/min/moment-with-locales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/min/moment-with-locales.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/min/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/moment.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/package.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/check-overflow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/date-from-array.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/from-anything.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/from-array.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/from-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/from-string-and-array.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/from-string-and-format.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/from-string.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/local.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/parsing-flags.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/utc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/create/valid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/abs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/add-subtract.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/as.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/bubble.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/clone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/constructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/create.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/duration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/get.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/humanize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/iso-string.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/prototype.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/duration/valid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/format/format.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/base-config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/constructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/formats.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/invalid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/lists.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/locale.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/locales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/ordinal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/pre-post-format.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/prototype.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/relative.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/locale/set.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/add-subtract.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/clone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/compare.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/constructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/creation-data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/diff.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/format.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/from.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/get-set.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/locale.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/min-max.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/now.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/prototype.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/start-end-of.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/to-type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/to.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/moment/valid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/parse/regex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/parse/token.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/aliases.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/day-of-month.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/day-of-week.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/day-of-year.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/hour.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/millisecond.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/minute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/month.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/offset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/priorities.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/quarter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/second.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/timestamp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/timezone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/units.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/week-calendar-utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/week-year.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/week.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/units/year.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/abs-ceil.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/abs-floor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/abs-round.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/compare-arrays.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/defaults.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/deprecate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/extend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/has-own-prop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/hooks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/index-of.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/is-array.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/is-date.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/is-function.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/is-number.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/is-object-empty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/is-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/is-undefined.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/keys.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/mod.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/some.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/to-int.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/lib/utils/zero-fill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ar-dz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ar-kw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ar-ly.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ar-ma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ar-sa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ar-tn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/be.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/bm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/bn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/bo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/bs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/cv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/cy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/de-at.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/de-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/dv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/en-SG.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/en-au.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/en-ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/en-gb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/en-ie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/en-il.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/en-nz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/eo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/es-do.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/es-us.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/fo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/fr-ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/fr-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/fy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/gd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/gom-latn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/gu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/hy-am.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/it-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/jv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ka.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/kk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/kn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ku.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/lb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/lo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/me.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/mi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/mk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/mn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/mr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ms-my.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/mt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/my.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ne.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/nl-be.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/nn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/pa-in.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/sd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/se.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/si.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/sq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/sr-cyrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ss.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/sw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/te.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tl-ph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tlh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tzl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tzm-latn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/tzm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ug-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/ur.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/uz-latn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/uz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/x-pseudo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/yo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/zh-hk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/locale/zh-tw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/moment/src/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,8 +445,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state relative-caret-position="1445">
+              <caret line="94" column="75" selection-start-line="94" selection-start-column="75" selection-end-line="94" selection-end-column="75" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -41,48 +455,65 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/services/task.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#964#965#0" expanded="true" />
+                <element signature="e#1028#1029#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+            <state relative-caret-position="595">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <entry file="file://$PROJECT_DIR$/frontend/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="459">
+                <caret line="27" selection-start-line="27" selection-end-line="27" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/services/user.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="17" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="8" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="122" column="3" lean-forward="true" selection-start-line="112" selection-start-column="1" selection-end-line="122" selection-end-column="3" />
+            <state relative-caret-position="289">
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
               <folding>
-                <element signature="e#0#70#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,8 +531,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jefedepartamento</find>
-      <find>contain</find>
       <find>surname</find>
       <find>surnames</find>
       <find>192.168.1.94</find>
@@ -130,6 +559,8 @@
       <find>in progress</find>
       <find>for</find>
       <find>users</find>
+      <find>angular.json</find>
+      <find>angular.js</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,11 +601,8 @@
         <option value="$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dto/GeneralUserDTO.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/frontend/src/app/services/user.service.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.html" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/UserService.java" />
-        <option value="$PROJECT_DIR$/frontend/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" />
@@ -182,17 +610,20 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/FakeLoginController.java" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/index.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.ts" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/TaskRepository.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/services/user.service.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css" />
       </list>
     </option>
@@ -205,8 +636,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="556" />
-    <option name="y" value="-15" />
+    <option name="x" value="229" />
+    <option name="y" value="172" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -219,7 +650,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -374,6 +804,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,6 +960,8 @@
       <workItem from="1580322244770" duration="10861000" />
       <workItem from="1580483526206" duration="964000" />
       <workItem from="1580667948838" duration="3369000" />
+      <workItem from="1580929000510" duration="11518000" />
+      <workItem from="1581274463683" duration="617000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1555248258417</created>
@@ -733,11 +1166,18 @@
       <option name="project" value="LOCAL" />
       <updated>1580333096995</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Se empieza con el DashBoard&#10; (Ya se muestran valores de estados de tareas en este momento)">
+      <created>1580761721246</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1580761721246</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219088000" />
+    <option name="totallyTimeSpent" value="232087000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -758,16 +1198,16 @@
       <window_info id="npm" order="4" side_tool="true" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info id="Designer" order="6" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.24147122" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.2468017" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="0" sideWeight="0.49946696" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4946695" weight="0.2636656" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.4946695" visible="true" weight="0.2636656" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50586355" side_tool="true" weight="0.13719185" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.4989339" weight="0.3290461" />
       <window_info anchor="bottom" id="Java Enterprise" order="5" weight="0.3290461" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290461" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.3290461" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.3290461" />
@@ -792,7 +1232,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Frontend files&#10;&#10;1) Model" />
     <MESSAGE value="Funciona Login" />
     <MESSAGE value="Casi funciona el list task" />
     <MESSAGE value="FUNCIONA EL BORRADO DE TAREAS" />
@@ -817,7 +1256,8 @@
     <MESSAGE value="Gestión de contraseñas con MD5 completado.&#10;&#10;Todavía se observa el error en el primer login --&gt; no se observa &#10;correctamente el Profile." />
     <MESSAGE value="Auditoría de estados de tarea finalizada.&#10; - En creación se crea una auditoría sin estado a Pendiente.&#10; - En modificación se crean auditorías con el estado que estaba al que &#10; cambia.&#10;&#10;Todavía se observa el error en el primer login --&gt; no se observa &#10;correctamente el Profile." />
     <MESSAGE value="Se cambia el Navbar --&gt; Mejor diseño&#10;&#10;El navbar funciona correctamente. Todos los links son correctos y &#10;funcionan correctamente.&#10;&#10;Falta hacer el DashBoard con los datos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se cambia el Navbar --&gt; Mejor diseño&#10;&#10;El navbar funciona correctamente. Todos los links son correctos y &#10;funcionan correctamente.&#10;&#10;Falta hacer el DashBoard con los datos." />
+    <MESSAGE value="Se empieza con el DashBoard&#10; (Ya se muestran valores de estados de tareas en este momento)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se empieza con el DashBoard&#10; (Ya se muestran valores de estados de tareas en este momento)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -827,12 +1267,6 @@
           <line>91</line>
           <properties />
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -844,42 +1278,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dto/GeneralUserDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="e#1889#1890#0" expanded="true" />
-            <element signature="e#1920#1921#0" expanded="true" />
-            <element signature="e#1968#1969#0" expanded="true" />
-            <element signature="e#2008#2009#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="e#1993#1994#0" expanded="true" />
-            <element signature="e#2025#2026#0" expanded="true" />
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2120#2121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -891,16 +1289,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="559" selection-start-line="559" selection-end-line="559" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,16 +1442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/user.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/services/login.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1073,26 +1451,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/favicon.ico">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="68" column="20" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/angular.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1169,39 +1527,6 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/app/model/TimeSheet.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/User.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/TaskRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1215,30 +1540,6 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/task.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="122" column="3" lean-forward="true" selection-start-line="112" selection-start-column="1" selection-end-line="122" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1249,27 +1550,155 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" selection-start-line="4" selection-start-column="8" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/model/User.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="103" column="24" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#843#844#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="6" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/angular.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1513">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        <state relative-caret-position="1445">
+          <caret line="94" column="75" selection-start-line="94" selection-start-column="75" selection-end-line="94" selection-end-column="75" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/task.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#1028#1029#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="595">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="680">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/services/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="459">
+            <caret line="27" selection-start-line="27" selection-end-line="27" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

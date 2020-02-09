@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {Task} from 'src/app/model/Task';
 import {EnumResidency} from '../../enums/enum-residency.enum';
 import {User} from '../../model/User';
+import {logger} from 'codelyzer/util/logger';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,22 @@ export class DashboardComponent implements OnInit {
   pendingTask;
   inProgressTask;
   finalizedTask;
-  users: User [];
+  users = {};
+
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+  };
+
+  public barChartLabels = [];
+
+  public barChartType = 'bar';
+
+  public barChartLegend = true;
+
+  public barChartData;
+  chartReady: boolean;
+
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -32,48 +48,60 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.giveMeData();
+    this.getUserByRole();
   }
 
-  private giveMeData() {
-
-    this._taskService.getNumberOfTaskByState(EnumResidency.PENDING).subscribe( (num) => {
-      console.log(num);
+  private async giveMeData() {
+    this._taskService.getNumberOfTaskByState(EnumResidency.PENDING).subscribe((num) => {
       this.pendingTask = num;
     }, (error) => {
-      console.log(error)
+      console.log(error);
     });
-    this._taskService.getNumberOfTaskByState(EnumResidency.INPROGRESS).subscribe( (num) => {
-      console.log(num);
+    this._taskService.getNumberOfTaskByState(EnumResidency.INPROGRESS).subscribe((num) => {
       this.inProgressTask = num;
     }, (error) => {
-      console.log(error)
+      console.log(error);
     });
-    this._taskService.getNumberOfTaskByState(EnumResidency.FINALIZED).subscribe( (num) => {
-      console.log(num);
+    this._taskService.getNumberOfTaskByState(EnumResidency.FINALIZED).subscribe((num) => {
       this.finalizedTask = num;
     }, (error) => {
-      console.log(error)
+      console.log(error);
     });
 
-    this.getUserByRole();
 
   }
 
   private getUserByRole() {
-    this._userService.getUsersByRole(EnumResidency.TRABAJADOR).subscribe((user) => {
-        let trabajadorAll = new User();
-        trabajadorAll.name = EnumResidency.ALL;
-        this.users = user;
-        this.users.splice(0, 0, trabajadorAll);
-      }, (error) => {
-        console.log(error);
-      }
-    );
+    this._userService.getUsersByRole(EnumResidency.TRABAJADOR).subscribe((users) => {
+      this.users = users;
+      this.getAllUsers();
+    }, (error) => {
+      console.log(error);
+    });
   }
 
   applyFilterUser() {
 
+  }
+
+
+  private getAllUsers() {
+    for (let i in this.users) {
+      this.barChartLabels.push(this.users[i].name);
+    }
+
+    this.barChartData = [
+      {data: [33, 25, 30, 40, 22, 18], label: 'Average Time to Finish Task (Hours)'}
+    ];
+
+    this.chartReady = true;
+  }
+
+  private getAverage(user: User) {
+    let tasks;
+
+    tasks = this._taskService.getAllTaskByUser(user.id).toPromise();
+    console.log(tasks);
   }
 }
