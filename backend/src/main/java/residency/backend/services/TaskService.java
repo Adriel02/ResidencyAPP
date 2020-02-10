@@ -92,4 +92,16 @@ public class TaskService {
         List<Task>tasks = this.taskRepository.findAllByState(state);
         return tasks.size();
     }
+
+    public List<Task> getTaskNotFinalizedByUserID(String userID){
+        List<Task> tasks = this.taskRepository.findAllByUserId(userID);
+        List<Task> tasksNotFinalized = new ArrayList<>();
+
+        for(Task t: tasks){
+            if(!t.getState().equals("Finalized")){
+                tasksNotFinalized.add(t);
+            }
+        }
+        return tasksNotFinalized;
+    }
 }

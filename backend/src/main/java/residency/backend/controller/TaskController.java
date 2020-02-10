@@ -67,4 +67,10 @@ public class TaskController {
         return this.taskService.getTaskByState(state);
 
     }
+
+    @GetMapping("/{userID}/NotFinalized")
+    public List<Task> getTaskNoFinalizedByUserID(@PathVariable String userID){
+        return this.taskService.getTaskNotFinalizedByUserID(userID);
+    }
+
 }
