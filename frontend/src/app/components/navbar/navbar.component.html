@@ -11,9 +11,17 @@
 
 
     Tasks List</span>
-      <a class="text-white" routerLink="/list_tasks"><span class="navbar-brand text-white"
-                                                           *ngIf="_loggedUser.getUserLoggedIn() && _route.url!='/list_tasks'">
-     <i class="fas fa-home"></i> New Task</span></a>
+      <a class="text-white" routerLink="/list_tasks">
+        <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/task'">
+     <i class="fas fa-home"></i> New Task
+        </span>
+        <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/profile'">
+     <i class="fas fa-home"></i> Profile
+        </span>
+        <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/dashboard'">
+     <i class="fas fa-home"></i> DashBoard
+        </span>
+      </a>
 
     </li>
   </ul>
