@@ -106,11 +106,9 @@ export class DashboardComponent implements OnInit {
 
 
   private getTaskByUsername() {
-    console.log(this.users);
     for (let i in this.users) {
       this._taskService.getTaskNotFinalizedByUserID(this.users[i].id).subscribe((tasks) => {
         this.pieChartLabels.push(this.users[i].name);
-        console.log(this.users[i].name + '-' + tasks.length);
         this.pieChartData.push(tasks.length);
       }, (error) => {
         console.log(error);

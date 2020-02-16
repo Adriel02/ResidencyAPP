@@ -39,8 +39,6 @@ export class ProfileComponent implements OnInit {
       this._userService.setter(user);
     }
     this.user = this._userService.getter();
-    console.log(this.user);
-
     this.generateFormGroup();
   }
 

@@ -72,7 +72,6 @@ export class EmployeeTaskFormComponent implements OnInit {
     if (this.taskForm.controls.incidence != null) {
       this.task.incidence = this.taskForm.controls.incidence.value;
     }
-    console.log(this.isAllTaskFinish());
     if (this.isAllTaskFinish()) {
       this.task.state = EnumResidency.FINALIZED;
       this.task.endDate = new Date();

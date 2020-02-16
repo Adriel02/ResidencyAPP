@@ -53,4 +53,7 @@ export class NavbarComponent implements OnInit {
   }
 
 
+  isBoss() {
+    return this._loggedUser.getRoleUser() == EnumResidency.JEFEDEPARTAMENTO;
+  }
 }

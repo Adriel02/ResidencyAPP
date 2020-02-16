@@ -4,7 +4,7 @@
     <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/list_tasks'">
       <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-bars"></i></button>
     <mat-menu #menu="matMenu">
-      <button class="btn btn-link nav-link logout " mat-menu-item (click)="goDashboard()">
+      <button class="btn btn-link nav-link logout " mat-menu-item (click)="goDashboard()" *ngIf=" isBoss()">
         <span><i class="fas fa-chart-line"></i> DashBoard</span>
       </button>
     </mat-menu>

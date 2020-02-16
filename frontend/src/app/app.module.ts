@@ -32,6 +32,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {ChartsModule} from 'ng2-charts';
+import {OnlyBossGuard} from './Authentication/OnlyBossGuard';
 
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -52,7 +53,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'task', component: TaskFormComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'update', component: EmployeeTaskFormComponent,
@@ -68,7 +69,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'dashboard', component: DashboardComponent,
-    canActivate: [AuthGuard]
+    canActivate: [OnlyBossGuard]
   },
 ];
 
@@ -104,7 +105,7 @@ const appRoutes: Routes = [
     ChartsModule,
   ],
   providers: [
-    ResidencyService, TaskService, SubTaskService, LoginService, AuthGuard, {
+    ResidencyService, TaskService, SubTaskService, LoginService, AuthGuard, OnlyBossGuard, {
       provide: HTTP_INTERCEPTORS,
       useClass: XhrInterceptor,
       multi: true

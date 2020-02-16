@@ -120,7 +120,6 @@ export class TaskFormComponent implements OnInit {
     this.formToTask();
     if (this.task.id == undefined) {
       this.task.creationDate = new Date();
-      console.log(this._loggedUser.getUser());
       this.task.supervisor = this._loggedUser.getUser();
       this._taskService.createTask(this.task).subscribe(() => {
         this.successMessage('create');
