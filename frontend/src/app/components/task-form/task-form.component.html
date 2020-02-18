@@ -97,14 +97,14 @@
         </div>
 
 
-        <div class="buttons">
+        <div >
           <button *ngIf="task.id==null" type="submit" name="save" class="btn button-create button"><i
             class="fas fa-check"></i> Create task
           </button>
           <button *ngIf="task.id!=null" type="submit" name="save" class="btn button-create button"><i
             class="fas fa-check"></i> Update task
           </button>
-          <button type="button" class="btn button-cancel ml-2 button1" routerLink="/list_tasks"><i
+          <button type="button" class="btn button-cancel button1" routerLink="/list_tasks"><i
             class="fas fa-times"></i> Cancel
           </button>
         </div>

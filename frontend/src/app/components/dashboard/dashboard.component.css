@@ -9,6 +9,7 @@
   width: 200px;
   height: 100px;
   margin: 1em;
+
 }
 
 .pending {
@@ -45,4 +46,44 @@
 .diagrams{
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+.tasks{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+@media (max-width: 1200px) {
+
+  .page{
+    padding: 25px;
+  }
+
+
+  .diagram {
+    display: block;
+    width: 100%;
+    padding: 5px;
+  }
+  .right {
+  }
+  .diagrams{
+
+  }
+
+}
+
+@media (max-width: 400px) {
+  h3{
+    font-size: 18px;
+  }
+  .defaultValue {
+    border: 3px solid black;
+    text-align: center;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    margin: 1em;
+  }
 }

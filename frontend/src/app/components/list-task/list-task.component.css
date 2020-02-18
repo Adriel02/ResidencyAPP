@@ -79,3 +79,19 @@ mat-row:nth-child(4n+1), mat-row:nth-child(4n+3) {
     justify-content: end;
   }
 }
+
+
+@media (max-width: 670px) {
+  .icon-status{
+    width: 25px;
+  }
+  .optionsIcons{
+    justify-content: center;
+  }
+  .areaInformation{
+    display: none;
+  }
+  .taskInformation{
+    justify-content: center;
+  }
+}

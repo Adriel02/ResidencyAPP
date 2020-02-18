@@ -7,9 +7,16 @@
   <component name="ChangeListManager">
     <list default="true" id="27ede6c0-0263-4f07-bfc4-d207007789de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Authentication/OnlyBossGuard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Authentication/OnlyBossGuard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,24 +31,12 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/Authentication/OnlyBossGuard.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="238">
+              <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -58,8 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bsvalue</find>
-      <find>local</find>
       <find>app</find>
       <find>states</find>
       <find>applyFilterState</find>
@@ -88,6 +81,8 @@
       <find>equals</find>
       <find>boss</find>
       <find>console.log</find>
+      <find>optionsColumSize</find>
+      <find>area</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -101,17 +96,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/src/app/components/footer/footer.component.css" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/TimeSheetRepository.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TimeSheetService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TimeSheetController.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/TimeSheet.java" />
         <option value="$PROJECT_DIR$/frontend/src/app/model/User.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/model/TimeSheet.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/services/TimeSheet.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.css" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.css" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/UserRepository.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/User.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dto/UserNoPasswordDTO.java" />
@@ -122,9 +112,7 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Audit.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/AuditRepository.java" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dto/GeneralUserDTO.java" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.html" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/UserService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/DBSeeder.java" />
         <option value="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" />
@@ -140,8 +128,6 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/services/TaskService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java" />
         <option value="$PROJECT_DIR$/frontend/src/app/services/task.service.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css" />
-        <option value="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.ts" />
@@ -152,6 +138,15 @@
         <option value="$PROJECT_DIR$/frontend/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/Authentication/OnlyBossGuard.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.html" />
       </list>
     </option>
   </component>
@@ -297,6 +292,24 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="navbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ResidencyAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="task-form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ResidencyAPP" type="b2602c69:ProjectViewProjectNode" />
@@ -486,7 +499,8 @@
       <workItem from="1581274463683" duration="9117000" />
       <workItem from="1581292764204" duration="151000" />
       <workItem from="1581773716491" duration="242000" />
-      <workItem from="1581872004136" duration="1967000" />
+      <workItem from="1581872004136" duration="2941000" />
+      <workItem from="1582048882128" duration="5219000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1555248258417</created>
@@ -733,11 +747,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581873804572</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Los  No-Supervisores no verán el menú en el NAVBAR">
+      <created>1581874016951</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1581874016951</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242947000" />
+    <option name="totallyTimeSpent" value="249140000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -759,10 +780,10 @@
       <window_info id="npm" order="4" side_tool="true" />
       <window_info id="Web" order="5" side_tool="true" />
       <window_info id="Designer" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.25479743" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.25746268" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="0" sideWeight="0.49946696" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4946695" weight="0.2636656" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4946695" visible="true" weight="0.2636656" />
       <window_info anchor="bottom" id="Docker" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50586355" side_tool="true" weight="0.13719185" />
       <window_info anchor="bottom" id="Messages" order="4" sideWeight="0.4989339" weight="0.3290461" />
@@ -772,7 +793,7 @@
       <window_info anchor="bottom" id="Spring" order="8" weight="0.3290461" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.15648445" />
-      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49413645" visible="true" weight="0.3301179" />
+      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49413645" weight="0.3301179" />
       <window_info anchor="bottom" id="Debug" order="12" sideWeight="0.49626866" weight="0.28938907" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -829,8 +850,47 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Hay cosas en el Create (subTask, users, additionalInformation)&#10;&#10;Falta que funcione el create" />
     <MESSAGE value="Funciona el Create&#10;Se añade al modelo Floor y Room para guardar en BBDD las habitaciones y los pisos" />
     <MESSAGE value="Funciona el CREATE y el UPDATE" />
     <MESSAGE value="Se añade Enums&#10;Se crean bien las tareas.&#10;Se controla el estado de Pendiente" />
@@ -855,7 +915,8 @@
     <MESSAGE value="Continuo con el DashBoard&#10; 1º DIAGRAMA DE BARRAS COMPLETADO&#10; 1º GRAFICO CIRCULAR COMPLETADO&#10; 2º DIAGRAMA DE BARRAS INCOMPLETO, CON BUGS&#10; &#10; Además se aáde un método en taskService para tener la carga de trabajo&#10; de cada trabajador, es decir, cuantas tareas no finalizadas tiene.&#10; &#10; Se añade al ENUM NotFinalized haciendo referencia a tareas no Finalizadas." />
     <MESSAGE value="Cambio en Navbar para que se observe en que pestaña estamos" />
     <MESSAGE value="No se permite a No-Supevisores entrar en DASHBOARD" />
-    <option name="LAST_COMMIT_MESSAGE" value="No se permite a No-Supevisores entrar en DASHBOARD" />
+    <MESSAGE value="Los  No-Supervisores no verán el menú en el NAVBAR" />
+    <option name="LAST_COMMIT_MESSAGE" value="Los  No-Supervisores no verán el menú en el NAVBAR" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -866,53 +927,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/model/Audit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1201#1202#0" expanded="true" />
-            <element signature="e#1236#1237#0" expanded="true" />
-            <element signature="e#1292#1293#0" expanded="true" />
-            <element signature="e#1340#1341#0" expanded="true" />
-            <element signature="e#1374#1375#0" expanded="true" />
-            <element signature="e#1406#1407#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1496#1497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/phrase.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="184" column="16" selection-start-line="184" selection-start-column="16" selection-end-line="184" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/dao/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/FakeLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -985,13 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1024,13 +1031,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/employee-task-form/employee-task-form.component.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/environments/environment.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1137,54 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/residency/backend/controller/TaskController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -1202,16 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1282,10 +1224,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="56" column="76" selection-start-line="56" selection-start-column="76" selection-end-line="56" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/components/navbar/navbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state relative-caret-position="68">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/dashboard/dashboard.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/task-form/task-form.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/list-task/list-task.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="26" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/components/profile/profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
         </state>
       </provider>
     </entry>

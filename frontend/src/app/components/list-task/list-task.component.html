@@ -56,13 +56,13 @@
       </ng-container>
 
       <ng-container matColumnDef="subTask.id">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Task</mat-header-cell>
-        <mat-cell *matCellDef="let task">{{task.subTask.id}}</mat-cell>
+        <mat-header-cell class="taskInformation" *matHeaderCellDef mat-sort-header>Task</mat-header-cell>
+        <mat-cell class="taskInformation"  *matCellDef="let task">{{task.subTask.id}}</mat-cell>
       </ng-container>
-      º
+
       <ng-container matColumnDef="room.number">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Area</mat-header-cell>
-        <mat-cell *matCellDef="let task">
+        <mat-header-cell class="areaInformation" *matHeaderCellDef mat-sort-header class="areaInformation">Area</mat-header-cell>
+        <mat-cell class="areaInformation" *matCellDef="let task">
           <span *ngIf="task.room.number < 10">{{task.floorNumber + "0" + task.room.number}}</span>
           <span *ngIf="task.room.number >= 10">{{task.floorNumber + "" + task.room.number}}</span>
         </mat-cell>
@@ -99,9 +99,9 @@
       <ng-container matColumnDef="Options">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
         <mat-cell class="optionsColumSize" *matCellDef="let task">
-          <div class="row">
+          <div class="row optionsIcons">
 
-            <button *ngIf="isBoss()" class="btn text-secondary"><i
+            <button *ngIf="isBoss()" class="btn text-secondary rigth"><i
               class="fas fa-pen fa-sm right modifyTask" (click)="updateTask(task)"></i></button>
 
             <button *ngIf="!isBoss()" class="btn text-secondary"><i

@@ -2,7 +2,7 @@
   <ul class="navbar-nav mr-auto">
     <li class="navbar-nav active">
     <span class="navbar-brand text-white" *ngIf="_loggedUser.getUserLoggedIn() && _route.url=='/list_tasks'">
-      <div *ngIf="isBoss()">
+      <div *ngIf="isBoss()" class="menu">
         <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-bars"></i></button>
           <mat-menu #menu="matMenu">
             <button class="btn btn-link nav-link logout " mat-menu-item (click)="goDashboard()">

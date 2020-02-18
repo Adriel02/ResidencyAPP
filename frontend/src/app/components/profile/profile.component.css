@@ -13,3 +13,32 @@
   background-color: #2e73b0;
   color: white;
 }
+.button1{
+  background-color: #ce3311;
+  color: white;
+}
+.button,.button1{
+  margin:5px;
+}
+.buttons{
+  margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+  .actionPage{
+    margin: auto;
+    width: 75%;
+  }
+  .mainPage{
+    padding: 25px;
+  }
+
+
+}
+
+@media (max-width: 670px) {
+  .button,.button1{
+    margin:5px;
+    width: 100%;
+  }
+}

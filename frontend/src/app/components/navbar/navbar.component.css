@@ -27,3 +27,7 @@ nav{
   height: 64px;
   font-family: 'Catamaran', sans-serif;
 }
+
+.menu{
+  display: inline;
+}

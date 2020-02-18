@@ -33,4 +33,9 @@ textarea{
   .mainPage{
     padding: 20px;
   }
+
+  .button,.button1{
+    margin:5px;
+    width: 100%;
+  }
 }
