@@ -1,6 +1,7 @@
 import {SubTask} from './SubTask';
 import {User} from './User';
 import {Room} from './Room';
+import {Audit} from './Audit';
 
 export class Task {
   id: string;
@@ -16,8 +17,6 @@ export class Task {
   incidence: string;
   additionalInformation: string;
   state: string;
+  audits: Audit [];
 
-  constructor() {
-    this.state = 'Pending';
-  }
 }

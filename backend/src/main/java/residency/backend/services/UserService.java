@@ -38,7 +38,10 @@ public class UserService {
     public User getUserByUsername(String username) {
         Optional<User> user = this.userRepository.findByUsername(username);
         return user.orElse(null);
-        //return convertModelToDTO(user);
+    }
+    public User getUserByName(String name) {
+        Optional<User> user = this.userRepository.findByName(name);
+        return user.orElse(null);
     }
 
     public User createUser(User user) {

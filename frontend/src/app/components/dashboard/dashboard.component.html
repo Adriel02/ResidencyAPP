@@ -47,29 +47,42 @@
 
 
   </div>
-  <!--
-      <form [formGroup]="formGroup">
-        <div class="filter">
-          <label class="text-secondary">Employee</label>
-          <select class="form-control handIcon" name="searchUser" formControlName="user"
-                  (change)="applyFilterUser()">
-            <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
-          </select>
-        </div>
-      </form>
 
-        <div class="diagram" >
-          <h3 class="text-center">Time to Finish Task</h3>
-          <div>
-            <canvas baseChart
-                    [datasets]="barChartDataByUser"
-                    [labels]="barChartLabelsByUser"
-                    [legend]="barChartLegendByUser"
-                    [chartType]="barChartTypeByUser"
-                    [colors]="barChartColorsByUser"
-            >
+  <form [formGroup]="formGroup">
+    <div class="filter">
+      <label class="text-secondary">Employee</label>
+      <select class="form-control handIcon" name="searchUser" formControlName="user"
+              (change)="applyFilterUser()">
+        <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
+      </select>
+    </div>
+  </form>
 
-            </canvas>
-          </div>
-        </div>-->
+  <div class="diagram" *ngIf="show">
+    <h3 class="text-center">Time to Finish Task</h3>
+    <div>
+      <canvas baseChart
+              [datasets]="barChartDataByUser"
+              [labels]="barChartLabelsByUser"
+              [options]="barChartOptions"
+              [legend]="barChartLegendByUser"
+              [chartType]="barChartTypeByUser"
+              [colors]="barChartColorsByUser"
+      >
+
+      </canvas>
+    </div>
+  </div>
+
+  <div class="diagram right">
+    <h3 class="text-center">Tasks State (%)</h3>
+    <canvas baseChart
+            [labels]="doughnutChartLabels"
+            [datasets]="doughnutChartData"
+            [chartType]="doughnutChartType"
+    >
+
+    </canvas>
+  </div>
+
 </div>

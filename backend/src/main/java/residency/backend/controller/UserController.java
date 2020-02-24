@@ -44,6 +44,11 @@ public class UserController {
         return this.userService.getUserByUsername(username);
     }
 
+    @GetMapping("/name/{name}")
+    public User getUserByName(@PathVariable String name) {
+        return this.userService.getUserByName(name);
+    }
+
     @PostMapping
     public void createUser(@RequestBody User user) {
         this.userService.createUser(user);

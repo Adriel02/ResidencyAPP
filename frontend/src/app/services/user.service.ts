@@ -18,6 +18,10 @@ export class UserService {
     return this._http.get<User>(this.base_url + '/username/' + username);
   }
 
+  getUserByName(name: string) {
+    return this._http.get<User>(this.base_url + '/name/' + name);
+  }
+
   getUsersByRole(role: string) {
     return this._http.get<User[]>(this.base_url + '/role/' + role);
   }

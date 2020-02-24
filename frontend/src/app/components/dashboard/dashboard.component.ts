@@ -6,6 +6,8 @@ import {TaskService} from '../../services/task.service';
 import {Router} from '@angular/router';
 import {Task} from 'src/app/model/Task';
 import {EnumResidency} from '../../enums/enum-residency.enum';
+import {User} from '../../model/User';
+import {Audit} from '../../model/Audit';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +26,14 @@ export class DashboardComponent implements OnInit {
   private barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 0,
+        }
+      }]
+    }
+
   };
 
 
@@ -40,7 +50,8 @@ export class DashboardComponent implements OnInit {
   private barChartLabelsByUser = [];
   private barChartTypeByUser = 'bar';
   private barChartLegendByUser = true;
-  private barChartDataByUser;
+  private barChartDataByUser = [];
+  private data = [];
   private barChartColorsByUser = [
     {
       backgroundColor: this.colors[4]
@@ -51,13 +62,20 @@ export class DashboardComponent implements OnInit {
   private pieChartType = 'pie';
   private pieChartLegend = true;
   private pieChartData = [];
+
+
+
   private pieChartColors = [
     {
       backgroundColor: this.colors
     }
   ];
+  private doughnutChartLabels = ['Finalized','Not Finalized'];
+  private doughnutChartType = 'doughnut';
+  private doughnutChartData = [];
 
   chartReady: boolean;
+  show: boolean;
 
 
   constructor(
@@ -71,6 +89,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.generateFormGroup();
+    this.getTaskFinalized();
     this.crerateTasksInformation();
     this.generateDiagrams();
   }
@@ -117,16 +136,15 @@ export class DashboardComponent implements OnInit {
   }
 
   applyFilterUser() {
-    this._taskService.getAllTaskByUser(this.formGroup.controls.user.value).subscribe( (tasks) =>{
-      for(let i in tasks){
-        if((tasks[i].state) === EnumResidency.FINALIZED){
-          this.barChartLabelsByUser.push('Task '+ i);
-          this.barChartDataByUser.push(20+i);
-        }
-      }
+    this.data = [];
+    this.barChartLabelsByUser = [];
+    console.log();
+    this._userService.getUserByName(this.formGroup.controls.user.value).subscribe((user) => {
+      this.a(user);
     }, (error) => {
       console.log(error);
     });
+
 
   }
 
@@ -149,5 +167,53 @@ export class DashboardComponent implements OnInit {
         user: []
       }
     );
+  }
+
+  private a(user: User) {
+    let firstAudit: Audit;
+    let lastAudit: Audit;
+    this._taskService.getAllTaskByUser(user.id).subscribe((tasks) => {
+      for (let i in tasks) {
+        if ((tasks[i].state) === EnumResidency.FINALIZED) {
+          this.barChartLabelsByUser.push('Task ' + i);
+          for (let j in (tasks[i].audits)) {
+            if ((tasks[i].audits)[j].lastValue == '' && (tasks[i].audits)[j].currentValue == EnumResidency.PENDING) {
+              firstAudit = (tasks[i].audits)[j];
+            } else if ((tasks[i].audits)[j].currentValue == EnumResidency.FINALIZED) {
+              lastAudit = (tasks[i].audits)[j];
+            }
+          }
+          this.data.push(20 + i.valueOf());
+        }
+      }
+      this.barChartDataByUser = [
+        {data: this.data, label: user.name + ' Finalized Tasks'}
+      ];
+      this.show = true;
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
+  private getTaskFinalized() {
+    let finalized = 0;
+    let notFinalized = 0;
+    let totals;
+    this._taskService.getAllTasks().subscribe((tasks) => {
+      console.log(tasks);
+      for (let x in tasks) {
+        if (tasks[x].state == EnumResidency.FINALIZED) {
+          finalized++;
+        } else {
+          notFinalized++;
+        }
+      }
+      totals = finalized+notFinalized;
+      this.doughnutChartData = [
+        {data: [(finalized/totals)*100,(notFinalized/totals)*100 ], label: 'Tasks'}
+      ];
+    }, (error) => {
+      console.log(error);
+    });
   }
 }
