@@ -4,7 +4,8 @@
       <div class="form-group task-size">
         <div class="form-row">
           <div class="col-md-8" *ngIf="idUndefined()">
-            <b><label class="createdBy text-success">This task has been created by {{this.task.supervisor.name+' '+this.task.supervisor.surname}}</label></b>
+            <b><label class="createdBy text-success">This task has been created
+              by {{this.task.supervisor.name + ' ' + this.task.supervisor.surname}}</label></b>
           </div>
         </div>
 
@@ -26,12 +27,29 @@
             </div>
           </div>
         </div>
+
+        <div class="form-row">
+            <div class="col-md-auto">
+              <label>Date</label>
+              <div class="input-group form-group">
+                <input type="text" bsDatepicker #datePicker="bsDatepicker"
+                       class="form-control handIcon" formControlName="creationDate">
+                <div (click)="datePicker.toggle()" class="input-group-append handIcon">
+                  <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                </div>
+              </div>
+            </div>
+          <timepicker formControlName="hourCreationDate" [(ngModel)]="mytime"></timepicker>
+        </div>
+
+
         <div class="form-row">
           <div class="col-md-4">
             <label>Assign to</label>
             <select formControlName="user" class="form-control">
               <option hidden></option>
-              <option *ngFor="let user of users" [ngValue]="user">{{user.name}} {{user.surname}} || {{user.timeSheet.name.substring(0,1)}}</option>
+              <option *ngFor="let user of users" [ngValue]="user">{{user.name}} {{user.surname}}
+                || {{user.timeSheet.name.substring(0, 1)}}</option>
             </select>
           </div>
         </div>
@@ -88,7 +106,10 @@
               </div>
             </div>
           </div>
+
+
         </div>
+
 
         <div class="form-group textArea">
           <label>Additional info:</label>
@@ -97,7 +118,7 @@
         </div>
 
 
-        <div >
+        <div>
           <button *ngIf="task.id==null" type="submit" name="save" class="btn button-create button"><i
             class="fas fa-check"></i> Create task
           </button>

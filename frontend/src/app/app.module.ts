@@ -10,7 +10,7 @@ import {TaskService} from './services/task.service';
 import {SubTaskService} from './services/subTask.service';
 import {LoginService} from './services/login.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BsDatepickerModule} from 'ngx-bootstrap';
+import {BsDatepickerModule, TimepickerModule} from 'ngx-bootstrap';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './Authentication/AuthGuard';
 import {HTTP_INTERCEPTORS, HttpClientModule, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
@@ -103,6 +103,7 @@ const appRoutes: Routes = [
     MatMenuModule,
     MatIconModule,
     ChartsModule,
+    TimepickerModule.forRoot(),
   ],
   providers: [
     ResidencyService, TaskService, SubTaskService, LoginService, AuthGuard, OnlyBossGuard, {

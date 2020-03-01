@@ -13,7 +13,7 @@ import {Room} from '../../model/Room';
 import {EnumResidency} from '../../enums/enum-residency.enum';
 import {Role} from '../../model/Role';
 import {LoginService} from '../../services/login.service';
-
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 
 @Component({
   selector: 'app-task-form',
@@ -33,6 +33,7 @@ export class TaskFormComponent implements OnInit {
   private states: string [] = ['Pending', 'In Progress', 'Finalized'];
   pendingUser: User;
   pendingRole: Role;
+  mytime: Date = new Date();
 
 
   constructor(
@@ -109,6 +110,9 @@ export class TaskFormComponent implements OnInit {
       'subTask': new FormControl(this.task.subTask, Validators.required),
       'floorNumber': new FormControl('', Validators.required),
       'additionalInformation': new FormControl(this.task.additionalInformation),
+      'creationDate': new FormControl(''),
+      'hourCreationDate': new FormControl('')
+
     });
   }
 
@@ -144,7 +148,9 @@ export class TaskFormComponent implements OnInit {
       'state': new FormControl('', Validators.required),
       'subTask': new FormControl('', Validators.required),
       'floorNumber': new FormControl('', Validators.required),
-      'additionalInformation': new FormControl('')
+      'additionalInformation': new FormControl(''),
+      'creationDate': new FormControl(''),
+      'hourCreationDate': new FormControl('')
     });
   }
 
