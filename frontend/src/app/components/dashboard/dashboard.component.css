@@ -1,5 +1,10 @@
 .page {
-  padding: 50px;
+  padding-top: 50px;
+  padding-left: 180px ;
+}
+
+.fullPage{
+  margin-top: 64px;
 }
 
 .defaultValue {
@@ -54,12 +59,51 @@
   justify-content: space-around;
   flex-flow: wrap;
 }
+
+.sidebar{
+  margin: 0px;
+  padding: 0px;
+}
+
+#sidebar{
+  position: fixed;
+  width: auto;
+  height: 100%;
+  background-color: #387cb9;
+  display: table;
+}
+
+#sidebar ul{
+  display: table-cell;
+  vertical-align: middle;
+  left: 0;
+}
+
+
+
+
+#sidebar ul li{
+  padding: 35px 10px;
+  list-style-type: none;
+  font-size: 15px;
+  text-align: center;
+}
+.sidebar button {
+  background-color: #387cb9;
+  border: none;
+  padding: 0px;
+}
+
+
 @media (max-width: 1200px) {
 
   .page{
     padding: 25px;
   }
 
+  .leyendaDashboard{
+    display: none;
+  }
 
   .diagram {
     display: block;
@@ -87,3 +131,4 @@
     margin: 1em;
   }
 }
+

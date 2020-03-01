@@ -76,7 +76,10 @@ export class DashboardComponent implements OnInit {
 
   chartReady: boolean;
   show: boolean;
+  doughnuyReady :boolean;
 
+  barDiagrams: boolean = true;
+  pieDiagrams: boolean = true;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -212,8 +215,24 @@ export class DashboardComponent implements OnInit {
       this.doughnutChartData = [
         {data: [(finalized/totals)*100,(notFinalized/totals)*100 ], label: 'Tasks'}
       ];
+      this.doughnuyReady = true;
     }, (error) => {
       console.log(error);
     });
+  }
+
+  showPieDiagrams() {
+    this.pieDiagrams = true;
+    this.barDiagrams = false;
+  }
+
+  showBarDiagrams() {
+    this.pieDiagrams = false;
+    this.barDiagrams = true;
+  }
+
+  showAllDiagrams(){
+    this.pieDiagrams = true;
+    this.barDiagrams = true;
   }
 }

@@ -1,88 +1,115 @@
-<div class="page">
-  <div class="tasks">
-    <div class="defaultValue pending">
-      <p>Pending</p>
-      <p>{{this.pendingTask}}</p>
+<div class="fullPage">
+  <div class="sidebar">
+    <div id="sidebar">
+      <div class="toggle-btn">
+      </div>
+      <ul>
+        <li>
+          <button class="text-white" (click)="showPieDiagrams()">
+            <div><i class="fas fa-chart-pie"></i></div>
+            <span class="leyendaDashboard">PIE DIAGRAM </span></button>
+        </li>
+        <li>
+          <button class="text-white" (click)="showBarDiagrams()">
+            <div><i class="far fa-chart-bar"></i></div>
+            <span class="leyendaDashboard">BAR DIAGRAM</span></button>
+        </li>
+        <li>
+          <button class="text-white" (click)="showAllDiagrams()">
+            <div><i class="fas fa-chart-line"></i></div>
+            <span class="leyendaDashboard">ALL DIAGRAMS </span></button>
+        </li>
+      </ul>
     </div>
-    <div class="defaultValue inProgress">
-      <p>Progress</p>
-      <p>{{this.inProgressTask}}</p>
-    </div>
-    <div class="defaultValue finalized">
-      <p>Finalized</p>
-      <p>{{this.finalizedTask}}</p>
-    </div>
+
   </div>
-
-  <div class="diagrams">
-    <div class="diagram" *ngIf="chartReady">
-      <h3 class="text-center">Average Time</h3>
-      <div>
-        <canvas baseChart
-                [datasets]="barChartData"
-                [labels]="barChartLabels"
-                [options]="barChartOptions"
-                [legend]="barChartLegend"
-                [chartType]="barChartType"
-                [colors]="barChartColors"
-        >
-
-        </canvas>
+  <div class="page">
+    <div class="tasks">
+      <div class="defaultValue pending">
+        <p>Pending</p>
+        <p>{{this.pendingTask}}</p>
+      </div>
+      <div class="defaultValue inProgress">
+        <p>Progress</p>
+        <p>{{this.inProgressTask}}</p>
+      </div>
+      <div class="defaultValue finalized">
+        <p>Finalized</p>
+        <p>{{this.finalizedTask}}</p>
       </div>
     </div>
 
-    <div class="diagram right">
-      <h3 class="text-center">WorkLoad</h3>
-      <div>
-        <canvas baseChart
-                [data]="pieChartData"
-                [labels]="pieChartLabels"
-                [legend]="pieChartLegend"
-                [chartType]="pieChartType"
-                [colors]="pieChartColors"
-        >
-        </canvas>
+    <div class="diagrams">
+      <div class="diagram" *ngIf="chartReady && barDiagrams">
+        <h3 class="text-center">Average Time</h3>
+        <div>
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  [colors]="barChartColors"
+          >
+
+          </canvas>
+        </div>
+      </div>
+
+      <div class="diagram right" *ngIf="pieDiagrams">
+        <h3 class="text-center">WorkLoad</h3>
+        <div>
+          <canvas baseChart
+                  [data]="pieChartData"
+                  [labels]="pieChartLabels"
+                  [legend]="pieChartLegend"
+                  [chartType]="pieChartType"
+                  [colors]="pieChartColors"
+          >
+          </canvas>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="diagram" *ngIf="barDiagrams">
+      <form [formGroup]="formGroup">
+        <div class="filter">
+          <label class="text-secondary">Employee</label>
+          <select class="form-control handIcon" name="searchUser" formControlName="user"
+                  (change)="applyFilterUser()">
+            <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
+          </select>
+        </div>
+      </form>
+
+      <div *ngIf="show">
+        <h3 class="text-center">Time to Finish Task</h3>
+        <div>
+          <canvas baseChart
+                  [datasets]="barChartDataByUser"
+                  [labels]="barChartLabelsByUser"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegendByUser"
+                  [chartType]="barChartTypeByUser"
+                  [colors]="barChartColorsByUser"
+          >
+
+          </canvas>
+        </div>
       </div>
     </div>
 
-
-  </div>
-
-  <form [formGroup]="formGroup">
-    <div class="filter">
-      <label class="text-secondary">Employee</label>
-      <select class="form-control handIcon" name="searchUser" formControlName="user"
-              (change)="applyFilterUser()">
-        <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
-      </select>
-    </div>
-  </form>
-
-  <div class="diagram" *ngIf="show">
-    <h3 class="text-center">Time to Finish Task</h3>
-    <div>
+    <div class="diagram right" *ngIf="doughnuyReady && pieDiagrams">
+      <h3 class="text-center">Tasks State (%)</h3>
       <canvas baseChart
-              [datasets]="barChartDataByUser"
-              [labels]="barChartLabelsByUser"
-              [options]="barChartOptions"
-              [legend]="barChartLegendByUser"
-              [chartType]="barChartTypeByUser"
-              [colors]="barChartColorsByUser"
+              [labels]="doughnutChartLabels"
+              [datasets]="doughnutChartData"
+              [chartType]="doughnutChartType"
       >
 
       </canvas>
     </div>
+
   </div>
-
-  <div class="diagram right">
-    <h3 class="text-center">Tasks State (%)</h3>
-    <canvas baseChart
-            [labels]="doughnutChartLabels"
-            [datasets]="doughnutChartData"
-            [chartType]="doughnutChartType"
-    >
-
-    </canvas>
-  </div>
-
 </div>
