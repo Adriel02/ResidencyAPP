@@ -26,8 +26,8 @@ export class UserService {
     return this._http.get<User[]>(this.base_url + '/role/' + role);
   }
 
-  getUsersByRoleAndTimeSheet(role: string, timeSheet: string) {
-    return this._http.get<User[]>(this.base_url + '/' + role + '/' + timeSheet);
+  getUsersByRoleAndTimeSheet(role: string, timeSheet: string, date: Date) {
+    return this._http.get<User[]>(this.base_url + '/' + role + '/' + timeSheet + '/' + date);
   }
 
 

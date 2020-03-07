@@ -6,10 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.security.*;
 
 
@@ -54,9 +51,21 @@ public class DBSeeder implements CommandLineRunner {
         this.residencyRepository.deleteAll();
         this.residencyRepository.saveAll(Arrays.asList(abuelito));
 
-        TimeSheet morning = new TimeSheet("Morning", "08:00", "16:00");
+
+        List<Date> workDays1 = new ArrayList<>();
+
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,7).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,8).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,9).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,10).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,11).getTime());
+
+
+
+
+        TimeSheet morning = new TimeSheet("Morning", "08:00", "16:00", workDays1);
         morning.setId("morning");
-        TimeSheet afternoon = new TimeSheet("Afternoon", "16:00", "24:00");
+        TimeSheet afternoon = new TimeSheet("Afternoon", "16:00", "24:00", workDays1);
         afternoon.setId("afternoon");
         this.timeSheetRepository.deleteAll();
         this.timeSheetRepository.saveAll(Arrays.asList(morning, afternoon));
@@ -72,7 +81,7 @@ public class DBSeeder implements CommandLineRunner {
         SubTask otro = new SubTask("Otro", new ArrayList<>());
         otro.setId("OTRO");
         this.subTaskRepository.deleteAll();
-        this.subTaskRepository.saveAll(Arrays.asList(lh, lu, rm, pr,otro));
+        this.subTaskRepository.saveAll(Arrays.asList(lh, lu, rm, pr, otro));
 
 
         Role jefeDepartamento = new Role("Jefe Departamento");
@@ -83,13 +92,10 @@ public class DBSeeder implements CommandLineRunner {
         this.roleRepository.saveAll(Arrays.asList(jefeDepartamento, trabajador));
 
 
-
-
         User jefe1 = new User("Adriel", "García Díaz", "789456123E", jefeDepartamento, "resp", md5Creator("1234"), morning);
         jefe1.setId("jefe1");
         User jefe2 = new User("Ana", "Díaz Rodríguez", "369852217O", jefeDepartamento, "resp2", md5Creator("1234"), afternoon);
         jefe2.setId("jefe2");
-
 
 
         User trabajador1 = new User("Raul", "García Díaz", "123456789A", trabajador, "emp1", md5Creator("1234"), morning);
@@ -156,7 +162,7 @@ public class DBSeeder implements CommandLineRunner {
         audit6.setId(java.util.UUID.randomUUID().toString());
 
         this.auditRepository.deleteAll();
-        this.auditRepository.saveAll(Arrays.asList(audit1, audit2, audit3, audit4, audit5,audit6));
+        this.auditRepository.saveAll(Arrays.asList(audit1, audit2, audit3, audit4, audit5, audit6));
 
         task1.getAudits().add(audit6);
         task1.getAudits().add(audit1);
@@ -179,19 +185,18 @@ public class DBSeeder implements CommandLineRunner {
         this.taskRepository.saveAll(Arrays.asList(task1, task2, task3, task4));
 
 
-
-
     }
-    private String md5Creator (String password) throws NoSuchAlgorithmException {
+
+    private String md5Creator(String password) throws NoSuchAlgorithmException {
         MessageDigest md5 = MessageDigest.getInstance("MD5");
         md5.update(password.getBytes());
 
-        byte [] bytes = md5.digest();
-        BigInteger number = new BigInteger(1,bytes);
+        byte[] bytes = md5.digest();
+        BigInteger number = new BigInteger(1, bytes);
         String hashPassword = number.toString(16);
 
-        while(hashPassword.length()<32){
-            hashPassword = "0"+hashPassword;
+        while (hashPassword.length() < 32) {
+            hashPassword = "0" + hashPassword;
         }
         return hashPassword;
     }

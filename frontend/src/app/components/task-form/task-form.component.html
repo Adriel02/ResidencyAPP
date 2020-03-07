@@ -33,13 +33,13 @@
               <label>Date</label>
               <div class="input-group form-group">
                 <input type="text" bsDatepicker #datePicker="bsDatepicker"
-                       class="form-control handIcon" formControlName="creationDate">
+                       class="form-control handIcon" formControlName="creationDate" [bsConfig]="datePickerConfig" (ngModelChange)="getUsersByRole()">
                 <div (click)="datePicker.toggle()" class="input-group-append handIcon">
                   <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                 </div>
               </div>
             </div>
-          <timepicker formControlName="hourCreationDate" [(ngModel)]="mytime"></timepicker>
+          <timepicker formControlName="hourCreationDate" [(ngModel)]="mytime" (ngModelChange)="getUsersByRole()"></timepicker>
         </div>
 
 

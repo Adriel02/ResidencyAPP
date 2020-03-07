@@ -6,6 +6,7 @@ import residency.backend.exception.UserNotValidException;
 import residency.backend.model.User;
 import residency.backend.services.UserService;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -34,9 +35,9 @@ public class UserController {
         return this.userService.getAllUserByTimeSheet(timeSheet);
     }
 
-    @GetMapping("/{role}/{timeSheet}")
-    public List<User> getUsersByTimeSheet(@PathVariable String role, @PathVariable String timeSheet) {
-        return this.userService.getAllUserByRoleAndTimeSheet(role, timeSheet);
+    @GetMapping("/{role}/{timeSheet}/{date}")
+    public List<User> getAllUserByRoleAndTimeSheet(@PathVariable String role, @PathVariable String timeSheet, @PathVariable Date date ) {
+        return this.userService.getAllUserByRoleAndTimeSheet(role, timeSheet,date);
     }
 
     @GetMapping("/username/{username}")

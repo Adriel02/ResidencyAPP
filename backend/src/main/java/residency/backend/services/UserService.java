@@ -5,8 +5,7 @@ import org.springframework.stereotype.Service;
 import residency.backend.dao.UserRepository;
 import residency.backend.model.User;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -31,14 +30,39 @@ public class UserService {
         return this.userRepository.findAllByTimeSheet(timeSheet);
     }
 
-    public List<User> getAllUserByRoleAndTimeSheet(String role, String timeSheet) {
-        return this.userRepository.findAllByRoleAndTimeSheet(role, timeSheet);
+    public List<User> getAllUserByRoleAndTimeSheet(String role, String timeSheet, Date date) {
+        List<User> users = this.userRepository.findAllByRoleAndTimeSheet(role, timeSheet);
+        List<User> usersWorkingNow = new ArrayList<>();
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY,0);
+        cal.set(Calendar.MINUTE,0);
+        cal.set(Calendar.SECOND,0);
+        cal.set(Calendar.MILLISECOND,0);
+
+        System.out.println(cal.getTime());
+        for (User user : users) {
+            for (Date workDay : user.getTimeSheet().getWorkDays()) {
+
+                if(cal.getTime().compareTo(workDay)==0){
+                    usersWorkingNow.add(user);
+                }
+//                if (date.getDay() == workDay.getDay() &&
+//                        date.getMonth() == workDay.getMonth() &&
+//                        date.getYear() == workDay.getYear()) {
+//                    usersWorkingNow.add(user);
+//                }
+            }
+        }
+        return usersWorkingNow;
     }
 
     public User getUserByUsername(String username) {
         Optional<User> user = this.userRepository.findByUsername(username);
         return user.orElse(null);
     }
+
     public User getUserByName(String name) {
         Optional<User> user = this.userRepository.findByName(name);
         return user.orElse(null);

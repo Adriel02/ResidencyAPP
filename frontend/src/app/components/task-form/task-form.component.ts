@@ -13,7 +13,8 @@ import {Room} from '../../model/Room';
 import {EnumResidency} from '../../enums/enum-residency.enum';
 import {Role} from '../../model/Role';
 import {LoginService} from '../../services/login.service';
-import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import {TimepickerModule} from 'ngx-bootstrap/timepicker';
+import {BsDatepickerConfig} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-task-form',
@@ -34,6 +35,8 @@ export class TaskFormComponent implements OnInit {
   pendingUser: User;
   pendingRole: Role;
   mytime: Date = new Date();
+  datePickerConfig: Partial<BsDatepickerConfig> = new BsDatepickerConfig();
+  bsvalue: Date = new Date();
 
 
   constructor(
@@ -44,7 +47,14 @@ export class TaskFormComponent implements OnInit {
     private _subTaskService: SubTaskService,
     private _loggedUser: LoginService
   ) {
-  }
+    this.datePickerConfig = Object.assign({}, {
+        showWeekNumbers: false,
+        dateInputFormat: EnumResidency.DATEINPUTFORMAT,
+        containerClass: 'theme-dark-blue',
+        isDisabled: true,
+      }
+    );
+  };
 
   ngOnInit() {
     if (this._taskService.getter() == null) {
@@ -56,7 +66,6 @@ export class TaskFormComponent implements OnInit {
     }
     this.task = this._taskService.getter();
     this.getResidency(EnumResidency.RESIDENCIAABUELITO);
-    this.getUsersByRole();
     this.getAllSubtasks();
     if (this.idUndefined()) {
       this.generateFormGroup();
@@ -66,7 +75,9 @@ export class TaskFormComponent implements OnInit {
   }
 
   private idUndefined() {
-    if(this.task.id != undefined) return true;
+    if (this.task.id != undefined) {
+      return true;
+    }
     return false;
   }
 
@@ -94,7 +105,7 @@ export class TaskFormComponent implements OnInit {
 
   private getUsersByRole() {
     this.getTimeSheet();
-    this._userService.getUsersByRoleAndTimeSheet(EnumResidency.TRABAJADOR, this.timeSheet).subscribe((user) => {
+    this._userService.getUsersByRoleAndTimeSheet(EnumResidency.TRABAJADOR, this.timeSheet, this.taskForm.controls.creationDate.value).subscribe((user) => {
       this.users = user;
       this.setDefaultValuesUser();
     }, (error) => {
@@ -110,7 +121,7 @@ export class TaskFormComponent implements OnInit {
       'subTask': new FormControl(this.task.subTask, Validators.required),
       'floorNumber': new FormControl('', Validators.required),
       'additionalInformation': new FormControl(this.task.additionalInformation),
-      'creationDate': new FormControl(''),
+      'creationDate': new FormControl(this.bsvalue),
       'hourCreationDate': new FormControl('')
 
     });
@@ -149,7 +160,7 @@ export class TaskFormComponent implements OnInit {
       'subTask': new FormControl('', Validators.required),
       'floorNumber': new FormControl('', Validators.required),
       'additionalInformation': new FormControl(''),
-      'creationDate': new FormControl(''),
+      'creationDate': new FormControl(this.bsvalue),
       'hourCreationDate': new FormControl('')
     });
   }
@@ -213,15 +224,18 @@ export class TaskFormComponent implements OnInit {
   }
 
   private getTimeSheet() {
-    let now = new Date();
+    this.mytime = this.taskForm.controls.hourCreationDate.value;
+    console.log(this.mytime);
     let startMorning = new Date().setHours(8, 0, 0, 0);
     let finishMorning = new Date().setHours(16, 0, 0, 0);
     let finishAfternoon = new Date().setHours(24, 0, 0, 0);
 
-    if (now.getTime() > startMorning && now.getTime() < finishMorning) {
+    if (this.mytime.getTime() > startMorning && this.mytime.getTime() < finishMorning) {
       this.timeSheet = EnumResidency.MORNING;
-    } else if (now.getTime() > finishMorning && now.getTime() < finishAfternoon) {
+    } else if (this.mytime.getTime() > finishMorning && this.mytime.getTime() < finishAfternoon) {
       this.timeSheet = EnumResidency.AFTERNOON;
     }
+
+    console.log(this.timeSheet);
   }
 }
