@@ -58,6 +58,7 @@ export class DashboardComponent implements OnInit {
     }
   ];
 
+
   private pieChartLabels = [];
   private pieChartType = 'pie';
   private pieChartLegend = true;
@@ -151,7 +152,6 @@ export class DashboardComponent implements OnInit {
   applyFilterUser() {
     this.data = [];
     this.barChartLabelsByUser = [];
-    console.log();
     this._userService.getUserByName(this.formGroup.controls.user.value).subscribe((user) => {
       this.generateEmployeeBarDiagram(user);
     }, (error) => {
@@ -196,7 +196,7 @@ export class DashboardComponent implements OnInit {
               lastAudit = (tasks[i].audits)[j];
             }
           }
-          this.data.push(20 + i.valueOf());
+          this.data.push(this.getHours(firstAudit, lastAudit));
         }
       }
       this.barChartDataByUser = [
@@ -208,12 +208,20 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  private getHours(firstAudit: Audit, lastAudit: Audit) {
+
+    var firstAuditDate = new Date(firstAudit.auditDate);
+    var lastAuditDate = new Date(lastAudit.auditDate);
+    console.log((firstAuditDate.getTime() - lastAuditDate.getTime())/(1000*60));
+    return ((firstAuditDate.getTime() - lastAuditDate.getTime())/(1000*60));
+
+  }
+
   private getTaskFinalized() {
     let finalized = 0;
     let notFinalized = 0;
     let totals;
     this._taskService.getAllTasks().subscribe((tasks) => {
-      console.log(tasks);
       for (let x in tasks) {
         if (tasks[x].state == EnumResidency.FINALIZED) {
           finalized++;
@@ -267,7 +275,4 @@ export class DashboardComponent implements OnInit {
     this.workLoadDiagram = false;
   }
 
-  private setDefaultValue() {
-
-  }
 }

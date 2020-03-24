@@ -225,7 +225,6 @@ export class TaskFormComponent implements OnInit {
 
   private getTimeSheet() {
     this.mytime = this.taskForm.controls.hourCreationDate.value;
-    console.log(this.mytime);
     let startMorning = new Date().setHours(8, 0, 0, 0);
     let finishMorning = new Date().setHours(16, 0, 0, 0);
     let finishAfternoon = new Date().setHours(24, 0, 0, 0);
@@ -236,6 +235,5 @@ export class TaskFormComponent implements OnInit {
       this.timeSheet = EnumResidency.AFTERNOON;
     }
 
-    console.log(this.timeSheet);
   }
 }

@@ -19,7 +19,6 @@ export class OnlyBossGuard implements CanActivate {
       if (!this._loggedUser.getUserLoggedIn()) {
         this.setUserAgain();
       }
-      console.log(this._loggedUser.getRoleUser());
       if (this._loggedUser.getRoleUser() == EnumResidency.JEFEDEPARTAMENTO) {
         return true;
       } else {

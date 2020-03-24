@@ -429,7 +429,6 @@ export class ListTaskComponent implements OnInit {
   }
 
   isRoomNumber(numberString: string) {
-    console.log(Number(numberString));
     if(isNaN(Number(numberString))) {
       return true;
     }

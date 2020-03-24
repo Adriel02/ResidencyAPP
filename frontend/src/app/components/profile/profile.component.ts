@@ -34,7 +34,6 @@ export class ProfileComponent implements OnInit {
       let user = new User();
       if (localStorage.getItem('userLogged')) {
         user = JSON.parse(atob(localStorage.getItem('userLogged')));
-        console.log(user);
       }
       this._userService.setter(user);
     }

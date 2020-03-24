@@ -4,9 +4,9 @@
   padding-bottom: 250px;
 }
 
-.fullPage{
+.statusSummary{
+  text-align: center;
 }
-
 .defaultValue {
   border: 3px solid black;
   text-align: center;
