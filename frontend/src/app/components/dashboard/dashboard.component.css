@@ -1,11 +1,10 @@
 .page {
   padding-top: 50px;
-  padding-left: 180px ;
+  padding-left: 190px ;
   padding-bottom: 250px;
 }
 
 .fullPage{
-  margin-top: 64px;
 }
 
 .defaultValue {
@@ -62,38 +61,43 @@
 }
 
 .sidebar{
-  margin: 0px;
-  padding: 0px;
+
 }
 
 #sidebar{
-  position: fixed;
-  width: auto;
-  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  height: 150%;
+  position:absolute;
   background-color: #387cb9;
+  width: auto;
   display: table;
 }
 
-#sidebar ul{
+.sidebar ul{
   display: table-cell;
   vertical-align: middle;
-  left: 0;
+
 }
 
-
-
+.doughnut{
+  padding-top: 132px;
+}
 
 #sidebar ul li{
-  padding: 35px 10px;
+  padding: 10px;
   list-style-type: none;
   font-size: 15px;
   text-align: center;
+  height: 100%;
 }
 .sidebar button {
   background-color: #387cb9;
   border: none;
   padding: 0px;
 }
+
 
 
 @media (max-width: 1200px) {

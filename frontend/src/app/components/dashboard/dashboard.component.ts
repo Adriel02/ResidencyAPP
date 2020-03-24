@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {LoginService} from '../../services/login.service';
 import {UserService} from '../../services/user.service';
 import {TaskService} from '../../services/task.service';
-import {Router} from '@angular/router';
 import {Task} from 'src/app/model/Task';
 import {EnumResidency} from '../../enums/enum-residency.enum';
 import {User} from '../../model/User';
@@ -20,8 +19,9 @@ export class DashboardComponent implements OnInit {
   private pendingTask;
   private inProgressTask;
   private finalizedTask;
-  private users;
+  private users: User[];
   formGroup: FormGroup;
+  user: User;
 
   private barChartOptions = {
     scaleShowVerticalLines: false,
@@ -37,14 +37,14 @@ export class DashboardComponent implements OnInit {
   };
 
 
-  private colors = ['#ebdef0', '#d4e6f1', '#d1f2eb', '#d4efdf', '#fcf3cf', '#f6ddcc', '#f6ddcc', '#e5e8e8'];
+  private colors = ['#ebdef0', '#d4e6f1', '#d1f2eb', '#d4efdf', '#e5e8e8', '#d1f695', '#f1c0f6'];
   private barChartLabels = [];
   private barChartType = 'bar';
   private barChartLegend = true;
   private barChartData;
   private barChartColors = [
     {
-      backgroundColor: this.colors[6]
+      backgroundColor: '#f6ddcc'
     }
   ];
   private barChartLabelsByUser = [];
@@ -54,7 +54,7 @@ export class DashboardComponent implements OnInit {
   private data = [];
   private barChartColorsByUser = [
     {
-      backgroundColor: this.colors[4]
+      backgroundColor: '#f6ddcc'
     }
   ];
 
@@ -64,29 +64,36 @@ export class DashboardComponent implements OnInit {
   private pieChartData = [];
 
 
-
   private pieChartColors = [
     {
       backgroundColor: this.colors
     }
   ];
-  private doughnutChartLabels = ['Finalized','Not Finalized'];
+  private doughnutChartLabels = ['Finalized', 'Not Finalized'];
   private doughnutChartType = 'doughnut';
   private doughnutChartData = [];
+  private doughnutChartColors = [
+    {
+      backgroundColor: ['#f6ddcc', '#fcf3cf']
+    }
+  ];
+
 
   chartReady: boolean;
   show: boolean;
-  doughnuyReady :boolean;
+  doughnuyReady: boolean;
 
-  barDiagrams: boolean = true;
-  pieDiagrams: boolean = true;
+  averageTimeDiagram: boolean = true;
+  workLoadDiagram: boolean = true;
+  timeToFinishTaskDiagram: boolean = true;
+  taskStateDiagram: boolean = true;
+
 
   constructor(
     private _formBuilder: FormBuilder,
     private _loggedUser: LoginService,
     private _userService: UserService,
     private _taskService: TaskService,
-    private _router: Router,
   ) {
   }
 
@@ -119,6 +126,8 @@ export class DashboardComponent implements OnInit {
   private generateDiagrams() {
     this._userService.getUsersByRole(EnumResidency.TRABAJADOR).subscribe((users) => {
       this.users = users;
+      this.formGroup.controls.user.setValue(this.users[0].name);
+      this.applyFilterUser(); //To create the default Value
       this.generateBarDiagram();
       this.getTaskByUsername();
     }, (error) => {
@@ -136,6 +145,7 @@ export class DashboardComponent implements OnInit {
         console.log(error);
       });
     }
+    this.formGroup.controls.user.setValue(this.users[0].name);
   }
 
   applyFilterUser() {
@@ -143,7 +153,7 @@ export class DashboardComponent implements OnInit {
     this.barChartLabelsByUser = [];
     console.log();
     this._userService.getUserByName(this.formGroup.controls.user.value).subscribe((user) => {
-      this.a(user);
+      this.generateEmployeeBarDiagram(user);
     }, (error) => {
       console.log(error);
     });
@@ -167,12 +177,12 @@ export class DashboardComponent implements OnInit {
 
   private generateFormGroup() {
     this.formGroup = this._formBuilder.group({
-        user: []
+        user: [],
       }
     );
   }
 
-  private a(user: User) {
+  private generateEmployeeBarDiagram(user: User) {
     let firstAudit: Audit;
     let lastAudit: Audit;
     this._taskService.getAllTaskByUser(user.id).subscribe((tasks) => {
@@ -211,9 +221,9 @@ export class DashboardComponent implements OnInit {
           notFinalized++;
         }
       }
-      totals = finalized+notFinalized;
+      totals = finalized + notFinalized;
       this.doughnutChartData = [
-        {data: [(finalized/totals)*100,(notFinalized/totals)*100 ], label: 'Tasks'}
+        {data: [(finalized / totals) * 100, (notFinalized / totals) * 100], label: 'Tasks'}
       ];
       this.doughnuyReady = true;
     }, (error) => {
@@ -221,18 +231,43 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  showPieDiagrams() {
-    this.pieDiagrams = true;
-    this.barDiagrams = false;
+
+  showAllDiagrams() {
+    this.taskStateDiagram = true;
+    this.averageTimeDiagram = true;
+    this.timeToFinishTaskDiagram = true;
+    this.workLoadDiagram = true;
   }
 
-  showBarDiagrams() {
-    this.pieDiagrams = false;
-    this.barDiagrams = true;
+  showAverageTimeDiagram() {
+    this.averageTimeDiagram = true;
+    this.timeToFinishTaskDiagram = false;
+    this.taskStateDiagram = false;
+    this.workLoadDiagram = false;
   }
 
-  showAllDiagrams(){
-    this.pieDiagrams = true;
-    this.barDiagrams = true;
+  showWordLoadDiagram() {
+    this.workLoadDiagram = true;
+    this.averageTimeDiagram = false;
+    this.timeToFinishTaskDiagram = false;
+    this.taskStateDiagram = false;
+  }
+
+  showTaskStateDiagram() {
+    this.taskStateDiagram = true;
+    this.averageTimeDiagram = false;
+    this.timeToFinishTaskDiagram = false;
+    this.workLoadDiagram = false;
+  }
+
+  showTimeToFinishTaskDiagram() {
+    this.timeToFinishTaskDiagram = true;
+    this.averageTimeDiagram = false;
+    this.taskStateDiagram = false;
+    this.workLoadDiagram = false;
+  }
+
+  private setDefaultValue() {
+
   }
 }

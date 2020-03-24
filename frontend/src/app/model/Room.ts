@@ -1,9 +1,9 @@
 export class Room {
-  number: number;
+  number: string;
   lastCleaningDate: Date;
 
   constructor(){
-    this.number= 0;
+    this.number= 0+"";
   }
 
 }

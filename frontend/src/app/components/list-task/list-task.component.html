@@ -57,14 +57,23 @@
 
       <ng-container matColumnDef="subTask.id">
         <mat-header-cell class="taskInformation" *matHeaderCellDef mat-sort-header>Task</mat-header-cell>
-        <mat-cell class="taskInformation"  *matCellDef="let task">{{task.subTask.id}}</mat-cell>
+        <mat-cell class="taskInformation" *matCellDef="let task">{{task.subTask.id}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="room.number">
-        <mat-header-cell class="areaInformation" *matHeaderCellDef mat-sort-header class="areaInformation">Area</mat-header-cell>
+        <mat-header-cell class="areaInformation" *matHeaderCellDef mat-sort-header class="areaInformation">Area
+        </mat-header-cell>
         <mat-cell class="areaInformation" *matCellDef="let task">
-          <span *ngIf="task.room.number < 10">{{task.floorNumber + "0" + task.room.number}}</span>
-          <span *ngIf="task.room.number >= 10">{{task.floorNumber + "" + task.room.number}}</span>
+
+          <div *ngIf="!isRoomNumber(task.room.number);else areaPart">
+            <span *ngIf="task.room.number < 10">{{task.floorNumber + "0" + task.room.number}}</span>
+            <span *ngIf="task.room.number >= 10">{{task.floorNumber + "" + task.room.number}}</span>
+          </div>
+
+          <ng-template #areaPart>
+            <span>{{task.room.number}}</span>
+          </ng-template>
+
         </mat-cell>
       </ng-container>
       <ng-container matColumnDef="state">

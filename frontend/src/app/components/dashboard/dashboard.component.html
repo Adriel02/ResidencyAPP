@@ -5,14 +5,24 @@
       </div>
       <ul>
         <li>
-          <button class="text-white" (click)="showPieDiagrams()">
-            <div><i class="fas fa-chart-pie"></i></div>
-            <span class="leyendaDashboard">PIE DIAGRAM </span></button>
+          <button class="text-white" (click)="showAverageTimeDiagram()">
+            <div><i class="far fa-chart-bar"></i></div>
+            <span class="leyendaDashboard">Average Time</span></button>
         </li>
         <li>
-          <button class="text-white" (click)="showBarDiagrams()">
-            <div><i class="far fa-chart-bar"></i></div>
-            <span class="leyendaDashboard">BAR DIAGRAM</span></button>
+          <button class="text-white" (click)="showTimeToFinishTaskDiagram()">
+            <div><i class="fas fa-chart-bar"></i></div>
+            <span class="leyendaDashboard">Time To finish Task</span></button>
+        </li>
+        <li>
+          <button class="text-white" (click)="showWordLoadDiagram()">
+            <div><i class="fas fa-chart-pie"></i></div>
+            <span class="leyendaDashboard">WorkLoad</span></button>
+        </li>
+        <li>
+          <button class="text-white" (click)="showTaskStateDiagram()">
+            <div><i class="fas fa-chart-pie"></i></div>
+            <span class="leyendaDashboard">Task State</span></button>
         </li>
         <li>
           <button class="text-white" (click)="showAllDiagrams()">
@@ -40,8 +50,8 @@
     </div>
 
     <div class="diagrams">
-      <div class="diagram" *ngIf="chartReady && barDiagrams">
-        <h3 class="text-center">Average Time</h3>
+      <div class="diagram" *ngIf="chartReady && averageTimeDiagram">
+        <h3 class="text-center">Average Time to Finish Task</h3>
         <div>
           <canvas baseChart
                   [datasets]="barChartData"
@@ -56,7 +66,7 @@
         </div>
       </div>
 
-      <div class="diagram right" *ngIf="pieDiagrams">
+      <div class="diagram right workload" *ngIf="workLoadDiagram">
         <h3 class="text-center">WorkLoad</h3>
         <div>
           <canvas baseChart
@@ -72,44 +82,47 @@
 
 
     </div>
-    <div class="diagram" *ngIf="barDiagrams">
-      <form [formGroup]="formGroup">
-        <div class="filter">
-          <label class="text-secondary">Employee</label>
-          <select class="form-control handIcon" name="searchUser" formControlName="user"
-                  (change)="applyFilterUser()">
-            <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
-          </select>
-        </div>
-      </form>
+    <div class="diagrams">
+      <div class="diagram" *ngIf="timeToFinishTaskDiagram" >
+        <form  [formGroup]="formGroup">
+          <div class="filter form">
+            <label class="text-secondary" >Employee</label>
+            <select class="form-control handIcon" name="searchUser" formControlName="user"
+                    (change)="applyFilterUser()">
+              <option class="handIcon" *ngFor="let user of users" [ngValue]="user.name">{{user.name}}</option>
+            </select>
+          </div>
+        </form>
 
-      <div *ngIf="show">
-        <h3 class="text-center">Time to Finish Task</h3>
-        <div>
-          <canvas baseChart
-                  [datasets]="barChartDataByUser"
-                  [labels]="barChartLabelsByUser"
-                  [options]="barChartOptions"
-                  [legend]="barChartLegendByUser"
-                  [chartType]="barChartTypeByUser"
-                  [colors]="barChartColorsByUser"
-          >
+        <div *ngIf=" show && timeToFinishTaskDiagram" >
+          <h3 class="text-center">Time to Finish Task</h3>
+          <div>
+            <canvas baseChart
+                    [datasets]="barChartDataByUser"
+                    [labels]="barChartLabelsByUser"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegendByUser"
+                    [chartType]="barChartTypeByUser"
+                    [colors]="barChartColorsByUser"
+            >
 
-          </canvas>
+            </canvas>
+          </div>
         </div>
       </div>
+
+      <div class="diagram right doughnut" *ngIf="doughnuyReady && taskStateDiagram">
+        <h3 class="text-center">Tasks State (%)</h3>
+        <canvas baseChart
+                [labels]="doughnutChartLabels"
+                [datasets]="doughnutChartData"
+                [chartType]="doughnutChartType"
+                [colors]="doughnutChartColors"
+        >
+
+        </canvas>
+      </div>
+
     </div>
-
-    <div class="diagram right" *ngIf="doughnuyReady && pieDiagrams">
-      <h3 class="text-center">Tasks State (%)</h3>
-      <canvas baseChart
-              [labels]="doughnutChartLabels"
-              [datasets]="doughnutChartData"
-              [chartType]="doughnutChartType"
-      >
-
-      </canvas>
-    </div>
-
   </div>
 </div>

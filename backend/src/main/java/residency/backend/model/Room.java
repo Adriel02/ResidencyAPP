@@ -3,22 +3,22 @@ package residency.backend.model;
 import java.util.Date;
 
 public class Room {
-    private Integer number;
+    private String  number;
     private Date lastCleaningDate;
 
 
-    public Room(Integer number) {
+    public Room(String number) {
         this.number = number;
     }
 
     public Room() {
     }
 
-    public Integer getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

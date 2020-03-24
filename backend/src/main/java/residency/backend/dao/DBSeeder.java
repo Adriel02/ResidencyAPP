@@ -38,11 +38,23 @@ public class DBSeeder implements CommandLineRunner {
         List<Room> habitaciones = new ArrayList<>();
         List<Room> habitaciones2 = new ArrayList<>();
         for (int i = 1; i <= 10; i++) {
-            habitaciones.add(new Room(i));
+            habitaciones.add(new Room(i+""));
         }
         for (int i = 1; i <= 5; i++) {
-            habitaciones2.add(new Room(i));
+            habitaciones2.add(new Room(i+""));
         }
+        habitaciones.add(new Room("Comedor"));
+        habitaciones.add(new Room("Sala Comun Planta Baja"));
+        habitaciones.add(new Room("Sala Gerencia"));
+
+        habitaciones2.add(new Room("Sala Comun Planta 1"));
+        habitaciones2.add(new Room("Sala Administración"));
+        habitaciones2.add(new Room("Salon Principal"));
+
+        habitaciones2.add(new Room("Habitación de Juegos"));
+        habitaciones2.add(new Room("Sala Television"));
+
+
         Floor f1 = new Floor(1, habitaciones);
         Floor f2 = new Floor(2, habitaciones2);
 
@@ -54,11 +66,11 @@ public class DBSeeder implements CommandLineRunner {
 
         List<Date> workDays1 = new ArrayList<>();
 
-        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,7).getTime());
-        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,8).getTime());
-        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,9).getTime());
-        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,10).getTime());
-        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,11).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,19).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,20).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,21).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,22).getTime());
+        workDays1.add(new GregorianCalendar(2020,Calendar.MARCH,23).getTime());
 
 
 

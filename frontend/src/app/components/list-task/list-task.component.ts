@@ -54,7 +54,6 @@ export class ListTaskComponent implements OnInit {
 
 
   ngOnInit() {
-
     this.generateFormGroup();
     this.setDefaultValue();
     this.getAllData();
@@ -429,5 +428,16 @@ export class ListTaskComponent implements OnInit {
     this.applyFilterState();
   }
 
+  isRoomNumber(numberString: string) {
+    console.log(Number(numberString));
+    if(isNaN(Number(numberString))) {
+      return true;
+    }
+      return false;
+  }
+
+  convertStringToNumber(numberString:string){
+    return Number(numberString);
+  }
 }
 
